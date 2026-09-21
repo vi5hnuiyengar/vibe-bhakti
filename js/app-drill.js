@@ -18,6 +18,12 @@
   function enter(fn) { U.enter(fn); }
   function leave() { U.leave(); }
   function settings() { VB.Settings.open(); }
+  function isPron(skill) { return !!(VB.PRON_BY_ID && VB.PRON_BY_ID[String(skill).split(":")[0]]); }
+  function rec(skill, ok, opts) {
+    opts.massed = !!(sess && sess.massed);
+    if (isPron(skill)) opts.track = "pron";
+    S.record(skill, ok, opts);
+  }
 
   // The session chrome and the feedback panel, bound to this session.
   function topBar() { return U.topBar(stepIndex(), stepCount(), quit); }
@@ -50,7 +56,8 @@
       h("div", { class: "modes" },
         modeBtn("सा", "सारणी-अभ्यासः", "Fill in whole tables from memory", function () { enter(startTables); }),
         modeBtn("वे", "वेग-अभ्यासः", "60 seconds. True or false, as fast as you can", function () { enter(startSpeed); }),
-        modeBtn("रू", "रूपावलिः", "See every form of every word", function () { enter(reference); }))
+        modeBtn("रू", "रूपावलिः", "See every form of every word", function () { enter(reference); }),
+        VB.MODULES.pron ? modeBtn("स", "सर्वनामाभ्यासः", "Pronouns: सः, सा, तत्, अहम्, त्वम् and more", function () { enter(function () { startPron(); }); }) : null)
     );
   }
 
@@ -61,41 +68,71 @@
   }
   function vibOpen(v) { return S.unlockedVibs().indexOf(v) >= 0; }
 
-  // सरल-अभ्यासः: one vibhakti, class optional, ten questions
+  // pronoun bases in the order they open, and whether each is open yet
+  function pronBases() {
+    if (!VB.MODULES.pron) return [];
+    var open = S.pronOpen(), seen = {}, out = [];
+    VB.MODULES.pron.members.forEach(function (id) {
+      var b = VB.PRON_BY_ID[id].base;
+      if (seen[b]) { if (open.indexOf(id) >= 0) seen[b].open = true; return; }
+      seen[b] = { base: b, open: open.indexOf(id) >= 0 }; out.push(seen[b]);
+    });
+    return out;
+  }
+  var BASE_LABEL = { "अस्मद्": "अहम्", "युष्मद्": "त्वम्" };
+
+  // सरल-अभ्यासः: one vibhakti, and one word class or one pronoun; ten questions
   function massedCard() {
-    var pickVib = null, pickCls = null;
-    var start = h("button", { class: "primary", disabled: true,
-      onclick: function () { enter(function () { startMassed(pickVib, pickCls); }); } }, bi("दश प्रश्नाः", "Ten questions"));
-    var vibRow = h("div", { class: "chiprow" }), clsRow = h("div", { class: "chiprow" });
-    VB.VIBS.forEach(function (v) {
-      var open = vibOpen(v);
-      var c = chip(VB.VIB_SA[v], false, !open, function () {
-        pickVib = pickVib === v ? null : v;
-        vibRow.querySelectorAll(".selchip").forEach(function (b, i) { b.setAttribute("aria-pressed", VB.VIBS[i] === pickVib ? "true" : "false"); });
-        start.disabled = !pickVib;
+    var pickVib = null, pickCls = null, pickPron = null;
+    var start = h("button", { class: "primary", disabled: true, onclick: function () {
+      enter(function () { if (pickPron) startMassedPron(pickVib, pickPron); else startMassed(pickVib, pickCls); });
+    } }, bi("दश प्रश्नाः", "Ten questions"));
+    var vibRow = h("div", { class: "chiprow" }), clsRow = h("div", { class: "chiprow" }), pronRow = h("div", { class: "chiprow" });
+
+    function refresh() {
+      vibRow.querySelectorAll(".selchip").forEach(function (b, i) {
+        var v = VB.VIBS[i], locked = !vibOpen(v) || (pickPron && v === "sam");
+        b.disabled = locked; b.classList.toggle("locked", locked);
+        b.setAttribute("aria-pressed", v === pickVib ? "true" : "false");
       });
-      add(vibRow, c);
+      clsRow.querySelectorAll(".selchip").forEach(function (b, i) { b.setAttribute("aria-pressed", !pickPron && clsOpts[i] === pickCls ? "true" : "false"); });
+      pronRow.querySelectorAll(".selchip").forEach(function (b, i) { b.setAttribute("aria-pressed", bases[i].base === pickPron ? "true" : "false"); });
+      clsRow.classList.toggle("muted-row", !!pickPron);
+      start.disabled = !pickVib || (pickPron && pickVib === "sam");
+    }
+    VB.VIBS.forEach(function (v) {
+      add(vibRow, chip(VB.VIB_SA[v], false, !vibOpen(v), function () { pickVib = pickVib === v ? null : v; refresh(); }));
     });
     var clsOpts = [null].concat(VB.CLASSES);
     clsOpts.forEach(function (cl) {
-      add(clsRow, chip(cl ? VB.MODEL[cl] : "सर्वे", cl === pickCls, false, function () {
-        pickCls = cl;
-        clsRow.querySelectorAll(".selchip").forEach(function (b, i) { b.setAttribute("aria-pressed", clsOpts[i] === pickCls ? "true" : "false"); });
+      add(clsRow, chip(cl ? VB.MODEL[cl] : "सर्वे", false, false, function () { pickCls = cl; pickPron = null; refresh(); }));
+    });
+    var bases = pronBases();
+    bases.forEach(function (b) {
+      add(pronRow, chip(BASE_LABEL[b.base] || b.base, false, !b.open, function () {
+        pickPron = pickPron === b.base ? null : b.base;
+        if (pickPron && pickVib === "sam") pickVib = null;
+        refresh();
       }));
     });
-    clsRow.querySelector(".selchip").setAttribute("aria-pressed", "true");
+    refresh();
     return h("section", { class: "leaf pickcard" },
       h("h2", { text: "सरल-अभ्यासः" }),
       h("p", { text: "Ten of the same. Good before the daily practice." }),
       h("p", { class: "chiplab", text: "Vibhakti" }), vibRow,
       h("p", { class: "chiplab", text: "Word class, if you want one" }), clsRow,
+      bases.length ? [h("p", { class: "chiplab", text: "Or a pronoun" }), pronRow] : null,
       start);
   }
 
-  // अभ्यासं वृणुत: the learner's own mix, twelve questions, full exercise pool
+  // अभ्यासं वृणुत: the learner's own mix, twelve questions, full exercise pool.
+  // Choosing any pronoun switches the class row to a liṅga row.
   function focusCard() {
     var f = S.state.settings.focus || (S.state.settings.focus = { vibs: [], classes: [] });
-    var vibRow = h("div", { class: "chiprow" }), clsRow = h("div", { class: "chiprow" });
+    f.prons = f.prons || []; f.lingas = f.lingas || [];
+    var pronMode = f.prons.length > 0;
+    var vibRow = h("div", { class: "chiprow" }), clsRow = h("div", { class: "chiprow" }), pronRow = h("div", { class: "chiprow" });
+    var card;
 
     function toggle(list, value, row, labels) {
       var i = list.indexOf(value);
@@ -110,24 +147,60 @@
     }
     var vibVals = [null].concat(VB.VIBS);
     vibVals.forEach(function (v) {
-      var locked = v !== null && !vibOpen(v);
+      var locked = v !== null && (!vibOpen(v) || (pronMode && v === "sam"));
       var on = v === null ? !f.vibs.length : f.vibs.indexOf(v) >= 0;
       add(vibRow, chip(v === null ? "सर्वाः" : VB.VIB_SA[v], on, locked, function () { toggle(f.vibs, v, vibRow, vibVals); }));
     });
-    var clsVals = [null].concat(VB.CLASSES);
-    clsVals.forEach(function (cl) {
-      var on = cl === null ? !f.classes.length : f.classes.indexOf(cl) >= 0;
-      add(clsRow, chip(cl === null ? "सर्वे" : VB.MODEL[cl], on, false, function () { toggle(f.classes, cl, clsRow, clsVals); }));
+    if (!pronMode) {
+      var clsVals = [null].concat(VB.CLASSES);
+      clsVals.forEach(function (cl) {
+        var on = cl === null ? !f.classes.length : f.classes.indexOf(cl) >= 0;
+        add(clsRow, chip(cl === null ? "सर्वे" : VB.MODEL[cl], on, false, function () { toggle(f.classes, cl, clsRow, clsVals); }));
+      });
+    } else {
+      var lVals = [null, "m", "f", "n"], lLab = { m: "पुंलिङ्गम्", f: "स्त्रीलिङ्गम्", n: "नपुंसकलिङ्गम्" };
+      lVals.forEach(function (g) {
+        var on = g === null ? !f.lingas.length : f.lingas.indexOf(g) >= 0;
+        add(clsRow, chip(g === null ? "सर्वे" : lLab[g], on, false, function () { toggle(f.lingas, g, clsRow, lVals); }));
+      });
+    }
+    var bases = pronBases();
+    [{ base: "*", open: true }].concat(bases).forEach(function (b) {
+      var on = f.prons.indexOf(b.base) >= 0;
+      add(pronRow, chip(b.base === "*" ? "सर्वाणि" : (BASE_LABEL[b.base] || b.base), on, !b.open, function () {
+        var i = f.prons.indexOf(b.base);
+        if (i >= 0) f.prons.splice(i, 1);
+        else if (b.base === "*") f.prons = ["*"];
+        else { f.prons = f.prons.filter(function (x) { return x !== "*"; }); f.prons.push(b.base); }
+        if (f.prons.length) f.vibs = f.vibs.filter(function (v) { return v !== "sam"; });
+        S.save();
+        var fresh = focusCard(); card.replaceWith(fresh);   // the row below changes shape
+      }));
     });
-    return h("section", { class: "leaf pickcard" },
+
+    function filterNow() {
+      if (!f.prons.length) return { vibs: f.vibs.slice(), classes: f.classes.slice() };
+      var open = S.pronOpen();
+      var ids = open.filter(function (id) {
+        var p = VB.PRON_BY_ID[id];
+        var baseOk = f.prons.indexOf("*") >= 0 || f.prons.indexOf(p.base) >= 0;
+        var lingaOk = !f.lingas.length || !p.linga || f.lingas.indexOf(p.linga) >= 0;
+        return baseOk && lingaOk;
+      });
+      return { module: "pron", classes: ids.length ? ids : open, vibs: f.vibs.filter(function (v) { return VB.PRON_VIBS.indexOf(v) >= 0; }) };
+    }
+
+    card = h("section", { class: "leaf pickcard" },
       h("h2", { text: "अभ्यासं वृणुत" }),
       h("p", { text: "Choose what to practise. Twelve questions from your selection." }),
       h("p", { class: "chiplab", text: "Vibhakti" }), vibRow,
-      h("p", { class: "chiplab", text: "Word class" }), clsRow,
+      h("p", { class: "chiplab", text: pronMode ? "Liṅga" : "Word class" }), clsRow,
+      bases.length ? [h("p", { class: "chiplab", text: "Pronouns, if you want them instead" }), pronRow] : null,
       h("button", { class: "primary", onclick: function () {
-        var filter = { vibs: f.vibs.slice(), classes: f.classes.slice() };
-        enter(function () { startFocused(filter); });
+        var filter = filterNow();
+        enter(function () { if (filter.module === "pron") startFocusedPron(filter); else startFocused(filter); });
       } }, bi("आरभताम्", "Start")));
+    return card;
   }
 
   // =====================================================================
@@ -149,6 +222,10 @@
 
   function startDaily() {
     var plan = S.planSkills(12), steps = [];
+    if (VB.MODULES.pron && S.unlockedVibs().length === VB.VIBS.length) {
+      var pp = S.planSkills(2, { module: "pron" });
+      plan.splice(4, 1, pp[0]); plan.splice(9, 1, pp[1]);
+    }
     var iv = pendingIntro();
     if (iv) steps.push({ kind: "intro", vibs: iv });
     plan.forEach(function (p, i) {
@@ -189,6 +266,66 @@
     nextStep();
   }
 
+  // सर्वनामाभ्यासः: twelve pronoun questions and one pronoun table.
+  function pendingPronIntro() {
+    var st = S.state, M = VB.MODULES.pron;
+    if (!M || st.settings.all || st.pron.introduced >= st.pron.unlocked) return null;
+    var ids = []; M.groups.slice(st.pron.introduced, st.pron.unlocked).forEach(function (g) { ids = ids.concat(g); });
+    return ids;
+  }
+  function pronTableSize() {
+    var open = S.pronOpen(), lv = 0, n = 0;
+    open.forEach(function (m) { VB.MODULES.pron.cells.forEach(function (c) { lv += S.level(m + ":" + c); n++; }); });
+    lv = n ? lv / n : 0;
+    return lv < 1.5 ? "small" : lv < 2.5 ? "large" : "full";
+  }
+  function startPron(filter) {
+    var steps = [], iv = pendingPronIntro();
+    if (iv) steps.push({ kind: "pintro", ids: iv });
+    var plan = S.planSkills(12, Object.assign({ module: "pron" }, filter || {}));
+    plan.forEach(function (p, i) {
+      steps.push({ kind: "q", p: p });
+      if (i === 5) steps.push({ kind: "ptable", size: pronTableSize() });
+    });
+    sess = { mode: "pron", steps: steps, i: 0, right: 0, total: 0, missed: [], lastType: null, retried: false, pick: { filter: filter } };
+    nextStep();
+  }
+  // ten of one pronoun and one vibhakti, liṅgas rotating, vacana alternating
+  function startMassedPron(vib, base) {
+    var ids = VB.PRONOUNS.filter(function (x) { return x.base === base; }).map(function (x) { return x.id; });
+    var steps = [];
+    for (var i = 0; i < 10; i++) {
+      var id = ids[i % ids.length], cell = vib + "." + (i % 2 === 0 ? "eka" : "bahu");
+      steps.push({ kind: "q", p: { skill: id + ":" + cell, cls: id, cell: cell } });
+    }
+    sess = { mode: "massed", steps: steps, i: 0, right: 0, total: 0, missed: [], lastType: null,
+             retried: true, massed: true, allow: VB.PRON_MASSED_TYPES, pick: { vib: vib, pron: base } };
+    nextStep();
+  }
+  function showPronIntro(ids) {
+    var blocks = ids.map(function (id) {
+      var p = VB.PRON_BY_ID[id];
+      return h("div", { style: "margin-bottom:20px" },
+        h("div", { class: "wordhead", style: "text-align:left" }, h("b", { text: p.label })),
+        fullTable(p.F, null, VB.PRON_VIBS));
+    });
+    show(
+      h("div", { class: "bar" },
+        h("button", { class: "iconbtn", "aria-label": "Leave practice", onclick: quit }, icon("close")),
+        h("span", { class: "muted", text: "New in your practice" })),
+      h("section", { class: "leaf" },
+        h("p", { class: "instr", text: "Say each table aloud once, row by row. Pronouns have no सम्बोधनम्." }),
+        blocks),
+      dock(h("button", { class: "primary", onclick: function () { S.state.pron.introduced = S.state.pron.unlocked; S.save(); sess.i++; nextStep(); } }, bi("अवगतम्", "Got it"))));
+  }
+
+  function startFocusedPron(filter) {
+    var plan = S.planSkills(12, filter);
+    sess = { mode: "focused", steps: plan.map(function (p) { return { kind: "q", p: p }; }), i: 0, right: 0, total: 0,
+             missed: [], lastType: null, retried: true, massed: true, pick: { filter: filter } };
+    nextStep();
+  }
+
   function startTables() {
     var sizes = ["small", "rows", "column", "large", "full"], order = VB.shuffle(VB.CLASSES);
     var steps = sizes.map(function (s, i) { return { kind: "table", size: s, cls: order[i % 4] }; });
@@ -220,8 +357,9 @@
   var HARD = { tiles: 1, stiles: 1, error: 1, kim: 1, table: 1 };
 
   function makeQuestion(p, avoid, allow) {
-    var lv = S.level(p.skill);
-    var W = lv <= 1 ? TYPES.low : lv === 2 ? TYPES.mid : TYPES.high;
+    var lv = S.level(p.skill), pron = isPron(p.skill);
+    var T = pron ? VB.PTYPES : TYPES, G = pron ? VB.PGEN : GEN;
+    var W = lv <= 1 ? T.low : lv === 2 ? T.mid : T.high;
     var c = ctx(lv <= 1 ? 1 : lv === 2 ? 2 : 3);
     if (allow) {
       var only = {};
@@ -232,12 +370,12 @@
     for (var tries = 0; tries < 8 && names.length; tries++) {
       var total = names.reduce(function (a, t) { return a + W[t]; }, 0), r = Math.random() * total, t = names[0];
       for (var i = 0; i < names.length; i++) { r -= W[names[i]]; if (r <= 0) { t = names[i]; break; } }
-      var q = GEN[t](p.cls, p.cell, c);
+      var q = G[t](p.cls, p.cell, c);
       if (q) { q.kindName = t; return q; }
       names = names.filter(function (x) { return x !== t; });
     }
-    var fall = allow ? allow.slice() : ["sentence", "form", "identify", "tf"];
-    for (var j = 0; j < fall.length; j++) { var f = GEN[fall[j]](p.cls, p.cell, c); if (f) { f.kindName = fall[j]; return f; } }
+    var fall = allow ? allow.slice() : pron ? ["form", "identify", "tf"] : ["sentence", "form", "identify", "tf"];
+    for (var j = 0; j < fall.length; j++) { var f = G[fall[j]](p.cls, p.cell, c); if (f) { f.kindName = fall[j]; return f; } }
     return null;
   }
 
@@ -248,7 +386,7 @@
     if (!sess) return home();
     if (sess.i >= sess.steps.length) {
       // one more look at what went wrong, in a new form and with a new word
-      if (sess.mode === "daily" && !sess.retried && sess.missed.length) {
+      if ((sess.mode === "daily" || sess.mode === "pron") && !sess.retried && sess.missed.length) {
         sess.retried = true;
         var seen = {};
         sess.missed.forEach(function (m) {
@@ -262,6 +400,12 @@
     }
     var st = sess.steps[sess.i];
     if (st.kind === "intro") return showIntro(st.vibs);
+    if (st.kind === "pintro") return showPronIntro(st.ids);
+    if (st.kind === "ptable") {
+      var pq = VB.pGenTable(VB.pick(S.pronOpen()), st.size);
+      if (!pq) { sess.i++; return nextStep(); }
+      return showTable(pq);
+    }
     if (st.kind === "table") {
       var tq = VB.genTable(st.cls || S.weakClass(), ctx(), st.size);
       if (!tq) { sess.i++; return nextStep(); }
@@ -311,7 +455,9 @@
     var chosen = null, picks = {}, built = [], checkBtn, area, answered = false;
 
     // hint: meaning or pattern first, rule second
-    var hints = [q.hint.meaning || q.hint.pattern, q.hint.rule].filter(Boolean);
+    var mw = q.noun || (q.w && !q.w.pron ? q.w : null);
+    if (!q.hint.meaning && mw && mw.en1) q.hint.meaning = mw.stem + ":  " + (mw.solo ? mw.en1 : mw.en1 + "  (many: " + mw.en2 + ")");
+    var hints = [q.hint.meaning, q.hint.pattern, q.hint.rule].filter(Boolean);
     var hintBox = h("div", { class: "hint", hidden: true }), hintN = 0;
     var hintBtn = hints.length ? h("button", { class: "hintbtn", onclick: function () {
       if (hintN >= hints.length) return;
@@ -323,6 +469,7 @@
 
     var card = h("section", { class: "leaf" },
       h("div", { class: "qhead" }, h("p", { class: "instr", text: q.instr }), hintBtn),
+      questionPicture(q),
       promptView(q), hintBox);
 
     checkBtn = h("button", { class: "primary", disabled: true, onclick: check }, bi("परीक्षताम्", "Check"));
@@ -410,15 +557,28 @@
         if (q.allCorrect) area.querySelector(".opt").classList.add("right");
       }
       var skills = q.skills || [q.skill];
-      skills.forEach(function (sk) { if (sk) S.record(sk, ok, { hint: q.hintUsed, hard: HARD[q.kindName], massed: !!sess.massed }); });
+      skills.forEach(function (sk) { if (sk) rec(sk, ok, { hint: q.hintUsed, hard: HARD[q.kindName] }); });
       S.save();
       tally(ok, q);
       feedback(q, ok, chosenTag, extra);
     }
   }
 
+  // Pictures appear where the question is about one word's meaning. Never on
+  // questions that test the number itself (identify, change the number, true or
+  // false), where a picture of one or many would give the answer away.
+  var PICTURED = { form: 1, tiles: 1, sentence: 1, stiles: 1, agree: 1 };
+  function questionPicture(q) {
+    if (!PICTURED[q.kindName] || !q.cell) return null;
+    var w = q.noun || q.w;
+    if (!w || w.pron) return null;
+    var small = q.kindName === "sentence" || q.kindName === "stiles";
+    return U.picture(w.stem, q.cell.split(".")[1], false, small ? "small" : null);
+  }
+
   function promptView(q) {
     var p = q.prompt || {}, out = [];
+    if (p.setup) out.push(h("p", { class: "setup sa", text: p.setup }));
     if (p.pairs) {
       out.push(h("div", { class: "analogy" },
         h("span", { text: p.pairs[0][0] }), h("span", { class: "arrow", text: "→" }), h("span", { text: p.pairs[0][1] }),
@@ -463,7 +623,7 @@
   function feedback(q, ok, tag, built) {
     var body = [];
     if (!ok) body.push(h("p", { class: "ans" }, h("small", { text: "सम्यक् उत्तरम्" }), q.answerText));
-    if (q.type === "sentence" || q.type === "kim") body.push(h("p", { class: "filled-sent", text: q.filled }));
+    if (q.type === "sentence" || q.type === "kim" || q.type === "subst") body.push(h("p", { class: "filled-sent", text: q.filled }));
     if (q.type === "error") body.push(h("p", { class: "filled-sent", text: q.corrected }));
     if (q._blank && q.ui !== "tiles") { q._blank.textContent = q.w.P[q.cell]; q._blank.className = "blank filled"; }
 
@@ -472,7 +632,7 @@
     if (q.type === "kim") why = q.w.P[q.cell] + " : " + VB.cellLabel(q.cell) + ", " + GENDER_SA[VB.GENDER[q.w.cls]] + "  >  " + q.answerText;
     else if (q.type === "odd") why = q.oddNote;
     else if (q.type === "match") why = null;
-    else if (q.w && q.cell) why = q.w.stem + " (" + VB.CLASS_SA[q.w.cls] + ")\n" + VB.cellLabel(q.cell) + " : " + q.w.P[q.cell];
+    else if (q.w && q.cell) why = q.w.stem + " (" + (VB.CLASS_SA[q.w.cls] || q.w.sub) + ")\n" + VB.cellLabel(q.cell) + " : " + q.w.P[q.cell];
     if (why) body.push(h("p", { class: "why", style: "white-space:pre-line", text: why }));
     if (!ok && tag && VB.MISTAKE_NOTE[tag]) body.push(h("p", { class: "note", text: VB.MISTAKE_NOTE[tag] }));
     if (!ok && q.hint.rule && !tag) body.push(h("p", { class: "note", text: q.hint.rule }));
@@ -480,7 +640,7 @@
 
     var links = h("div", { class: "links" }), peek = h("div", { class: "peek", hidden: true });
     if (q.w) add(links, h("button", { class: "linkbtn", onclick: function () {
-      if (!peek.firstChild) add(peek, fullTable(q.w, q.skills ? q.skills.map(function (s) { return s.split(":")[1]; }) : [q.cell]));
+      if (!peek.firstChild) add(peek, fullTable(q.w, q.skills ? q.skills.map(function (s) { return s.split(":")[1]; }) : [q.cell], q.w.vibs));
       peek.hidden = !peek.hidden;
     } }, "सर्वाणि रूपाणि", h("small", { text: "Full table" })));
     if (q.meaning) {
@@ -523,7 +683,7 @@
     show(topBar(), card, h("div", { class: "match" }, L, R));
     function finishMatch() {
       var ok = Object.keys(missed).length === 0;
-      q.pairs.forEach(function (p, i) { S.record(p.skill, !missed[i], { hint: q.hintUsed, massed: !!sess.massed }); });
+      q.pairs.forEach(function (p, i) { rec(p.skill, !missed[i], { hint: q.hintUsed }); });
       S.save(); sess.total++; if (ok) sess.right++;
       sheet(ok, [h("p", { class: "note", text: ok ? "Every pair on the first try." : "Done. The pairs you missed will come back soon." })], null, null, ok ? null : "समाप्तम्");
     }
@@ -534,16 +694,22 @@
   // =====================================================================
   function showTable(q) {
     var w = q.w, order = [], filled = {}, sel = null, answered = false;
-    VB.VIBS.forEach(function (v) { ["eka", "bahu"].forEach(function (n) { var c = v + "." + n; if (q.blanks.indexOf(c) >= 0) order.push(c); }); });
+    var VACS = q.vacs || VB.SHOWN_VACS;
+    VB.VIBS.forEach(function (v) { VACS.forEach(function (n) { var c = v + "." + n; if (q.blanks.indexOf(c) >= 0) order.push(c); }); });
     var slots = {}, chipEls = [];
 
     var hintBox = h("div", { class: "hint", hidden: true });
-    var hintBtn = h("button", { class: "hintbtn", onclick: function () { hintBox.hidden = false; add(hintBox, h("p", { text: q.hint.pattern })); hintBtn.disabled = true; q.hintUsed = true; } }, "सङ्केतः", h("small", { text: "Hint" }));
+    var hintBtn = h("button", { class: "hintbtn", onclick: function () {
+      hintBox.hidden = false;
+      if (w.en1) add(hintBox, h("p", { text: w.stem + ":  " + (w.solo ? w.en1 : w.en1 + "  (many: " + w.en2 + ")") }));
+      if (q.hint.pattern) add(hintBox, h("p", { text: q.hint.pattern }));
+      hintBtn.disabled = true; q.hintUsed = true;
+    } }, "सङ्केतः", h("small", { text: "Hint" }));
 
     var tbody = h("tbody");
     q.rows.forEach(function (v) {
       var tr = h("tr", {}, h("th", { class: "rh", text: VB.VIB_SA[v] }));
-      ["eka", "bahu"].forEach(function (n) {
+      VACS.forEach(function (n) {
         var c = v + "." + n;
         if (q.blanks.indexOf(c) >= 0) {
           var b = h("button", { class: "slotbtn", "aria-label": VB.cellLabel(c) + ", empty", onclick: function () { tapSlot(c); } });
@@ -553,7 +719,7 @@
       tbody.appendChild(tr);
     });
     var table = h("table", { class: "dtable" },
-      h("thead", {}, h("tr", {}, h("th", { class: "rh", text: "" }), h("th", { text: "एकवचनम्" }), h("th", { text: "बहुवचनम्" }))), tbody);
+      h("thead", {}, h("tr", {}, h("th", { class: "rh", text: "" }), VACS.map(function (n) { return h("th", { text: VB.VAC_SA[n] }); }))), tbody);
 
     var bank = h("div", { class: "bank" });
     q.chips.forEach(function (t, i) {
@@ -564,7 +730,8 @@
     var checkBtn = h("button", { class: "primary", disabled: true, onclick: check }, bi("परीक्षताम्", "Check"));
     var card = h("section", { class: "leaf" },
       h("div", { class: "qhead" }, h("p", { class: "instr", text: q.instr }), hintBtn),
-      h("div", { class: "wordhead" }, h("b", { text: w.stem }), h("span", { text: VB.CLASS_SA[w.cls] })),
+      w.pron ? null : U.picture(w.stem, "eka", false, "small"),
+      h("div", { class: "wordhead" }, h("b", { text: w.stem }), h("span", { text: VB.CLASS_SA[w.cls] || w.sub })),
       table, hintBox);
     show(topBar(), card, dock(checkBtn, bank, true));
     select(order[0]);
@@ -601,7 +768,7 @@
         slots[c].classList.remove("sel", "full");
         slots[c].classList.add(ok ? "right" : "wrong");
         if (!ok) slots[c].appendChild(h("span", { class: "fix", text: w.P[c] }));
-        S.record(w.cls + ":" + c, ok, { hint: q.hintUsed, hard: true, massed: !!sess.massed });
+        rec(w.cls + ":" + c, ok, { hint: q.hintUsed, hard: true });
         if (!ok && sess.missed) sess.missed.push({ skill: w.cls + ":" + c, type: "table" });
       });
       S.save();
@@ -621,6 +788,11 @@
     var st = S.state, unlocked = null, mode = sess.mode;
     if (sess.mode === "daily") { S.finishDay(sess.total, sess.right); unlocked = S.tryUnlock(); }
     if (sess.mode === "tables" || sess.mode === "massed" || sess.mode === "focused") S.finishDay(sess.total, sess.right);
+    if (sess.mode === "pron") {
+      S.finishDay(sess.total, sess.right);
+      var pg = S.tryUnlockPron();
+      if (pg) unlocked = { pron: pg };
+    }
     var pick = sess.pick;
     var ratio = sess.total ? sess.right / sess.total : 0;
     var head = ratio >= 0.9 ? "अति उत्तमम्!" : ratio >= 0.7 ? "साधु!" : "प्रयत्नः फलति।";
@@ -633,7 +805,9 @@
         h("h2", { class: "sa", style: "font-weight:400;font-size:2.2rem;margin:0", text: head }),
         sub,
         unlocked ? h("div", { class: "hint", style: "text-align:left" },
-          h("p", { class: "sa", style: "font-size:1.3rem", text: "नूतनम्: " + unlocked.map(function (v) { return VB.VIB_SA[v]; }).join(", ") }),
+          h("p", { class: "sa", style: "font-size:1.3rem", text: "नूतनम्: " + (unlocked.pron
+            ? VB.PRON_BY_ID[unlocked.pron[0]].base
+            : unlocked.map(function (v) { return VB.VIB_SA[v]; }).join(", ")) }),
           h("p", { text: "A new vibhakti opens. It will be introduced at the start of your next practice." })) : null,
         h("p", { class: "sa", style: "font-size:1.4rem;margin:18px 0 0", text: "श्वः पुनः मिलामः।" }),
         h("p", { class: "instr", style: "text-align:center", text: "See you tomorrow." })),
@@ -642,7 +816,10 @@
         h("button", { class: "primary", onclick: leave }, bi("मुखपृष्ठम्", "Home")),
         h("button", { class: "ghost", onclick: function () {
           if (mode === "tables") startTables();
+          else if (mode === "massed" && pick.pron) startMassedPron(pick.vib, pick.pron);
           else if (mode === "massed") startMassed(pick.vib, pick.cls);
+          else if (mode === "pron") startPron(pick.filter);
+          else if (mode === "focused" && pick.filter.module === "pron") startFocusedPron(pick.filter);
           else if (mode === "focused") startFocused(pick.filter);
           else startDaily();
         } }, "पुनः अभ्यासः", h("small", { text: "Practise again" })))
@@ -724,6 +901,7 @@
         h("h1", { class: "sa", style: "font-weight:400;font-size:1.9rem;margin:0", text: "रूपावलिः" })),
       tabs, sel,
       h("section", { class: "leaf" },
+        U.picture(w.stem, "eka"),
         h("div", { class: "wordhead" }, h("b", { text: w.stem }), h("span", { text: VB.CLASS_SA[w.cls] })),
         fullTable(w)),
       h("p", { class: "center muted", style: "margin-top:14px", text: "Every word in a class follows its pattern word: " + VB.MODEL[cls] + "." })

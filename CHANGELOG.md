@@ -10,7 +10,12 @@ Built to `vibe-bhakti-architecture.md`, phase by phase. `node tools/check.js` pa
 
 **Phase 3: massed and focused practice.** सरल-अभ्यासः runs ten of one vibhakti, alternating vacana, with four exercise types. अभ्यासं वृणुत runs twelve questions from a chosen set of vibhaktis and classes, and the selection is saved. `Store.planSkills(count, filter)` does the filtering. Both record with `{massed: true}`, which updates memory but never counts toward the unlock gate.
 
-**Phase 3b: pronouns.** Not built. The data files (`pronouns.js`, `pronoun-frames.js`) have not been delivered yet. The store, registry, table and checker already accommodate them.
+**Phase 3b: pronouns.** Built on the delivered `pronouns.js` (17 paradigms, 357 cells) and `pronoun-frames.js` (63 sentences), with `pron-questions.js`.
+- **Session:** सर्वनामाभ्यासः runs as its own session, opening in six groups with its own gate. The two new exercises are agreement and substitution.
+- **Mixing and selection:** pronouns join the daily session once every vibhakti is open, and are offered in the massed and focused cards.
+- **Progress:** a 17 × 7 progress grid.
+- **Checker:** the delivered pronoun checks are ported, plus 6,800 generated pronoun questions.
+- **Ambiguity rule:** sentence questions never offer a wrong answer that is actually good Sanskrit.
 
 **Phase 4: script page.** Adds `lipi.js` (delivered data), `lipi-questions.js` (six generators and IAST transliteration) and `app-script.js`. Stages from `VB.LIPI_STAGES` open by the same gate as vibhaktis. There is a letter speed round, and a script grid on प्रगतिः.
 
@@ -25,3 +30,7 @@ Built to `vibe-bhakti-architecture.md`, phase by phase. `node tools/check.js` pa
 - The Python cross-check is committed as `tools/crosscheck.py`. It agrees with the site's engine on all 9,392 forms of the 587 words.
 
 **Not changed:** `js/grammar.js`.
+
+**Word pictures.** `js/images.js`, `tools/images.py`, and `img/` with a guide, a Gemini style paragraph and a checklist of all 587 words. A picture appears only when one exists; otherwise nothing changes on screen. The first hint tap now shows the word's meaning on every word question, not only on sentences.
+
+**Progress safety.** The site asks the browser for persistent storage (`navigator.storage.persist()`), so a phone short of space is less likely to clear saved progress.

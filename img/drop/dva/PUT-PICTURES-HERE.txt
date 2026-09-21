@@ -1,0 +1,1 @@
+Put dva pictures in this folder, named from img/checklist.csv, then run: python3 tools/images.py

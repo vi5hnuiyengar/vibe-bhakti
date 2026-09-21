@@ -14,13 +14,14 @@
   function moduleGrid(mod, opts) {
     opts = opts || {};
     var cols = mod.cols, rows = mod.members;
-    var grid = h("div", { class: "grid", style: "grid-template-columns: 52px repeat(" + cols.length + ", 1fr)",
+    var grid = h("div", { class: "grid" + (opts.wide ? " wide" : ""), style: "grid-template-columns: " + (opts.wide ? "76px" : "52px") + " repeat(" + cols.length + ", 1fr)",
       "aria-label": opts.label || "Progress" },
       h("span"), cols.map(function (c) { return h("span", { class: "h", text: mod.colLabel(c) }); }));
     rows.forEach(function (m) {
-      add(grid, h("span", { class: "rowlab", text: mod.rowLabel(m) }));
+      var rowOpen = mod.rowOpen ? mod.rowOpen(m) : true;
+      add(grid, h("span", { class: "rowlab" + (opts.wide ? " small" : "") + (rowOpen ? "" : " locked"), text: mod.rowLabel(m) }));
       cols.forEach(function (c) {
-        var cells = mod.cellsFor(c), open = mod.isOpen ? mod.isOpen(c) : true;
+        var cells = mod.cellsFor(c), open = rowOpen && (mod.isOpen ? mod.isOpen(c) : true);
         var levels = cells.map(function (cell) { return S.level(m + ":" + cell); });
         var lv = Math.min.apply(null, levels), lvMax = Math.max.apply(null, levels);
         var shown = lv || (lvMax ? 1 : 0);
@@ -49,6 +50,19 @@
       cellsFor: function (v) { return (VB.SHOWN_VACS || VB.VACS).map(function (n) { return v + "." + n; }); },
       isOpen: function (v) { return open.indexOf(v) >= 0; }
     }, { label: "Progress for every class and vibhakti" });
+  }
+
+  // the pronoun module: seventeen paradigms down, seven vibhaktis across
+  function pronGrid() {
+    var M = VB.MODULES.pron; if (!M) return null;
+    var open = S.pronOpen(), short = { m: "पुं", f: "स्त्री", n: "नपुं" };
+    return moduleGrid({
+      members: M.members, cols: M.vibs,
+      rowLabel: function (id) { var p = VB.PRON_BY_ID[id]; return p.linga ? p.base + " " + short[p.linga] : p.base; },
+      colLabel: function (v) { return VB.VIB_SHORT[v]; },
+      cellsFor: function (v) { return M.vacs.map(function (n) { return v + "." + n; }); },
+      rowOpen: function (id) { return open.indexOf(id) >= 0; }
+    }, { label: "Progress for every pronoun", wide: true });
   }
 
   // ---------- the script grid, drawn only when the lipi module is present ----------
@@ -84,6 +98,9 @@
         h("span", { class: "sa", text: vibs.map(function (v) { return VB.VIB_SA[v]; }).join(", ") }), ". " + next),
       nounGrid(),
       legend(),
+      VB.MODULES.pron ? h("h3", { class: "section", style: "margin-top:26px", text: "सर्वनामानि" }) : null,
+      VB.MODULES.pron ? h("p", { class: "progress-note", text: "Pronouns open in groups: तद्, then एतद्, किम्, अहम् and त्वम्, इदम्, यद्." }) : null,
+      pronGrid(),
       VB.AKSHARAS ? h("h3", { class: "section", style: "margin-top:26px", text: "लिपिः" }) : null,
       VB.AKSHARAS ? h("p", { class: "progress-note", text: "Letters you have practised on the script page." }) : null,
       lipiGrid(),

@@ -7,7 +7,7 @@ It has four pages, one tab each:
 
 | Tab | What it is for |
 |---|---|
-| **अभ्यासः** | Vibhakti drills: the daily session, focused and massed practice, tables, a speed round, and every form of every word |
+| **अभ्यासः** | Vibhakti drills: the daily session, focused and massed practice, tables, a speed round, pronouns, and every form of every word |
 | **पठनम्** | Reading real stories line by line and naming the vibhakti of marked words |
 | **लिपिः** | Learning to read Devanagari: letters, vowel signs and conjuncts |
 | **प्रगतिः** | Progress for all of the above, in one place |
@@ -43,6 +43,8 @@ That is 64 skills (4 classes × 8 vibhaktis × 2 numbers), drilled with 587 ever
 14. [Things to know](#14-things-to-know)
 15. [The script page](#15-the-script-page)
 16. [The reading page and adding stories](#16-the-reading-page-and-adding-stories)
+17. [Pronouns](#17-pronouns)
+18. [Word pictures](#18-word-pictures)
 
 ---
 
@@ -167,11 +169,13 @@ Both feed the memory model and the progress grid. **Neither counts toward openin
 - **सारणी-अभ्यासः** (Table practice): five declension tables in a row, from a few blanks up to the whole table from memory.
 - **वेग-अभ्यासः** (Speed round): 60 seconds of true or false, tapping as fast as possible.
 - **रूपावलिः** (All forms): the full declension table of any word in the list.
+- **सर्वनामाभ्यासः** (Pronouns): twelve questions and one table on सः, सा, तत्, अहम्, त्वम् and the rest (section 17).
 
 ### Hints and feedback
 
 Every question has a **सङ्केतः (Hint)** button:
-- The **first tap** shows the English meaning of the sentence, or a pattern word to compare with.
+- The **first tap** shows the English meaning: of the sentence, or of the word itself on word questions.
+- The **next tap** shows a pattern word to compare with, where there is one.
 - The **second tap** shows the grammar rule, such as "सह always takes तृतीया".
 - A right answer after a hint earns half credit.
 
@@ -463,7 +467,11 @@ This needs Node.js, free from https://nodejs.org. It changes nothing. It checks:
 5. that progress saved by the first version survives the upgrade with every field intact,
 6. the script tables: every confusion entry is a real character, every conjunct is its two parts joined by ्, and every listed transliteration matches how the app reads the character,
 7. about 5,000 generated script questions at every stage,
-8. every marked word in every story, regenerated from the grammar engine and compared with the word as written (section 16).
+8. every marked word in every story, regenerated from the grammar engine and compared with the word as written (section 16),
+9. the pronoun tables (section 17): all 21 cells in every paradigm, the known syncretisms, agreement with the separate किम् table in `grammar.js`, the regular patterns that link तद्, एतद्, यद्, किम्, इदम्, अहम् and त्वम् to each other, and a second hand-written copy of the fifteen forms no pattern reaches,
+10. every pronoun sentence: one blank, an answer that exists, and gender agreement wherever the blank describes the next noun,
+11. about 6,800 generated pronoun questions, including a check that no sentence ever offers a wrong answer that is actually good Sanskrit,
+12. every picture listed in `js/images.js` exists and belongs to a word in the list.
 
 It ends with "All checks passed." or a list of what to fix. It also prints which story cells have few or no marked words yet, as a warning, not a failure.
 
@@ -496,12 +504,16 @@ icons/                  app icons
 
 js/grammar.js           the declension engine and ण rule. Verified; do not change its logic
 js/words.js             the 587 words
+js/images.js            which word pictures exist (written by tools/images.py)
+js/pronouns.js          the seventeen pronoun tables, written out in full
+js/pronoun-frames.js    the 63 pronoun sentences
 js/frames.js            the 276 sentence patterns, hint rules, and introductions to each vibhakti
 js/lipi.js              letters, vowel signs, conjuncts, confusion sets and script stages
 js/stories-l1.js        the level 1 story corpus
 js/store.js             progress (schema v2), the memory model, session planning, unlock gates
 js/questions.js         the 13 vibhakti exercise generators
 js/lipi-questions.js    the 6 script exercise generators, and transliteration
+js/pron-questions.js    the pronoun exercise generators
 
 js/app-shell.js         shared pieces on VB.UI: DOM helper, icons, panels, tables, tab bar, router
 js/app-drill.js         अभ्यासः: daily, massed and focused practice, tables, speed round, all forms
@@ -512,6 +524,13 @@ js/app-settings.js      प्रगतिः page and the settings panel, inclu
 tools/check.js          the self-check (section 11)
 tools/crosscheck.py     the independent Python cross-check (section 11)
 tools/engine_py.py      the Python declension engine it uses
+tools/images.py         the picture tool (section 18)
+
+img/README.md           how to make and add word pictures
+img/STYLE.txt           the style paragraph to give Gemini
+img/checklist.csv       every word, its picture file name, what to ask for, and what is done
+img/drop/               where you put new pictures (not uploaded)
+img/words/              the pictures the site shows
 ```
 
 **How the pieces fit.** Page files never call each other. Each one registers itself with `VB.UI.page(name, render)`, and the router in `app-shell.js` renders the page for the current tab. Shared widgets (the feedback panel, the top bar, the declension table) live only in `app-shell.js`.
@@ -523,7 +542,7 @@ tools/engine_py.py      the Python declension engine it uses
 ## 14. Things to know
 
 - **Grammar is guaranteed by rule; naturalness is not.** Every form is generated, and every sentence pattern was written by hand. But word-and-sentence combinations are made automatically, so now and then one may be grammatical but a little odd. If a teacher spots one, tighten that pattern's categories or add the word to its `ex` list.
-- **Scope.** द्विवचनम्, pronouns and other noun classes are not included yet. The code is written so that they arrive as data: nothing assumes two vacanas or four classes.
+- **Scope.** द्विवचनम् and other noun classes are not included yet. The pronoun tables already carry द्विवचनम्, switched off. The code is written so that both arrive as data: nothing assumes two vacanas or four classes.
 - **Verbs** in the sentences are simple लट् and लोट् forms, with a few ल्यप्/क्त्वा forms and one तुमुन् in the literary sentences.
 - **English** appears in the instruction line, hints, notes, settings, story glosses and transliteration on the script page. Everything a learner reads as Sanskrit and answers is in Devanagari.
 
@@ -598,3 +617,46 @@ The learner is asked for **liṅga, not class**. A reader looking at नद्�
 - **Sandhi.** If a marked word would change through sandhi with its neighbour, write the line without that sandhi, or leave the word unmarked. The one exception the checker allows is a final म् written as anusvara before a consonant (गृहं गच्छति), which is how the app spells running Sanskrit anyway.
 
 Run `node tools/check.js` after adding stories. It verifies every mark and prints which cells still have few examples, so gaps are easy to fill.
+
+---
+
+## 17. Pronouns
+
+**सर्वनामाभ्यासः** on the अभ्यासः tab is a separate twelve-question session with one pronoun table.
+
+**Order.** Pronouns open in six groups, each with a short introduction showing the new tables:
+1. तद् (सः, सा, तत्)
+2. एतद्
+3. किम्
+4. अस्मद् and युष्मद् (अहम्, त्वम्)
+5. इदम्
+6. यद्
+
+The next group opens by the same rule as vibhaktis. This track has its own counter, so pronoun practice never holds back vibhaktis, and vibhakti practice never opens pronouns.
+
+**Exercises.** Choose the form, build it from tiles, which vibhakti, change the number, true or false, which pronoun, odd one out, follow the pattern, find the mistake, fill in the blank, and the table. Two are new:
+- **Agreement:** बालकाय is shown, and the learner picks तस्मै.
+- **Substitution:** a vibhakti sentence with one noun marked (रामेण सह गच्छति), and the learner replaces it with the right form of तद् (तेन).
+
+**In the daily practice.** Once every vibhakti is open, two of the twelve daily questions are pronoun questions.
+
+**In the selection cards.** सरल-अभ्यासः takes a pronoun instead of a word class. अभ्यासं वृणुत takes pronouns too; choosing one swaps the word-class row for a liṅga row. सम्बोधनम् is locked while a pronoun is chosen, since pronouns have none.
+
+**Why the tables are written out.** Nouns are generated by rule. Pronouns are irregular, so `js/pronouns.js` is the one place forms are typed by hand. That is why the checker holds them to the strictest test in the project (section 11). `VB.PRON_SHOW_DVA` switches on the द्विवचनम् column when that phase arrives.
+
+**Wrong options in pronoun sentences** are chosen so they are wrong in every reading, not just unexpected. Another pronoun is never offered as a wrong answer there (एषः वृक्षः उन्नतः is as correct as अयम् वृक्षः उन्नतः). Nor is the other number of अहम् or त्वम् (माता अस्मान् आह्वयति is fine Sanskrit).
+
+---
+
+## 18. Word pictures
+
+Pictures show what a word means without English. They are entirely optional: a word without a picture looks exactly as it did before, with no empty box.
+
+The full guide is in **`img/README.md`**. In short:
+1. Paste `img/STYLE.txt` into a Gemini chat once.
+2. For each word, ask for the text in the checklist (`img/checklist.csv`), such as `Draw: one boy.`
+3. Save it as the checklist's file name (`baalaka.png`) in `img/drop/eka/`, `img/drop/dva/` or `img/drop/bahu/`.
+4. Run `python3 tools/images.py`. It makes 512 × 512 WebP files, updates `js/images.js`, and ticks the checklist.
+5. Upload `img/words/`, `js/images.js` and `img/checklist.csv`.
+
+Pictures appear on the questions about one word's meaning, in the question's number, and never on questions that test the number. Section "Where pictures appear" in `img/README.md` has the full list.

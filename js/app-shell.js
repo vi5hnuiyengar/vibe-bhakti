@@ -128,6 +128,30 @@
       })));
   }
 
+  /*
+    A picture of a word, or null when there is none. The list of pictures
+    comes from js/images.js, which tools/images.py writes. Nothing is shown
+    for a word without a picture: no placeholder, no caption, no gap.
+
+    vac     the number to picture ("eka", "dva", "bahu")
+    strict  true when the picture must match that number exactly. Otherwise a
+            missing dva/bahu picture falls back to the eka one, since the
+            picture is there for meaning and the number is written beside it.
+  */
+  function picture(stem, vac, strict, cls) {
+    var I = VB.IMAGES;
+    if (!I || !stem) return null;
+    vac = vac || "eka";
+    var v = vac, entry = (I[vac] || {})[stem];
+    if (!entry && !strict && vac !== "eka") { v = "eka"; entry = (I.eka || {})[stem]; }
+    if (!entry) return null;
+    var dot = entry.lastIndexOf("."), name = entry.slice(0, dot), ver = entry.slice(dot + 1);
+    var img = h("img", { src: "img/words/" + v + "/" + name + ".webp?v=" + ver, alt: "", width: "512", height: "512", decoding: "async" });
+    var fig = h("div", { class: "pic" + (cls ? " " + cls : ""), "aria-hidden": "true" }, img);
+    img.addEventListener("error", function () { fig.remove(); });   // a missing file never shows as broken
+    return fig;
+  }
+
   // The bar at the top of a session: close button, progress, count.
   function topBar(i, n, onClose, title) {
     return h("div", { class: "bar" },
@@ -226,7 +250,7 @@
   VB.UI = {
     h: h, add: add, show: show, bi: bi, N: N, ICON: ICON, icon: icon, lampSvg: lampSvg, DOW: DOW,
     applyScale: applyScale, lampsRow: lampsRow, modeBtn: modeBtn, dock: dock, sheet: sheet,
-    keepInView: keepInView, fullTable: fullTable, topBar: topBar, spaceBelow: spaceBelow,
+    keepInView: keepInView, fullTable: fullTable, topBar: topBar, spaceBelow: spaceBelow, picture: picture,
     page: page, go: go, enter: enter, leave: leave, render: render, tabs: TABS,
     inSession: function () { return inSession; },
     app: $app
@@ -235,6 +259,10 @@
   // ---------- boot ----------
   function boot() {
     applyScale();
+    // Ask the browser to keep this site's data even when the phone is short of
+    // space. Browsers that grant it (installed apps, sites used often) will not
+    // evict the saved progress on their own.
+    try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist(); } catch (e) { /* not supported */ }
     buildBar();
     if (!location.hash) location.replace("#/" + (S.state.settings.tab || "abhyasa"));
     render();

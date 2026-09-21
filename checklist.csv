@@ -1,0 +1,588 @@
+﻿#,word,class,english,file name,eka done,dva done,bahu done,notes,ask for (eka),ask for (dva),ask for (bahu)
+1,बालक,अकारान्त पुं,boy / boys,baalaka,,,,,Draw: one boy.,"Draw: exactly two boys, side by side.",Draw: a group of three to five boys.
+2,छात्र,अकारान्त पुं,student / students,chaatra,,,,,Draw: one student.,"Draw: exactly two students, side by side.",Draw: a group of three to five students.
+3,शिष्य,अकारान्त पुं,disciple / disciples,shishya,,,,,Draw: one disciple.,"Draw: exactly two disciples, side by side.",Draw: a group of three to five disciples.
+4,शिक्षक,अकारान्त पुं,teacher / teachers,shikshaka,,,,,Draw: one teacher.,"Draw: exactly two teachers, side by side.",Draw: a group of three to five teachers.
+5,अध्यापक,अकारान्त पुं,teacher / teachers,adhyaapaka,,,,,Draw: one teacher.,"Draw: exactly two teachers, side by side.",Draw: a group of three to five teachers.
+6,आचार्य,अकारान्त पुं,master / masters,aacaarya,,,,,Draw: one master.,"Draw: exactly two masters, side by side.",Draw: a group of three to five masters.
+7,वैद्य,अकारान्त पुं,doctor / doctors,vaidya,,,,,Draw: one doctor.,"Draw: exactly two doctors, side by side.",Draw: a group of three to five doctors.
+8,कृषक,अकारान्त पुं,farmer / farmers,krishaka,,,,,Draw: one farmer.,"Draw: exactly two farmers, side by side.",Draw: a group of three to five farmers.
+9,सैनिक,अकारान्त पुं,soldier / soldiers,sainika,,,,,Draw: one soldier.,"Draw: exactly two soldiers, side by side.",Draw: a group of three to five soldiers.
+10,नृप,अकारान्त पुं,king / kings,nripa,,,,,Draw: one king.,"Draw: exactly two kings, side by side.",Draw: a group of three to five kings.
+11,जनक,अकारान्त पुं,father / fathers,janaka,,,,,Draw: one father.,"Draw: exactly two fathers, side by side.",Draw: a group of three to five fathers.
+12,पितामह,अकारान्त पुं,grandfather / grandfathers,pitaamaha,,,,,Draw: one grandfather.,"Draw: exactly two grandfathers, side by side.",Draw: a group of three to five grandfathers.
+13,पुत्र,अकारान्त पुं,son / sons,putra,,,,,Draw: one son.,"Draw: exactly two sons, side by side.",Draw: a group of three to five sons.
+14,पौत्र,अकारान्त पुं,grandson / grandsons,pautra,,,,,Draw: one grandson.,"Draw: exactly two grandsons, side by side.",Draw: a group of three to five grandsons.
+15,अनुज,अकारान्त पुं,younger brother / younger brothers,anuja,,,,,Draw: one younger brother.,"Draw: exactly two younger brothers, side by side.",Draw: a group of three to five younger brothers.
+16,अग्रज,अकारान्त पुं,elder brother / elder brothers,agraja,,,,,Draw: one elder brother.,"Draw: exactly two elder brothers, side by side.",Draw: a group of three to five elder brothers.
+17,मातुल,अकारान्त पुं,uncle / uncles,maatula,,,,,Draw: one uncle.,"Draw: exactly two uncles, side by side.",Draw: a group of three to five uncles.
+18,पुरुष,अकारान्त पुं,man / men,purusha,,,,,Draw: one man.,"Draw: exactly two men, side by side.",Draw: a group of three to five men.
+19,जन,अकारान्त पुं,person / people,jana,,,,,Draw: one person.,"Draw: exactly two people, side by side.",Draw: a group of three to five people.
+20,भक्त,अकारान्त पुं,devotee / devotees,bhakta,,,,,Draw: one devotee.,"Draw: exactly two devotees, side by side.",Draw: a group of three to five devotees.
+21,गायक,अकारान्त पुं,singer / singers,gaayaka,,,,,Draw: one singer.,"Draw: exactly two singers, side by side.",Draw: a group of three to five singers.
+22,लेखक,अकारान्त पुं,writer / writers,lekhaka,,,,,Draw: one writer.,"Draw: exactly two writers, side by side.",Draw: a group of three to five writers.
+23,नर्तक,अकारान्त पुं,dancer / dancers,nartaka,,,,,Draw: one dancer.,"Draw: exactly two dancers, side by side.",Draw: a group of three to five dancers.
+24,पाचक,अकारान्त पुं,cook / cooks,paacaka,,,,,Draw: one cook.,"Draw: exactly two cooks, side by side.",Draw: a group of three to five cooks.
+25,चालक,अकारान्त पुं,driver / drivers,caalaka,,,,,Draw: one driver.,"Draw: exactly two drivers, side by side.",Draw: a group of three to five drivers.
+26,आरक्षक,अकारान्त पुं,policeman / policemen,aarakshaka,,,,,Draw: one policeman.,"Draw: exactly two policemen, side by side.",Draw: a group of three to five policemen.
+27,सेवक,अकारान्त पुं,servant / servants,sevaka,,,,,Draw: one servant.,"Draw: exactly two servants, side by side.",Draw: a group of three to five servants.
+28,चोर,अकारान्त पुं,thief / thieves,cora,,,,,Draw: one thief.,"Draw: exactly two thieves, side by side.",Draw: a group of three to five thieves.
+29,राम,अकारान्त पुं,Rama,raama,,n/a,n/a,"a name: optional, one picture only",Draw: Rama.,,
+30,कृष्ण,अकारान्त पुं,Krishna,krishna,,n/a,n/a,"a name: optional, one picture only",Draw: Krishna.,,
+31,गणेश,अकारान्त पुं,Ganesha,ganesha,,n/a,n/a,"a name: optional, one picture only",Draw: Ganesha.,,
+32,शिव,अकारान्त पुं,Shiva,shiva,,n/a,n/a,"a name: optional, one picture only",Draw: Shiva.,,
+33,देव,अकारान्त पुं,god / gods,deva,,,,,Draw: one god.,"Draw: exactly two gods, side by side.",Draw: a group of three to five gods.
+34,वृक्ष,अकारान्त पुं,tree / trees,vriksha,,,,,Draw: one tree.,"Draw: exactly two trees, side by side.",Draw: a group of three to five trees.
+35,अश्व,अकारान्त पुं,horse / horses,ashva,,,,,Draw: one horse.,"Draw: exactly two horses, side by side.",Draw: a group of three to five horses.
+36,गज,अकारान्त पुं,elephant / elephants,gaja,,,,,Draw: one elephant.,"Draw: exactly two elephants, side by side.",Draw: a group of three to five elephants.
+37,सिंह,अकारान्त पुं,lion / lions,simha,,,,,Draw: one lion.,"Draw: exactly two lions, side by side.",Draw: a group of three to five lions.
+38,व्याघ्र,अकारान्त पुं,tiger / tigers,vyaaghra,,,,,Draw: one tiger.,"Draw: exactly two tigers, side by side.",Draw: a group of three to five tigers.
+39,मृग,अकारान्त पुं,deer / deer,mriga,,,,,Draw: one deer.,"Draw: exactly two deer, side by side.",Draw: a group of three to five deer.
+40,वृषभ,अकारान्त पुं,bull / bulls,vrishabha,,,,,Draw: one bull.,"Draw: exactly two bulls, side by side.",Draw: a group of three to five bulls.
+41,सर्प,अकारान्त पुं,snake / snakes,sarpa,,,,,Draw: one snake.,"Draw: exactly two snakes, side by side.",Draw: a group of three to five snakes.
+42,मूषक,अकारान्त पुं,mouse / mice,muushaka,,,,,Draw: one mouse.,"Draw: exactly two mice, side by side.",Draw: a group of three to five mice.
+43,मार्जार,अकारान्त पुं,cat / cats,maarjaara,,,,,Draw: one cat.,"Draw: exactly two cats, side by side.",Draw: a group of three to five cats.
+44,कुक्कुर,अकारान्त पुं,dog / dogs,kukkura,,,,,Draw: one dog.,"Draw: exactly two dogs, side by side.",Draw: a group of three to five dogs.
+45,वानर,अकारान्त पुं,monkey / monkeys,vaanara,,,,,Draw: one monkey.,"Draw: exactly two monkeys, side by side.",Draw: a group of three to five monkeys.
+46,शृगाल,अकारान्त पुं,jackal / jackals,shrigaala,,,,,Draw: one jackal.,"Draw: exactly two jackals, side by side.",Draw: a group of three to five jackals.
+47,मण्डूक,अकारान्त पुं,frog / frogs,manduuka,,,,,Draw: one frog.,"Draw: exactly two frogs, side by side.",Draw: a group of three to five frogs.
+48,मत्स्य,अकारान्त पुं,fish / fish,matsya,,,,,Draw: one fish.,"Draw: exactly two fish, side by side.",Draw: a group of three to five fish.
+49,मयूर,अकारान्त पुं,peacock / peacocks,mayuura,,,,,Draw: one peacock.,"Draw: exactly two peacocks, side by side.",Draw: a group of three to five peacocks.
+50,काक,अकारान्त पुं,crow / crows,kaaka,,,,,Draw: one crow.,"Draw: exactly two crows, side by side.",Draw: a group of three to five crows.
+51,शुक,अकारान्त पुं,parrot / parrots,shuka,,,,,Draw: one parrot.,"Draw: exactly two parrots, side by side.",Draw: a group of three to five parrots.
+52,हंस,अकारान्त पुं,swan / swans,hamsa,,,,,Draw: one swan.,"Draw: exactly two swans, side by side.",Draw: a group of three to five swans.
+53,कपोत,अकारान्त पुं,pigeon / pigeons,kapota,,,,,Draw: one pigeon.,"Draw: exactly two pigeons, side by side.",Draw: a group of three to five pigeons.
+54,कोकिल,अकारान्त पुं,cuckoo / cuckoos,kokila,,,,,Draw: one cuckoo.,"Draw: exactly two cuckoos, side by side.",Draw: a group of three to five cuckoos.
+55,खग,अकारान्त पुं,bird / birds,khaga,,,,,Draw: one bird.,"Draw: exactly two birds, side by side.",Draw: a group of three to five birds.
+56,भ्रमर,अकारान्त पुं,bee / bees,bhramara,,,,,Draw: one bee.,"Draw: exactly two bees, side by side.",Draw: a group of three to five bees.
+57,सूर्य,अकारान्त पुं,sun,suurya,,n/a,n/a,"a name: optional, one picture only",Draw: sun.,,
+58,चन्द्र,अकारान्त पुं,moon,candra,,n/a,n/a,"a name: optional, one picture only",Draw: moon.,,
+59,मेघ,अकारान्त पुं,cloud / clouds,megha,,,,,Draw: one cloud.,"Draw: exactly two clouds, side by side.",Draw: a group of three to five clouds.
+60,पर्वत,अकारान्त पुं,mountain / mountains,parvata,,,,,Draw: one mountain.,"Draw: exactly two mountains, side by side.",Draw: a group of three to five mountains.
+61,समुद्र,अकारान्त पुं,ocean / oceans,samudra,,,,,Draw: one ocean.,"Draw: exactly two oceans, side by side.",Draw: a group of three to five oceans.
+62,सागर,अकारान्त पुं,sea / seas,saagara,,,,,Draw: one sea.,"Draw: exactly two seas, side by side.",Draw: a group of three to five seas.
+63,तडाग,अकारान्त पुं,pond / ponds,tadaaga,,,,,Draw: one pond.,"Draw: exactly two ponds, side by side.",Draw: a group of three to five ponds.
+64,कूप,अकारान्त पुं,well / wells,kuupa,,,,,Draw: one well.,"Draw: exactly two wells, side by side.",Draw: a group of three to five wells.
+65,ग्राम,अकारान्त पुं,village / villages,graama,,,,,Draw: one village.,"Draw: exactly two villages, side by side.",Draw: a group of three to five villages.
+66,देश,अकारान्त पुं,country / countries,desha,,,,,Draw: one country.,"Draw: exactly two countries, side by side.",Draw: a group of three to five countries.
+67,मार्ग,अकारान्त पुं,road / roads,maarga,,,,,Draw: one road.,"Draw: exactly two roads, side by side.",Draw: a group of three to five roads.
+68,आपण,अकारान्त पुं,shop / shops,aapana,,,,,Draw: one shop.,"Draw: exactly two shops, side by side.",Draw: a group of three to five shops.
+69,विद्यालय,अकारान्त पुं,school / schools,vidyaalaya,,,,,Draw: one school.,"Draw: exactly two schools, side by side.",Draw: a group of three to five schools.
+70,ग्रन्थालय,अकारान्त पुं,library / libraries,granthaalaya,,,,,Draw: one library.,"Draw: exactly two libraries, side by side.",Draw: a group of three to five libraries.
+71,चिकित्सालय,अकारान्त पुं,hospital / hospitals,cikitsaalaya,,,,,Draw: one hospital.,"Draw: exactly two hospitals, side by side.",Draw: a group of three to five hospitals.
+72,देवालय,अकारान्त पुं,temple / temples,devaalaya,,,,,Draw: one temple.,"Draw: exactly two temples, side by side.",Draw: a group of three to five temples.
+73,प्रासाद,अकारान्त पुं,palace / palaces,praasaada,,,,,Draw: one palace.,"Draw: exactly two palaces, side by side.",Draw: a group of three to five palaces.
+74,घट,अकारान्त पुं,pot / pots,ghata,,,,,Draw: one pot.,"Draw: exactly two pots, side by side.",Draw: a group of three to five pots.
+75,कलश,अकारान्त पुं,water-pot / water-pots,kalasha,,,,,Draw: one water-pot.,"Draw: exactly two water-pots, side by side.",Draw: a group of three to five water-pots.
+76,चषक,अकारान्त पुं,cup / cups,cashaka,,,,,Draw: one cup.,"Draw: exactly two cups, side by side.",Draw: a group of three to five cups.
+77,दीप,अकारान्त पुं,lamp / lamps,diipa,,,,,Draw: one lamp.,"Draw: exactly two lamps, side by side.",Draw: a group of three to five lamps.
+78,दण्ड,अकारान्त पुं,stick / sticks,danda,,,,,Draw: one stick.,"Draw: exactly two sticks, side by side.",Draw: a group of three to five sticks.
+79,हस्त,अकारान्त पुं,hand / hands,hasta,,,,,Draw: one hand.,"Draw: exactly two hands, side by side.",Draw: a group of three to five hands.
+80,पाद,अकारान्त पुं,foot / feet,paada,,,,,Draw: one foot.,"Draw: exactly two feet, side by side.",Draw: a group of three to five feet.
+81,कर्ण,अकारान्त पुं,ear / ears,karna,,,,,Draw: one ear.,"Draw: exactly two ears, side by side.",Draw: a group of three to five ears.
+82,दन्त,अकारान्त पुं,tooth / teeth,danta,,,,,Draw: one tooth.,"Draw: exactly two teeth, side by side.",Draw: a group of three to five teeth.
+83,रथ,अकारान्त पुं,chariot / chariots,ratha,,,,,Draw: one chariot.,"Draw: exactly two chariots, side by side.",Draw: a group of three to five chariots.
+84,मोदक,अकारान्त पुं,modaka sweet / modaka sweets,modaka,,,,,Draw: one modaka sweet.,"Draw: exactly two modaka sweets, side by side.",Draw: a group of three to five modaka sweets.
+85,ओदन,अकारान्त पुं,rice,odana,,n/a,n/a,uncountable: one picture only,Draw: some rice.,,
+86,सूप,अकारान्त पुं,dal,suupa,,n/a,n/a,uncountable: one picture only,Draw: some dal.,,
+87,स्यूत,अकारान्त पुं,bag / bags,syuuta,,,,,Draw: one bag.,"Draw: exactly two bags, side by side.",Draw: a group of three to five bags.
+88,पर्यङ्क,अकारान्त पुं,cot / cots,paryangka,,,,,Draw: one cot.,"Draw: exactly two cots, side by side.",Draw: a group of three to five cots.
+89,ग्रन्थ,अकारान्त पुं,book / books,grantha,,,,,Draw: one book.,"Draw: exactly two books, side by side.",Draw: a group of three to five books.
+90,श्लोक,अकारान्त पुं,verse / verses,shloka,,,,,Draw: one verse.,"Draw: exactly two verses, side by side.",Draw: a group of three to five verses.
+91,पाठ,अकारान्त पुं,lesson / lessons,paatha,,,,,Draw: one lesson.,"Draw: exactly two lessons, side by side.",Draw: a group of three to five lessons.
+92,उत्सव,अकारान्त पुं,festival / festivals,utsava,,,,hard to picture: optional,Draw: a simple picture that suggests festival.,"Draw: exactly two festivals, side by side.",Draw: a group of three to five festivals.
+93,विवाह,अकारान्त पुं,wedding / weddings,vivaaha,,,,hard to picture: optional,Draw: a simple picture that suggests wedding.,"Draw: exactly two weddings, side by side.",Draw: a group of three to five weddings.
+94,दिवस,अकारान्त पुं,day / days,divasa,,,,hard to picture: optional,Draw: a simple picture that suggests day.,"Draw: exactly two days, side by side.",Draw: a group of three to five days.
+95,वसन्त,अकारान्त पुं,spring,vasanta,,n/a,n/a,"a name: optional, one picture only; hard to picture: optional",Draw: spring.,,
+96,धर्म,अकारान्त पुं,dharma,dharma,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests dharma.,,
+97,आनन्द,अकारान्त पुं,joy,aananda,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests joy.,,
+98,क्रोध,अकारान्त पुं,anger,krodha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests anger.,,
+99,विचार,अकारान्त पुं,thought / thoughts,vicaara,,,,hard to picture: optional,Draw: a simple picture that suggests thought.,"Draw: exactly two thoughts, side by side.",Draw: a group of three to five thoughts.
+100,गुण,अकारान्त पुं,virtue / virtues,guna,,,,hard to picture: optional,Draw: a simple picture that suggests virtue.,"Draw: exactly two virtues, side by side.",Draw: a group of three to five virtues.
+101,चमस,अकारान्त पुं,spoon / spoons,camasa,,,,,Draw: one spoon.,"Draw: exactly two spoons, side by side.",Draw: a group of three to five spoons.
+102,शङ्ख,अकारान्त पुं,conch / conches,shangkha,,,,,Draw: one conch.,"Draw: exactly two conches, side by side.",Draw: a group of three to five conches.
+103,ध्वज,अकारान्त पुं,flag / flags,dhvaja,,,,,Draw: one flag.,"Draw: exactly two flags, side by side.",Draw: a group of three to five flags.
+104,कन्दुक,अकारान्त पुं,ball / balls,kanduka,,,,,Draw: one ball.,"Draw: exactly two balls, side by side.",Draw: a group of three to five balls.
+105,ब्राह्मण,अकारान्त पुं,brahmin / brahmins,braahmana,,,,,Draw: one brahmin.,"Draw: exactly two brahmins, side by side.",Draw: a group of three to five brahmins.
+106,यजमान,अकारान्त पुं,patron / patrons,yajamaana,,,,,Draw: one patron.,"Draw: exactly two patrons, side by side.",Draw: a group of three to five patrons.
+107,पण्डित,अकारान्त पुं,scholar / scholars,pandita,,,,,Draw: one scholar.,"Draw: exactly two scholars, side by side.",Draw: a group of three to five scholars.
+108,तापस,अकारान्त पुं,ascetic / ascetics,taapasa,,,,,Draw: one ascetic.,"Draw: exactly two ascetics, side by side.",Draw: a group of three to five ascetics.
+109,वृद्ध,अकारान्त पुं,old man / old men,vriddha,,,,,Draw: one old man.,"Draw: exactly two old men, side by side.",Draw: a group of three to five old men.
+110,श्वशुर,अकारान्त पुं,father-in-law / fathers-in-law,shvashura,,,,,Draw: one father-in-law.,"Draw: exactly two fathers-in-law, side by side.",Draw: a group of three to five fathers-in-law.
+111,नायक,अकारान्त पुं,leader / leaders,naayaka,,,,,Draw: one leader.,"Draw: exactly two leaders, side by side.",Draw: a group of three to five leaders.
+112,न्यायाधीश,अकारान्त पुं,judge / judges,nyaayaadhiisha,,,,,Draw: one judge.,"Draw: exactly two judges, side by side.",Draw: a group of three to five judges.
+113,कुमार,अकारान्त पुं,boy / boys,kumaara,,,,,Draw: one boy.,"Draw: exactly two boys, side by side.",Draw: a group of three to five boys.
+114,दारक,अकारान्त पुं,child / children,daaraka,,,,,Draw: one child.,"Draw: exactly two children, side by side.",Draw: a group of three to five children.
+115,सुत,अकारान्त पुं,son / sons,suta,,,,,Draw: one son.,"Draw: exactly two sons, side by side.",Draw: a group of three to five sons.
+116,तनय,अकारान्त पुं,son / sons,tanaya,,,,,Draw: one son.,"Draw: exactly two sons, side by side.",Draw: a group of three to five sons.
+117,मानव,अकारान्त पुं,human / humans,maanava,,,,,Draw: one human.,"Draw: exactly two humans, side by side.",Draw: a group of three to five humans.
+118,नागरिक,अकारान्त पुं,citizen / citizens,naagarika,,,,,Draw: one citizen.,"Draw: exactly two citizens, side by side.",Draw: a group of three to five citizens.
+119,ग्रामीण,अकारान्त पुं,villager / villagers,graamiina,,,,,Draw: one villager.,"Draw: exactly two villagers, side by side.",Draw: a group of three to five villagers.
+120,सहायक,अकारान्त पुं,helper / helpers,sahaayaka,,,,,Draw: one helper.,"Draw: exactly two helpers, side by side.",Draw: a group of three to five helpers.
+121,रक्षक,अकारान्त पुं,guard / guards,rakshaka,,,,,Draw: one guard.,"Draw: exactly two guards, side by side.",Draw: a group of three to five guards.
+122,वादक,अकारान्त पुं,player / players,vaadaka,,,,,Draw: one player.,"Draw: exactly two players, side by side.",Draw: a group of three to five players.
+123,धावक,अकारान्त पुं,runner / runners,dhaavaka,,,,,Draw: one runner.,"Draw: exactly two runners, side by side.",Draw: a group of three to five runners.
+124,याचक,अकारान्त पुं,beggar / beggars,yaacaka,,,,,Draw: one beggar.,"Draw: exactly two beggars, side by side.",Draw: a group of three to five beggars.
+125,भिक्षुक,अकारान्त पुं,mendicant / mendicants,bhikshuka,,,,,Draw: one mendicant.,"Draw: exactly two mendicants, side by side.",Draw: a group of three to five mendicants.
+126,दूत,अकारान्त पुं,messenger / messengers,duuta,,,,,Draw: one messenger.,"Draw: exactly two messengers, side by side.",Draw: a group of three to five messengers.
+127,सूत,अकारान्त पुं,charioteer / charioteers,suuta,,,,,Draw: one charioteer.,"Draw: exactly two charioteers, side by side.",Draw: a group of three to five charioteers.
+128,भृत्य,अकारान्त पुं,servant / servants,bhritya,,,,,Draw: one servant.,"Draw: exactly two servants, side by side.",Draw: a group of three to five servants.
+129,वीर,अकारान्त पुं,hero / heroes,viira,,,,,Draw: one hero.,"Draw: exactly two heroes, side by side.",Draw: a group of three to five heroes.
+130,मूर्ख,अकारान्त पुं,fool / fools,muurkha,,,,,Draw: one fool.,"Draw: exactly two fools, side by side.",Draw: a group of three to five fools.
+131,इन्द्र,अकारान्त पुं,Indra,indra,,n/a,n/a,"a name: optional, one picture only",Draw: Indra.,,
+132,यम,अकारान्त पुं,Yama,yama,,n/a,n/a,"a name: optional, one picture only",Draw: Yama.,,
+133,वरुण,अकारान्त पुं,Varuna,varuna,,n/a,n/a,"a name: optional, one picture only",Draw: Varuna.,,
+134,कुबेर,अकारान्त पुं,Kubera,kubera,,n/a,n/a,"a name: optional, one picture only",Draw: Kubera.,,
+135,सुब्रह्मण्य,अकारान्त पुं,Subrahmanya,subrahmanya,,n/a,n/a,"a name: optional, one picture only",Draw: Subrahmanya.,,
+136,अर्जुन,अकारान्त पुं,Arjuna,arjuna,,n/a,n/a,"a name: optional, one picture only",Draw: Arjuna.,,
+137,भीम,अकारान्त पुं,Bhima,bhiima,,n/a,n/a,"a name: optional, one picture only",Draw: Bhima.,,
+138,युधिष्ठिर,अकारान्त पुं,Yudhishthira,yudhishthira,,n/a,n/a,"a name: optional, one picture only",Draw: Yudhishthira.,,
+139,लक्ष्मण,अकारान्त पुं,Lakshmana,lakshmana,,n/a,n/a,"a name: optional, one picture only",Draw: Lakshmana.,,
+140,भरत,अकारान्त पुं,Bharata,bharata,,n/a,n/a,"a name: optional, one picture only",Draw: Bharata.,,
+141,दशरथ,अकारान्त पुं,Dasharatha,dasharatha,,n/a,n/a,"a name: optional, one picture only",Draw: Dasharatha.,,
+142,सुग्रीव,अकारान्त पुं,Sugriva,sugriiva,,n/a,n/a,"a name: optional, one picture only",Draw: Sugriva.,,
+143,नारद,अकारान्त पुं,Narada,naarada,,n/a,n/a,"a name: optional, one picture only",Draw: Narada.,,
+144,रावण,अकारान्त पुं,Ravana,raavana,,n/a,n/a,"a name: optional, one picture only",Draw: Ravana.,,
+145,गर्दभ,अकारान्त पुं,donkey / donkeys,gardabha,,,,,Draw: one donkey.,"Draw: exactly two donkeys, side by side.",Draw: a group of three to five donkeys.
+146,उष्ट्र,अकारान्त पुं,camel / camels,ushtra,,,,,Draw: one camel.,"Draw: exactly two camels, side by side.",Draw: a group of three to five camels.
+147,मेष,अकारान्त पुं,ram / rams,mesha,,,,,Draw: one ram.,"Draw: exactly two rams, side by side.",Draw: a group of three to five rams.
+148,अज,अकारान्त पुं,goat / goats,aja,,,,,Draw: one goat.,"Draw: exactly two goats, side by side.",Draw: a group of three to five goats.
+149,शशक,अकारान्त पुं,rabbit / rabbits,shashaka,,,,,Draw: one rabbit.,"Draw: exactly two rabbits, side by side.",Draw: a group of three to five rabbits.
+150,नकुल,अकारान्त पुं,mongoose / mongooses,nakula,,,,,Draw: one mongoose.,"Draw: exactly two mongooses, side by side.",Draw: a group of three to five mongooses.
+151,वराह,अकारान्त पुं,boar / boars,varaaha,,,,,Draw: one boar.,"Draw: exactly two boars, side by side.",Draw: a group of three to five boars.
+152,ऋक्ष,अकारान्त पुं,bear / bears,riksha,,,,,Draw: one bear.,"Draw: exactly two bears, side by side.",Draw: a group of three to five bears.
+153,वृक,अकारान्त पुं,wolf / wolves,vrika,,,,,Draw: one wolf.,"Draw: exactly two wolves, side by side.",Draw: a group of three to five wolves.
+154,कच्छप,अकारान्त पुं,tortoise / tortoises,kacchapa,,,,,Draw: one tortoise.,"Draw: exactly two tortoises, side by side.",Draw: a group of three to five tortoises.
+155,मकर,अकारान्त पुं,crocodile / crocodiles,makara,,,,,Draw: one crocodile.,"Draw: exactly two crocodiles, side by side.",Draw: a group of three to five crocodiles.
+156,गृध्र,अकारान्त पुं,vulture / vultures,gridhra,,,,,Draw: one vulture.,"Draw: exactly two vultures, side by side.",Draw: a group of three to five vultures.
+157,उलूक,अकारान्त पुं,owl / owls,uluuka,,,,,Draw: one owl.,"Draw: exactly two owls, side by side.",Draw: a group of three to five owls.
+158,बक,अकारान्त पुं,crane / cranes,baka,,,,,Draw: one crane.,"Draw: exactly two cranes, side by side.",Draw: a group of three to five cranes.
+159,चक्रवाक,अकारान्त पुं,ruddy goose / ruddy geese,cakravaaka,,,,,Draw: one ruddy goose.,"Draw: exactly two ruddy geese, side by side.",Draw: a group of three to five ruddy geese.
+160,मशक,अकारान्त पुं,mosquito / mosquitoes,mashaka,,,,,Draw: one mosquito.,"Draw: exactly two mosquitoes, side by side.",Draw: a group of three to five mosquitoes.
+161,वृश्चिक,अकारान्त पुं,scorpion / scorpions,vrishcika,,,,,Draw: one scorpion.,"Draw: exactly two scorpions, side by side.",Draw: a group of three to five scorpions.
+162,कीट,अकारान्त पुं,insect / insects,kiita,,,,,Draw: one insect.,"Draw: exactly two insects, side by side.",Draw: a group of three to five insects.
+163,आम्र,अकारान्त पुं,mango tree / mango trees,aamra,,,,,Draw: one mango tree.,"Draw: exactly two mango trees, side by side.",Draw: a group of three to five mango trees.
+164,अशोक,अकारान्त पुं,ashoka tree / ashoka trees,ashoka,,,,,Draw: one ashoka tree.,"Draw: exactly two ashoka trees, side by side.",Draw: a group of three to five ashoka trees.
+165,वट,अकारान्त पुं,banyan / banyans,vata,,,,,Draw: one banyan.,"Draw: exactly two banyans, side by side.",Draw: a group of three to five banyans.
+166,अश्वत्थ,अकारान्त पुं,peepal tree / peepal trees,ashvattha,,,,,Draw: one peepal tree.,"Draw: exactly two peepal trees, side by side.",Draw: a group of three to five peepal trees.
+167,अङ्कुर,अकारान्त पुं,sprout / sprouts,angkura,,,,,Draw: one sprout.,"Draw: exactly two sprouts, side by side.",Draw: a group of three to five sprouts.
+168,शैल,अकारान्त पुं,mountain / mountains,shaila,,,,,Draw: one mountain.,"Draw: exactly two mountains, side by side.",Draw: a group of three to five mountains.
+169,राजमार्ग,अकारान्त पुं,highway / highways,raajamaarga,,,,,Draw: one highway.,"Draw: exactly two highways, side by side.",Draw: a group of three to five highways.
+170,हट्ट,अकारान्त पुं,market / markets,hatta,,,,,Draw: one market.,"Draw: exactly two markets, side by side.",Draw: a group of three to five markets.
+171,आश्रम,अकारान्त पुं,hermitage / hermitages,aashrama,,,,,Draw: one hermitage.,"Draw: exactly two hermitages, side by side.",Draw: a group of three to five hermitages.
+172,मठ,अकारान्त पुं,monastery / monasteries,matha,,,,,Draw: one monastery.,"Draw: exactly two monasteries, side by side.",Draw: a group of three to five monasteries.
+173,छात्रावास,अकारान्त पुं,hostel / hostels,chaatraavaasa,,,,,Draw: one hostel.,"Draw: exactly two hostels, side by side.",Draw: a group of three to five hostels.
+174,विहार,अकारान्त पुं,vihara / viharas,vihaara,,,,,Draw: one vihara.,"Draw: exactly two viharas, side by side.",Draw: a group of three to five viharas.
+175,आराम,अकारान्त पुं,pleasure garden / pleasure gardens,aaraama,,,,,Draw: one pleasure garden.,"Draw: exactly two pleasure gardens, side by side.",Draw: a group of three to five pleasure gardens.
+176,कक्ष,अकारान्त पुं,room / rooms,kaksha,,,,,Draw: one room.,"Draw: exactly two rooms, side by side.",Draw: a group of three to five rooms.
+177,प्रकोष्ठ,अकारान्त पुं,chamber / chambers,prakoshtha,,,,,Draw: one chamber.,"Draw: exactly two chambers, side by side.",Draw: a group of three to five chambers.
+178,स्तम्भ,अकारान्त पुं,pillar / pillars,stambha,,,,,Draw: one pillar.,"Draw: exactly two pillars, side by side.",Draw: a group of three to five pillars.
+179,प्राकार,अकारान्त पुं,wall / walls,praakaara,,,,,Draw: one wall.,"Draw: exactly two walls, side by side.",Draw: a group of three to five walls.
+180,कोण,अकारान्त पुं,corner / corners,kona,,,,,Draw: one corner.,"Draw: exactly two corners, side by side.",Draw: a group of three to five corners.
+181,लड्डुक,अकारान्त पुं,laddu / laddus,ladduka,,,,,Draw: one laddu.,"Draw: exactly two laddus, side by side.",Draw: a group of three to five laddus.
+182,अपूप,अकारान्त पुं,cake / cakes,apuupa,,,,,Draw: one cake.,"Draw: exactly two cakes, side by side.",Draw: a group of three to five cakes.
+183,कन्द,अकारान्त पुं,tuber / tubers,kanda,,,,,Draw: one tuber.,"Draw: exactly two tubers, side by side.",Draw: a group of three to five tubers.
+184,तण्डुल,अकारान्त पुं,rice grain / rice grains,tandula,,,,,Draw: one rice grain.,"Draw: exactly two rice grains, side by side.",Draw: a group of three to five rice grains.
+185,यव,अकारान्त पुं,barley,yava,,n/a,n/a,uncountable: one picture only,Draw: some barley.,,
+186,गुड,अकारान्त पुं,jaggery,guda,,n/a,n/a,uncountable: one picture only,Draw: some jaggery.,,
+187,आहार,अकारान्त पुं,food,aahaara,,n/a,n/a,uncountable: one picture only,Draw: some food.,,
+188,पनस,अकारान्त पुं,jackfruit / jackfruits,panasa,,,,,Draw: one jackfruit.,"Draw: exactly two jackfruits, side by side.",Draw: a group of three to five jackfruits.
+189,खर्जूर,अकारान्त पुं,date / dates,kharjuura,,,,,Draw: one date.,"Draw: exactly two dates, side by side.",Draw: a group of three to five dates.
+190,रस,अकारान्त पुं,juice / juices,rasa,,,,,Draw: one juice.,"Draw: exactly two juices, side by side.",Draw: a group of three to five juices.
+191,कषाय,अकारान्त पुं,decoction / decoctions,kashaaya,,,,,Draw: one decoction.,"Draw: exactly two decoctions, side by side.",Draw: a group of three to five decoctions.
+192,स्नेह,अकारान्त पुं,affection,sneha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests affection.,,
+193,शोक,अकारान्त पुं,grief,shoka,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests grief.,,
+194,हर्ष,अकारान्त पुं,joy,harsha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests joy.,,
+195,लोभ,अकारान्त पुं,greed,lobha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests greed.,,
+196,मोह,अकारान्त पुं,delusion,moha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests delusion.,,
+197,गर्व,अकारान्त पुं,pride,garva,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests pride.,,
+198,उत्साह,अकारान्त पुं,enthusiasm,utsaaha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests enthusiasm.,,
+199,विश्वास,अकारान्त पुं,trust,vishvaasa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests trust.,,
+200,संशय,अकारान्त पुं,doubt / doubts,samshaya,,,,hard to picture: optional,Draw: a simple picture that suggests doubt.,"Draw: exactly two doubts, side by side.",Draw: a group of three to five doubts.
+201,प्रश्न,अकारान्त पुं,question / questions,prashna,,,,hard to picture: optional,Draw: a simple picture that suggests question.,"Draw: exactly two questions, side by side.",Draw: a group of three to five questions.
+202,उपाय,अकारान्त पुं,means / means,upaaya,,,,hard to picture: optional,Draw: a simple picture that suggests means.,"Draw: exactly two means, side by side.",Draw: a group of three to five means.
+203,आरम्भ,अकारान्त पुं,beginning / beginnings,aarambha,,,,hard to picture: optional,Draw: a simple picture that suggests beginning.,"Draw: exactly two beginnings, side by side.",Draw: a group of three to five beginnings.
+204,समय,अकारान्त पुं,time / times,samaya,,,,hard to picture: optional,Draw: a simple picture that suggests time.,"Draw: exactly two times, side by side.",Draw: a group of three to five times.
+205,काल,अकारान्त पुं,time,kaala,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests time.,,
+206,मास,अकारान्त पुं,month / months,maasa,,,,hard to picture: optional,Draw: a simple picture that suggests month.,"Draw: exactly two months, side by side.",Draw: a group of three to five months.
+207,पक्ष,अकारान्त पुं,fortnight / fortnights,paksha,,,,hard to picture: optional,Draw: a simple picture that suggests fortnight.,"Draw: exactly two fortnights, side by side.",Draw: a group of three to five fortnights.
+208,ग्रीष्म,अकारान्त पुं,summer,griishma,,n/a,n/a,singular only; hard to picture: optional,Draw: a simple picture that suggests summer.,,
+209,हेमन्त,अकारान्त पुं,winter,hemanta,,n/a,n/a,singular only; hard to picture: optional,Draw: a simple picture that suggests winter.,,
+210,समारोह,अकारान्त पुं,ceremony / ceremonies,samaaroha,,,,hard to picture: optional,Draw: a simple picture that suggests ceremony.,"Draw: exactly two ceremonies, side by side.",Draw: a group of three to five ceremonies.
+211,जन्मदिवस,अकारान्त पुं,birthday / birthdays,janmadivasa,,,,hard to picture: optional,Draw: a simple picture that suggests birthday.,"Draw: exactly two birthdays, side by side.",Draw: a group of three to five birthdays.
+212,केश,अकारान्त पुं,hair / hairs,kesha,,,,,Draw: one hair.,"Draw: exactly two hairs, side by side.",Draw: a group of three to five hairs.
+213,स्कन्ध,अकारान्त पुं,shoulder / shoulders,skandha,,,,,Draw: one shoulder.,"Draw: exactly two shoulders, side by side.",Draw: a group of three to five shoulders.
+214,कण्ठ,अकारान्त पुं,throat / throats,kantha,,,,,Draw: one throat.,"Draw: exactly two throats, side by side.",Draw: a group of three to five throats.
+215,ओष्ठ,अकारान्त पुं,lip / lips,oshtha,,,,,Draw: one lip.,"Draw: exactly two lips, side by side.",Draw: a group of three to five lips.
+216,अङ्गुष्ठ,अकारान्त पुं,thumb / thumbs,anggushtha,,,,,Draw: one thumb.,"Draw: exactly two thumbs, side by side.",Draw: a group of three to five thumbs.
+217,कुम्भ,अकारान्त पुं,pot / pots,kumbha,,,,,Draw: one pot.,"Draw: exactly two pots, side by side.",Draw: a group of three to five pots.
+218,पिटक,अकारान्त पुं,basket / baskets,pitaka,,,,,Draw: one basket.,"Draw: exactly two baskets, side by side.",Draw: a group of three to five baskets.
+219,खड्ग,अकारान्त पुं,sword / swords,khadga,,,,,Draw: one sword.,"Draw: exactly two swords, side by side.",Draw: a group of three to five swords.
+220,बाण,अकारान्त पुं,arrow / arrows,baana,,,,,Draw: one arrow.,"Draw: exactly two arrows, side by side.",Draw: a group of three to five arrows.
+221,मुद्गर,अकारान्त पुं,club / clubs,mudgara,,,,,Draw: one club.,"Draw: exactly two clubs, side by side.",Draw: a group of three to five clubs.
+222,कोश,अकारान्त पुं,treasury / treasuries,kosha,,,,,Draw: one treasury.,"Draw: exactly two treasuries, side by side.",Draw: a group of three to five treasuries.
+223,हार,अकारान्त पुं,necklace / necklaces,haara,,,,,Draw: one necklace.,"Draw: exactly two necklaces, side by side.",Draw: a group of three to five necklaces.
+224,कटक,अकारान्त पुं,bracelet / bracelets,kataka,,,,,Draw: one bracelet.,"Draw: exactly two bracelets, side by side.",Draw: a group of three to five bracelets.
+225,शकट,अकारान्त पुं,cart / carts,shakata,,,,,Draw: one cart.,"Draw: exactly two carts, side by side.",Draw: a group of three to five carts.
+226,प्लव,अकारान्त पुं,boat / boats,plava,,,,,Draw: one boat.,"Draw: exactly two boats, side by side.",Draw: a group of three to five boats.
+227,मृदङ्ग,अकारान्त पुं,drum / drums,mridangga,,,,,Draw: one drum.,"Draw: exactly two drums, side by side.",Draw: a group of three to five drums.
+228,स्वर,अकारान्त पुं,note / notes,svara,,,,,Draw: one note.,"Draw: exactly two notes, side by side.",Draw: a group of three to five notes.
+229,नाद,अकारान्त पुं,sound / sounds,naada,,,,,Draw: one sound.,"Draw: exactly two sounds, side by side.",Draw: a group of three to five sounds.
+230,राग,अकारान्त पुं,raga / ragas,raaga,,,,hard to picture: optional,Draw: a simple picture that suggests raga.,"Draw: exactly two ragas, side by side.",Draw: a group of three to five ragas.
+231,समूह,अकारान्त पुं,group / groups,samuuha,,,,hard to picture: optional,Draw: a simple picture that suggests group.,"Draw: exactly two groups, side by side.",Draw: a group of three to five groups.
+232,गण,अकारान्त पुं,troop / troops,gana,,,,hard to picture: optional,Draw: a simple picture that suggests troop.,"Draw: exactly two troops, side by side.",Draw: a group of three to five troops.
+233,सङ्घ,अकारान्त पुं,assembly / assemblies,sanggha,,,,hard to picture: optional,Draw: a simple picture that suggests assembly.,"Draw: exactly two assemblies, side by side.",Draw: a group of three to five assemblies.
+234,बालिका,आकारान्त स्त्री,girl / girls,baalikaa,,,,,Draw: one girl.,"Draw: exactly two girls, side by side.",Draw: a group of three to five girls.
+235,छात्रा,आकारान्त स्त्री,student / students,chaatraa,,,,,Draw: one student.,"Draw: exactly two students, side by side.",Draw: a group of three to five students.
+236,शिष्या,आकारान्त स्त्री,disciple / disciples,shishyaa,,,,,Draw: one disciple.,"Draw: exactly two disciples, side by side.",Draw: a group of three to five disciples.
+237,शिक्षिका,आकारान्त स्त्री,teacher / teachers,shikshikaa,,,,,Draw: one teacher.,"Draw: exactly two teachers, side by side.",Draw: a group of three to five teachers.
+238,अध्यापिका,आकारान्त स्त्री,teacher / teachers,adhyaapikaa,,,,,Draw: one teacher.,"Draw: exactly two teachers, side by side.",Draw: a group of three to five teachers.
+239,गायिका,आकारान्त स्त्री,singer / singers,gaayikaa,,,,,Draw: one singer.,"Draw: exactly two singers, side by side.",Draw: a group of three to five singers.
+240,लेखिका,आकारान्त स्त्री,writer / writers,lekhikaa,,,,,Draw: one writer.,"Draw: exactly two writers, side by side.",Draw: a group of three to five writers.
+241,सेविका,आकारान्त स्त्री,helper / helpers,sevikaa,,,,,Draw: one helper.,"Draw: exactly two helpers, side by side.",Draw: a group of three to five helpers.
+242,कन्या,आकारान्त स्त्री,young girl / young girls,kanyaa,,,,,Draw: one young girl.,"Draw: exactly two young girls, side by side.",Draw: a group of three to five young girls.
+243,सीता,आकारान्त स्त्री,Sita,siitaa,,n/a,n/a,"a name: optional, one picture only",Draw: Sita.,,
+244,राधा,आकारान्त स्त्री,Radha,raadhaa,,n/a,n/a,"a name: optional, one picture only",Draw: Radha.,,
+245,रमा,आकारान्त स्त्री,Ramā,ramaa,,n/a,n/a,"a name: optional, one picture only",Draw: Ramā.,,
+246,उमा,आकारान्त स्त्री,Uma,umaa,,n/a,n/a,"a name: optional, one picture only",Draw: Uma.,,
+247,दुर्गा,आकारान्त स्त्री,Durga,durgaa,,n/a,n/a,"a name: optional, one picture only",Draw: Durga.,,
+248,गङ्गा,आकारान्त स्त्री,the Ganga,ganggaa,,n/a,n/a,"a name: optional, one picture only",Draw: Ganga.,,
+249,यमुना,आकारान्त स्त्री,the Yamuna,yamunaa,,n/a,n/a,"a name: optional, one picture only",Draw: Yamuna.,,
+250,अयोध्या,आकारान्त स्त्री,Ayodhya,ayodhyaa,,n/a,n/a,"a name: optional, one picture only",Draw: Ayodhya.,,
+251,मथुरा,आकारान्त स्त्री,Mathura,mathuraa,,n/a,n/a,"a name: optional, one picture only",Draw: Mathura.,,
+252,लङ्का,आकारान्त स्त्री,Lanka,langkaa,,n/a,n/a,"a name: optional, one picture only",Draw: Lanka.,,
+253,लता,आकारान्त स्त्री,creeper / creepers,lataa,,,,,Draw: one creeper.,"Draw: exactly two creepers, side by side.",Draw: a group of three to five creepers.
+254,शाखा,आकारान्त स्त्री,branch / branches,shaakhaa,,,,,Draw: one branch.,"Draw: exactly two branches, side by side.",Draw: a group of three to five branches.
+255,माला,आकारान्त स्त्री,garland / garlands,maalaa,,,,,Draw: one garland.,"Draw: exactly two garlands, side by side.",Draw: a group of three to five garlands.
+256,पाठशाला,आकारान्त स्त्री,school / schools,paathashaalaa,,,,,Draw: one school.,"Draw: exactly two schools, side by side.",Draw: a group of three to five schools.
+257,पाकशाला,आकारान्त स्त्री,kitchen / kitchens,paakashaalaa,,,,,Draw: one kitchen.,"Draw: exactly two kitchens, side by side.",Draw: a group of three to five kitchens.
+258,कक्षा,आकारान्त स्त्री,classroom / classrooms,kakshaa,,,,,Draw: one classroom.,"Draw: exactly two classrooms, side by side.",Draw: a group of three to five classrooms.
+259,वाटिका,आकारान्त स्त्री,garden / gardens,vaatikaa,,,,,Draw: one garden.,"Draw: exactly two gardens, side by side.",Draw: a group of three to five gardens.
+260,गुहा,आकारान्त स्त्री,cave / caves,guhaa,,,,,Draw: one cave.,"Draw: exactly two caves, side by side.",Draw: a group of three to five caves.
+261,नासिका,आकारान्त स्त्री,nose / noses,naasikaa,,,,,Draw: one nose.,"Draw: exactly two noses, side by side.",Draw: a group of three to five noses.
+262,जिह्वा,आकारान्त स्त्री,tongue / tongues,jihvaa,,,,,Draw: one tongue.,"Draw: exactly two tongues, side by side.",Draw: a group of three to five tongues.
+263,ग्रीवा,आकारान्त स्त्री,neck / necks,griivaa,,,,,Draw: one neck.,"Draw: exactly two necks, side by side.",Draw: a group of three to five necks.
+264,पुस्तिका,आकारान्त स्त्री,notebook / notebooks,pustikaa,,,,,Draw: one notebook.,"Draw: exactly two notebooks, side by side.",Draw: a group of three to five notebooks.
+265,पत्रिका,आकारान्त स्त्री,magazine / magazines,patrikaa,,,,,Draw: one magazine.,"Draw: exactly two magazines, side by side.",Draw: a group of three to five magazines.
+266,पेटिका,आकारान्त स्त्री,box / boxes,petikaa,,,,,Draw: one box.,"Draw: exactly two boxes, side by side.",Draw: a group of three to five boxes.
+267,कुञ्चिका,आकारान्त स्त्री,key / keys,kunycikaa,,,,,Draw: one key.,"Draw: exactly two keys, side by side.",Draw: a group of three to five keys.
+268,घटिका,आकारान्त स्त्री,clock / clocks,ghatikaa,,,,,Draw: one clock.,"Draw: exactly two clocks, side by side.",Draw: a group of three to five clocks.
+269,घण्टा,आकारान्त स्त्री,bell / bells,ghantaa,,,,,Draw: one bell.,"Draw: exactly two bells, side by side.",Draw: a group of three to five bells.
+270,नौका,आकारान्त स्त्री,boat / boats,naukaa,,,,,Draw: one boat.,"Draw: exactly two boats, side by side.",Draw: a group of three to five boats.
+271,शय्या,आकारान्त स्त्री,bed / beds,shayyaa,,,,,Draw: one bed.,"Draw: exactly two beds, side by side.",Draw: a group of three to five beds.
+272,दोला,आकारान्त स्त्री,swing / swings,dolaa,,,,,Draw: one swing.,"Draw: exactly two swings, side by side.",Draw: a group of three to five swings.
+273,द्विचक्रिका,आकारान्त स्त्री,bicycle / bicycles,dvicakrikaa,,,,,Draw: one bicycle.,"Draw: exactly two bicycles, side by side.",Draw: a group of three to five bicycles.
+274,रोटिका,आकारान्त स्त्री,roti / rotis,rotikaa,,,,,Draw: one roti.,"Draw: exactly two rotis, side by side.",Draw: a group of three to five rotis.
+275,कथा,आकारान्त स्त्री,story / stories,kathaa,,,,,Draw: one story.,"Draw: exactly two stories, side by side.",Draw: a group of three to five stories.
+276,कविता,आकारान्त स्त्री,poem / poems,kavitaa,,,,,Draw: one poem.,"Draw: exactly two poems, side by side.",Draw: a group of three to five poems.
+277,भाषा,आकारान्त स्त्री,language / languages,bhaashaa,,,,hard to picture: optional,Draw: a simple picture that suggests language.,"Draw: exactly two languages, side by side.",Draw: a group of three to five languages.
+278,वार्ता,आकारान्त स्त्री,news,vaartaa,,n/a,n/a,uncountable: one picture only,Draw: some news.,,
+279,विद्या,आकारान्त स्त्री,learning,vidyaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests learning.,,
+280,दया,आकारान्त स्त्री,compassion,dayaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests compassion.,,
+281,क्षमा,आकारान्त स्त्री,forgiveness,kshamaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests forgiveness.,,
+282,पूजा,आकारान्त स्त्री,worship / worships,puujaa,,,,hard to picture: optional,Draw: a simple picture that suggests worship.,"Draw: exactly two worships, side by side.",Draw: a group of three to five worships.
+283,प्रार्थना,आकारान्त स्त्री,prayer / prayers,praarthanaa,,,,,Draw: one prayer.,"Draw: exactly two prayers, side by side.",Draw: a group of three to five prayers.
+284,परीक्षा,आकारान्त स्त्री,exam / exams,pariikshaa,,,,hard to picture: optional,Draw: a simple picture that suggests exam.,"Draw: exactly two exams, side by side.",Draw: a group of three to five exams.
+285,यात्रा,आकारान्त स्त्री,journey / journeys,yaatraa,,,,hard to picture: optional,Draw: a simple picture that suggests journey.,"Draw: exactly two journeys, side by side.",Draw: a group of three to five journeys.
+286,क्रीडा,आकारान्त स्त्री,game / games,kriidaa,,,,hard to picture: optional,Draw: a simple picture that suggests game.,"Draw: exactly two games, side by side.",Draw: a group of three to five games.
+287,सभा,आकारान्त स्त्री,assembly / assemblies,sabhaa,,,,,Draw: one assembly.,"Draw: exactly two assemblies, side by side.",Draw: a group of three to five assemblies.
+288,सेना,आकारान्त स्त्री,army / armies,senaa,,,,hard to picture: optional,Draw: a simple picture that suggests army.,"Draw: exactly two armies, side by side.",Draw: a group of three to five armies.
+289,शिला,आकारान्त स्त्री,rock / rocks,shilaa,,,,,Draw: one rock.,"Draw: exactly two rocks, side by side.",Draw: a group of three to five rocks.
+290,छाया,आकारान्त स्त्री,shade / shades,chaayaa,,,,hard to picture: optional,Draw: a simple picture that suggests shade.,"Draw: exactly two shades, side by side.",Draw: a group of three to five shades.
+291,अजा,आकारान्त स्त्री,goat / goats,ajaa,,,,,Draw: one goat.,"Draw: exactly two goats, side by side.",Draw: a group of three to five goats.
+292,चटका,आकारान्त स्त्री,sparrow / sparrows,catakaa,,,,,Draw: one sparrow.,"Draw: exactly two sparrows, side by side.",Draw: a group of three to five sparrows.
+293,मक्षिका,आकारान्त स्त्री,fly / flies,makshikaa,,,,,Draw: one fly.,"Draw: exactly two flies, side by side.",Draw: a group of three to five flies.
+294,पिपीलिका,आकारान्त स्त्री,ant / ants,pipiilikaa,,,,,Draw: one ant.,"Draw: exactly two ants, side by side.",Draw: a group of three to five ants.
+295,वीणा,आकारान्त स्त्री,veena / veenas,viinaa,,,,,Draw: one veena.,"Draw: exactly two veenas, side by side.",Draw: a group of three to five veenas.
+296,सन्ध्या,आकारान्त स्त्री,evening / evenings,sandhyaa,,,,hard to picture: optional,Draw: a simple picture that suggests evening.,"Draw: exactly two evenings, side by side.",Draw: a group of three to five evenings.
+297,वर्षा,आकारान्त स्त्री,rainy season,varshaa,,n/a,n/a,"a name: optional, one picture only; hard to picture: optional",Draw: rainy season.,,
+298,तारा,आकारान्त स्त्री,star / stars,taaraa,,,,,Draw: one star.,"Draw: exactly two stars, side by side.",Draw: a group of three to five stars.
+299,मुद्रा,आकारान्त स्त्री,coin / coins,mudraa,,,,,Draw: one coin.,"Draw: exactly two coins, side by side.",Draw: a group of three to five coins.
+300,जाया,आकारान्त स्त्री,wife / wives,jaayaa,,,,,Draw: one wife.,"Draw: exactly two wives, side by side.",Draw: a group of three to five wives.
+301,भार्या,आकारान्त स्त्री,wife / wives,bhaaryaa,,,,,Draw: one wife.,"Draw: exactly two wives, side by side.",Draw: a group of three to five wives.
+302,स्नुषा,आकारान्त स्त्री,daughter-in-law / daughters-in-law,snushaa,,,,,Draw: one daughter-in-law.,"Draw: exactly two daughters-in-law, side by side.",Draw: a group of three to five daughters-in-law.
+303,वृद्धा,आकारान्त स्त्री,old woman / old women,vriddhaa,,,,,Draw: one old woman.,"Draw: exactly two old women, side by side.",Draw: a group of three to five old women.
+304,पण्डिता,आकारान्त स्त्री,woman scholar / women scholars,panditaa,,,,,Draw: one woman scholar.,"Draw: exactly two women scholars, side by side.",Draw: a group of three to five women scholars.
+305,प्रजा,आकारान्त स्त्री,subject / subjects,prajaa,,,,hard to picture: optional,Draw: a simple picture that suggests subject.,"Draw: exactly two subjects, side by side.",Draw: a group of three to five subjects.
+306,कोकिला,आकारान्त स्त्री,female cuckoo / female cuckoos,kokilaa,,,,,Draw: one female cuckoo.,"Draw: exactly two female cuckoos, side by side.",Draw: a group of three to five female cuckoos.
+307,सारिका,आकारान्त स्त्री,myna / mynas,saarikaa,,,,,Draw: one myna.,"Draw: exactly two mynas, side by side.",Draw: a group of three to five mynas.
+308,द्राक्षा,आकारान्त स्त्री,grape / grapes,draakshaa,,,,,Draw: one grape.,"Draw: exactly two grapes, side by side.",Draw: a group of three to five grapes.
+309,शर्करा,आकारान्त स्त्री,sugar,sharkaraa,,n/a,n/a,uncountable: one picture only,Draw: some sugar.,,
+310,हरिद्रा,आकारान्त स्त्री,turmeric,haridraa,,n/a,n/a,uncountable: one picture only,Draw: some turmeric.,,
+311,सुधा,आकारान्त स्त्री,nectar,sudhaa,,n/a,n/a,uncountable: one picture only,Draw: some nectar.,,
+312,वेदिका,आकारान्त स्त्री,platform / platforms,vedikaa,,,,,Draw: one platform.,"Draw: exactly two platforms, side by side.",Draw: a group of three to five platforms.
+313,मञ्जूषा,आकारान्त स्त्री,box / boxes,manyjuushaa,,,,,Draw: one box.,"Draw: exactly two boxes, side by side.",Draw: a group of three to five boxes.
+314,कुण्डिका,आकारान्त स्त्री,small pot / small pots,kundikaa,,,,,Draw: one small pot.,"Draw: exactly two small pots, side by side.",Draw: a group of three to five small pots.
+315,थालिका,आकारान्त स्त्री,plate / plates,thaalikaa,,,,,Draw: one plate.,"Draw: exactly two plates, side by side.",Draw: a group of three to five plates.
+316,शलाका,आकारान्त स्त्री,rod / rods,shalaakaa,,,,,Draw: one rod.,"Draw: exactly two rods, side by side.",Draw: a group of three to five rods.
+317,सूचिका,आकारान्त स्त्री,needle / needles,suucikaa,,,,,Draw: one needle.,"Draw: exactly two needles, side by side.",Draw: a group of three to five needles.
+318,तूलिका,आकारान्त स्त्री,brush / brushes,tuulikaa,,,,,Draw: one brush.,"Draw: exactly two brushes, side by side.",Draw: a group of three to five brushes.
+319,पञ्जिका,आकारान्त स्त्री,register / registers,panyjikaa,,,,,Draw: one register.,"Draw: exactly two registers, side by side.",Draw: a group of three to five registers.
+320,प्रतिमा,आकारान्त स्त्री,image / images,pratimaa,,,,,Draw: one image.,"Draw: exactly two images, side by side.",Draw: a group of three to five images.
+321,पताका,आकारान्त स्त्री,flag / flags,pataakaa,,,,,Draw: one flag.,"Draw: exactly two flags, side by side.",Draw: a group of three to five flags.
+322,मृत्तिका,आकारान्त स्त्री,clay,mrittikaa,,n/a,n/a,uncountable: one picture only,Draw: some clay.,,
+323,शिबिका,आकारान्त स्त्री,palanquin / palanquins,shibikaa,,,,,Draw: one palanquin.,"Draw: exactly two palanquins, side by side.",Draw: a group of three to five palanquins.
+324,शाला,आकारान्त स्त्री,hall / halls,shaalaa,,,,,Draw: one hall.,"Draw: exactly two halls, side by side.",Draw: a group of three to five halls.
+325,गोशाला,आकारान्त स्त्री,cowshed / cowsheds,goshaalaa,,,,,Draw: one cowshed.,"Draw: exactly two cowsheds, side by side.",Draw: a group of three to five cowsheds.
+326,नाट्यशाला,आकारान्त स्त्री,theatre / theatres,naatyashaalaa,,,,,Draw: one theatre.,"Draw: exactly two theatres, side by side.",Draw: a group of three to five theatres.
+327,कन्दरा,आकारान्त स्त्री,cave / caves,kandaraa,,,,,Draw: one cave.,"Draw: exactly two caves, side by side.",Draw: a group of three to five caves.
+328,कुल्या,आकारान्त स्त्री,canal / canals,kulyaa,,,,,Draw: one canal.,"Draw: exactly two canals, side by side.",Draw: a group of three to five canals.
+329,वसुधा,आकारान्त स्त्री,earth,vasudhaa,,n/a,n/a,singular only,Draw: one earth.,,
+330,उषा,आकारान्त स्त्री,dawn,ushaa,,n/a,n/a,singular only; hard to picture: optional,Draw: a simple picture that suggests dawn.,,
+331,निशा,आकारान्त स्त्री,night / nights,nishaa,,,,hard to picture: optional,Draw: a simple picture that suggests night.,"Draw: exactly two nights, side by side.",Draw: a group of three to five nights.
+332,सीमा,आकारान्त स्त्री,boundary / boundaries,siimaa,,,,hard to picture: optional,Draw: a simple picture that suggests boundary.,"Draw: exactly two boundaries, side by side.",Draw: a group of three to five boundaries.
+333,दिशा,आकारान्त स्त्री,direction / directions,dishaa,,,,hard to picture: optional,Draw: a simple picture that suggests direction.,"Draw: exactly two directions, side by side.",Draw: a group of three to five directions.
+334,शोभा,आकारान्त स्त्री,beauty,shobhaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests beauty.,,
+335,निद्रा,आकारान्त स्त्री,sleep,nidraa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests sleep.,,
+336,चिन्ता,आकारान्त स्त्री,worry,cintaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests worry.,,
+337,इच्छा,आकारान्त स्त्री,wish / wishes,icchaa,,,,hard to picture: optional,Draw: a simple picture that suggests wish.,"Draw: exactly two wishes, side by side.",Draw: a group of three to five wishes.
+338,आशा,आकारान्त स्त्री,hope / hopes,aashaa,,,,hard to picture: optional,Draw: a simple picture that suggests hope.,"Draw: exactly two hopes, side by side.",Draw: a group of three to five hopes.
+339,श्रद्धा,आकारान्त स्त्री,faith,shraddhaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests faith.,,
+340,कृपा,आकारान्त स्त्री,grace,kripaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests grace.,,
+341,व्यथा,आकारान्त स्त्री,pain,vyathaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests pain.,,
+342,कल्पना,आकारान्त स्त्री,imagination,kalpanaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests imagination.,,
+343,सूचना,आकारान्त स्त्री,information,suucanaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests information.,,
+344,शिक्षा,आकारान्त स्त्री,education,shikshaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests education.,,
+345,कला,आकारान्त स्त्री,art / arts,kalaa,,,,hard to picture: optional,Draw: a simple picture that suggests art.,"Draw: exactly two arts, side by side.",Draw: a group of three to five arts.
+346,सेवा,आकारान्त स्त्री,service,sevaa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests service.,,
+347,रचना,आकारान्त स्त्री,composition / compositions,racanaa,,,,hard to picture: optional,Draw: a simple picture that suggests composition.,"Draw: exactly two compositions, side by side.",Draw: a group of three to five compositions.
+348,घोषणा,आकारान्त स्त्री,announcement / announcements,ghoshanaa,,,,,Draw: one announcement.,"Draw: exactly two announcements, side by side.",Draw: a group of three to five announcements.
+349,गाथा,आकारान्त स्त्री,ballad / ballads,gaathaa,,,,,Draw: one ballad.,"Draw: exactly two ballads, side by side.",Draw: a group of three to five ballads.
+350,ऋचा,आकारान्त स्त्री,verse / verses,ricaa,,,,,Draw: one verse.,"Draw: exactly two verses, side by side.",Draw: a group of three to five verses.
+351,टीका,आकारान्त स्त्री,commentary / commentaries,tiikaa,,,,,Draw: one commentary.,"Draw: exactly two commentaries, side by side.",Draw: a group of three to five commentaries.
+352,संहिता,आकारान्त स्त्री,collection / collections,samhitaa,,,,,Draw: one collection.,"Draw: exactly two collections, side by side.",Draw: a group of three to five collections.
+353,घटना,आकारान्त स्त्री,event / events,ghatanaa,,,,hard to picture: optional,Draw: a simple picture that suggests event.,"Draw: exactly two events, side by side.",Draw: a group of three to five events.
+354,जटा,आकारान्त स्त्री,matted hair,jataa,,n/a,n/a,uncountable: one picture only,Draw: some matted hair.,,
+355,शिखा,आकारान्त स्त्री,crest / crests,shikhaa,,,,,Draw: one crest.,"Draw: exactly two crests, side by side.",Draw: a group of three to five crests.
+356,नदी,ईकारान्त स्त्री,river / rivers,nadii,,,,,Draw: one river.,"Draw: exactly two rivers, side by side.",Draw: a group of three to five rivers.
+357,नगरी,ईकारान्त स्त्री,city / cities,nagarii,,,,,Draw: one city.,"Draw: exactly two cities, side by side.",Draw: a group of three to five cities.
+358,पृथ्वी,ईकारान्त स्त्री,the earth,prithvii,,n/a,n/a,"a name: optional, one picture only; hard to picture: optional",Draw: earth.,,
+359,देवी,ईकारान्त स्त्री,goddess / goddesses,devii,,,,,Draw: one goddess.,"Draw: exactly two goddesses, side by side.",Draw: a group of three to five goddesses.
+360,गौरी,ईकारान्त स्त्री,Gauri,gaurii,,n/a,n/a,"a name: optional, one picture only",Draw: Gauri.,,
+361,पार्वती,ईकारान्त स्त्री,Parvati,paarvatii,,n/a,n/a,"a name: optional, one picture only",Draw: Parvati.,,
+362,सरस्वती,ईकारान्त स्त्री,Sarasvati,sarasvatii,,n/a,n/a,"a name: optional, one picture only",Draw: Sarasvati.,,
+363,जानकी,ईकारान्त स्त्री,Janaki,jaanakii,,n/a,n/a,"a name: optional, one picture only",Draw: Janaki.,,
+364,काशी,ईकारान्त स्त्री,Kashi,kaashii,,n/a,n/a,"a name: optional, one picture only",Draw: Kashi.,,
+365,गोदावरी,ईकारान्त स्त्री,the Godavari,godaavarii,,n/a,n/a,"a name: optional, one picture only",Draw: Godavari.,,
+366,कावेरी,ईकारान्त स्त्री,the Kaveri,kaaverii,,n/a,n/a,"a name: optional, one picture only",Draw: Kaveri.,,
+367,नारी,ईकारान्त स्त्री,woman / women,naarii,,,,,Draw: one woman.,"Draw: exactly two women, side by side.",Draw: a group of three to five women.
+368,कुमारी,ईकारान्त स्त्री,girl / girls,kumaarii,,,,,Draw: one girl.,"Draw: exactly two girls, side by side.",Draw: a group of three to five girls.
+369,पुत्री,ईकारान्त स्त्री,daughter / daughters,putrii,,,,,Draw: one daughter.,"Draw: exactly two daughters, side by side.",Draw: a group of three to five daughters.
+370,भगिनी,ईकारान्त स्त्री,sister / sisters,bhaginii,,,,,Draw: one sister.,"Draw: exactly two sisters, side by side.",Draw: a group of three to five sisters.
+371,जननी,ईकारान्त स्त्री,mother / mothers,jananii,,,,,Draw: one mother.,"Draw: exactly two mothers, side by side.",Draw: a group of three to five mothers.
+372,सखी,ईकारान्त स्त्री,friend / friends,sakhii,,,,,Draw: one friend.,"Draw: exactly two friends, side by side.",Draw: a group of three to five friends.
+373,राज्ञी,ईकारान्त स्त्री,queen / queens,raajnyii,,,,,Draw: one queen.,"Draw: exactly two queens, side by side.",Draw: a group of three to five queens.
+374,पत्नी,ईकारान्त स्त्री,wife,patnii,,n/a,n/a,singular only,Draw: one wife.,,
+375,तरुणी,ईकारान्त स्त्री,young woman / young women,tarunii,,,,,Draw: one young woman.,"Draw: exactly two young women, side by side.",Draw: a group of three to five young women.
+376,किशोरी,ईकारान्त स्त्री,teenage girl / teenage girls,kishorii,,,,,Draw: one teenage girl.,"Draw: exactly two teenage girls, side by side.",Draw: a group of three to five teenage girls.
+377,नर्तकी,ईकारान्त स्त्री,dancer / dancers,nartakii,,,,,Draw: one dancer.,"Draw: exactly two dancers, side by side.",Draw: a group of three to five dancers.
+378,गृहिणी,ईकारान्त स्त्री,homemaker / homemakers,grihinii,,,,,Draw: one homemaker.,"Draw: exactly two homemakers, side by side.",Draw: a group of three to five homemakers.
+379,दासी,ईकारान्त स्त्री,maid / maids,daasii,,,,,Draw: one maid.,"Draw: exactly two maids, side by side.",Draw: a group of three to five maids.
+380,लेखनी,ईकारान्त स्त्री,pen / pens,lekhanii,,,,,Draw: one pen.,"Draw: exactly two pens, side by side.",Draw: a group of three to five pens.
+381,आसन्दी,ईकारान्त स्त्री,chair / chairs,aasandii,,,,,Draw: one chair.,"Draw: exactly two chairs, side by side.",Draw: a group of three to five chairs.
+382,कर्तरी,ईकारान्त स्त्री,scissors / scissors,kartarii,,,,,Draw: one scissors.,"Draw: exactly two scissors, side by side.",Draw: a group of three to five scissors.
+383,कूपी,ईकारान्त स्त्री,bottle / bottles,kuupii,,,,,Draw: one bottle.,"Draw: exactly two bottles, side by side.",Draw: a group of three to five bottles.
+384,दूरवाणी,ईकारान्त स्त्री,phone / phones,duuravaanii,,,,,Draw: one phone.,"Draw: exactly two phones, side by side.",Draw: a group of three to five phones.
+385,वाणी,ईकारान्त स्त्री,speech,vaanii,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests speech.,,
+386,महिषी,ईकारान्त स्त्री,buffalo / buffaloes,mahishii,,,,,Draw: one buffalo.,"Draw: exactly two buffaloes, side by side.",Draw: a group of three to five buffaloes.
+387,सिंही,ईकारान्त स्त्री,lioness / lionesses,simhii,,,,,Draw: one lioness.,"Draw: exactly two lionesses, side by side.",Draw: a group of three to five lionesses.
+388,मयूरी,ईकारान्त स्त्री,peahen / peahens,mayuurii,,,,,Draw: one peahen.,"Draw: exactly two peahens, side by side.",Draw: a group of three to five peahens.
+389,हरिणी,ईकारान्त स्त्री,doe / does,harinii,,,,,Draw: one doe.,"Draw: exactly two does, side by side.",Draw: a group of three to five does.
+390,कदली,ईकारान्त स्त्री,banana plant / banana plants,kadalii,,,,,Draw: one banana plant.,"Draw: exactly two banana plants, side by side.",Draw: a group of three to five banana plants.
+391,वल्ली,ईकारान्त स्त्री,vine / vines,vallii,,,,,Draw: one vine.,"Draw: exactly two vines, side by side.",Draw: a group of three to five vines.
+392,कुटी,ईकारान्त स्त्री,hut / huts,kutii,,,,,Draw: one hut.,"Draw: exactly two huts, side by side.",Draw: a group of three to five huts.
+393,अङ्गुली,ईकारान्त स्त्री,finger / fingers,anggulii,,,,,Draw: one finger.,"Draw: exactly two fingers, side by side.",Draw: a group of three to five fingers.
+394,रजनी,ईकारान्त स्त्री,night / nights,rajanii,,,,hard to picture: optional,Draw: a simple picture that suggests night.,"Draw: exactly two nights, side by side.",Draw: a group of three to five nights.
+395,मैत्री,ईकारान्त स्त्री,friendship,maitrii,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests friendship.,,
+396,युवती,ईकारान्त स्त्री,young woman / young women,yuvatii,,,,,Draw: one young woman.,"Draw: exactly two young women, side by side.",Draw: a group of three to five young women.
+397,स्वामिनी,ईकारान्त स्त्री,mistress / mistresses,svaaminii,,,,,Draw: one mistress.,"Draw: exactly two mistresses, side by side.",Draw: a group of three to five mistresses.
+398,छात्री,ईकारान्त स्त्री,woman student / women students,chaatrii,,,,,Draw: one woman student.,"Draw: exactly two women students, side by side.",Draw: a group of three to five women students.
+399,लक्ष्मी,ईकारान्त स्त्री,Lakshmi,lakshmii,,n/a,n/a,"a name: optional, one picture only",Draw: Lakshmi.,,
+400,गायत्री,ईकारान्त स्त्री,Gayatri,gaayatrii,,n/a,n/a,"a name: optional, one picture only",Draw: Gayatri.,,
+401,शुकी,ईकारान्त स्त्री,female parrot / female parrots,shukii,,,,,Draw: one female parrot.,"Draw: exactly two female parrots, side by side.",Draw: a group of three to five female parrots.
+402,हंसी,ईकारान्त स्त्री,female swan / female swans,hamsii,,,,,Draw: one female swan.,"Draw: exactly two female swans, side by side.",Draw: a group of three to five female swans.
+403,कुक्कुटी,ईकारान्त स्त्री,hen / hens,kukkutii,,,,,Draw: one hen.,"Draw: exactly two hens, side by side.",Draw: a group of three to five hens.
+404,मृगी,ईकारान्त स्त्री,doe / does,mrigii,,,,,Draw: one doe.,"Draw: exactly two does, side by side.",Draw: a group of three to five does.
+405,वानरी,ईकारान्त स्त्री,female monkey / female monkeys,vaanarii,,,,,Draw: one female monkey.,"Draw: exactly two female monkeys, side by side.",Draw: a group of three to five female monkeys.
+406,मार्जारी,ईकारान्त स्त्री,female cat / female cats,maarjaarii,,,,,Draw: one female cat.,"Draw: exactly two female cats, side by side.",Draw: a group of three to five female cats.
+407,व्याघ्री,ईकारान्त स्त्री,tigress / tigresses,vyaaghrii,,,,,Draw: one tigress.,"Draw: exactly two tigresses, side by side.",Draw: a group of three to five tigresses.
+408,अटवी,ईकारान्त स्त्री,forest / forests,atavii,,,,,Draw: one forest.,"Draw: exactly two forests, side by side.",Draw: a group of three to five forests.
+409,वाटी,ईकारान्त स्त्री,garden / gardens,vaatii,,,,,Draw: one garden.,"Draw: exactly two gardens, side by side.",Draw: a group of three to five gardens.
+410,वीथी,ईकारान्त स्त्री,lane / lanes,viithii,,,,,Draw: one lane.,"Draw: exactly two lanes, side by side.",Draw: a group of three to five lanes.
+411,पुरी,ईकारान्त स्त्री,city / cities,purii,,,,,Draw: one city.,"Draw: exactly two cities, side by side.",Draw: a group of three to five cities.
+412,वापी,ईकारान्त स्त्री,step-well / step-wells,vaapii,,,,,Draw: one step-well.,"Draw: exactly two step-wells, side by side.",Draw: a group of three to five step-wells.
+413,तटिनी,ईकारान्त स्त्री,river / rivers,tatinii,,,,,Draw: one river.,"Draw: exactly two rivers, side by side.",Draw: a group of three to five rivers.
+414,नलिनी,ईकारान्त स्त्री,lotus pond / lotus ponds,nalinii,,,,,Draw: one lotus pond.,"Draw: exactly two lotus ponds, side by side.",Draw: a group of three to five lotus ponds.
+415,तटी,ईकारान्त स्त्री,bank / banks,tatii,,,,,Draw: one bank.,"Draw: exactly two banks, side by side.",Draw: a group of three to five banks.
+416,मेदिनी,ईकारान्त स्त्री,earth,medinii,,n/a,n/a,singular only,Draw: one earth.,,
+417,गोष्ठी,ईकारान्त स्त्री,assembly / assemblies,goshthii,,,,hard to picture: optional,Draw: a simple picture that suggests assembly.,"Draw: exactly two assemblies, side by side.",Draw: a group of three to five assemblies.
+418,मण्डली,ईकारान्त स्त्री,circle / circles,mandalii,,,,hard to picture: optional,Draw: a simple picture that suggests circle.,"Draw: exactly two circles, side by side.",Draw: a group of three to five circles.
+419,श्रेणी,ईकारान्त स्त्री,row / rows,shrenii,,,,hard to picture: optional,Draw: a simple picture that suggests row.,"Draw: exactly two rows, side by side.",Draw: a group of three to five rows.
+420,मञ्जरी,ईकारान्त स्त्री,blossom cluster / blossom clusters,manyjarii,,,,,Draw: one blossom cluster.,"Draw: exactly two blossom clusters, side by side.",Draw: a group of three to five blossom clusters.
+421,कुमुदिनी,ईकारान्त स्त्री,lily plant / lily plants,kumudinii,,,,,Draw: one lily plant.,"Draw: exactly two lily plants, side by side.",Draw: a group of three to five lily plants.
+422,पद्मिनी,ईकारान्त स्त्री,lotus plant / lotus plants,padminii,,,,,Draw: one lotus plant.,"Draw: exactly two lotus plants, side by side.",Draw: a group of three to five lotus plants.
+423,यूथी,ईकारान्त स्त्री,jasmine / jasmines,yuuthii,,,,,Draw: one jasmine.,"Draw: exactly two jasmines, side by side.",Draw: a group of three to five jasmines.
+424,मालती,ईकारान्त स्त्री,jasmine creeper / jasmine creepers,maalatii,,,,,Draw: one jasmine creeper.,"Draw: exactly two jasmine creepers, side by side.",Draw: a group of three to five jasmine creepers.
+425,केतकी,ईकारान्त स्त्री,screwpine / screwpines,ketakii,,,,,Draw: one screwpine.,"Draw: exactly two screwpines, side by side.",Draw: a group of three to five screwpines.
+426,तुलसी,ईकारान्त स्त्री,tulasi / tulasi plants,tulasii,,,,,Draw: one tulasi.,"Draw: exactly two tulasi plants, side by side.",Draw: a group of three to five tulasi plants.
+427,पेटी,ईकारान्त स्त्री,box / boxes,petii,,,,,Draw: one box.,"Draw: exactly two boxes, side by side.",Draw: a group of three to five boxes.
+428,चुल्ली,ईकारान्त स्त्री,stove / stoves,cullii,,,,,Draw: one stove.,"Draw: exactly two stoves, side by side.",Draw: a group of three to five stoves.
+429,देहली,ईकारान्त स्त्री,threshold / thresholds,dehalii,,,,,Draw: one threshold.,"Draw: exactly two thresholds, side by side.",Draw: a group of three to five thresholds.
+430,वेणी,ईकारान्त स्त्री,braid / braids,venii,,,,,Draw: one braid.,"Draw: exactly two braids, side by side.",Draw: a group of three to five braids.
+431,शर्वरी,ईकारान्त स्त्री,night / nights,sharvarii,,,,hard to picture: optional,Draw: a simple picture that suggests night.,"Draw: exactly two nights, side by side.",Draw: a group of three to five nights.
+432,पौर्णमी,ईकारान्त स्त्री,full moon day / full moon days,paurnamii,,,,hard to picture: optional,Draw: a simple picture that suggests full moon day.,"Draw: exactly two full moon days, side by side.",Draw: a group of three to five full moon days.
+433,एकादशी,ईकारान्त स्त्री,ekadashi,ekaadashii,,n/a,n/a,"a name: optional, one picture only; hard to picture: optional",Draw: ekadashi.,,
+434,आरती,ईकारान्त स्त्री,arati,aaratii,,n/a,n/a,singular only; hard to picture: optional,Draw: a simple picture that suggests arati.,,
+435,सामग्री,ईकारान्त स्त्री,material,saamagrii,,n/a,n/a,uncountable: one picture only,Draw: some material.,,
+436,फल,अकारान्त नपुं,fruit / fruits,phala,,,,,Draw: one fruit.,"Draw: exactly two fruits, side by side.",Draw: a group of three to five fruits.
+437,पुष्प,अकारान्त नपुं,flower / flowers,pushpa,,,,,Draw: one flower.,"Draw: exactly two flowers, side by side.",Draw: a group of three to five flowers.
+438,कुसुम,अकारान्त नपुं,blossom / blossoms,kusuma,,,,,Draw: one blossom.,"Draw: exactly two blossoms, side by side.",Draw: a group of three to five blossoms.
+439,कमल,अकारान्त नपुं,lotus / lotuses,kamala,,,,,Draw: one lotus.,"Draw: exactly two lotuses, side by side.",Draw: a group of three to five lotuses.
+440,पर्ण,अकारान्त नपुं,leaf / leaves,parna,,,,,Draw: one leaf.,"Draw: exactly two leaves, side by side.",Draw: a group of three to five leaves.
+441,बीज,अकारान्त नपुं,seed / seeds,biija,,,,,Draw: one seed.,"Draw: exactly two seeds, side by side.",Draw: a group of three to five seeds.
+442,वन,अकारान्त नपुं,forest / forests,vana,,,,,Draw: one forest.,"Draw: exactly two forests, side by side.",Draw: a group of three to five forests.
+443,अरण्य,अकारान्त नपुं,jungle / jungles,aranya,,,,,Draw: one jungle.,"Draw: exactly two jungles, side by side.",Draw: a group of three to five jungles.
+444,जल,अकारान्त नपुं,water,jala,,n/a,n/a,uncountable: one picture only,Draw: some water.,,
+445,दुग्ध,अकारान्त नपुं,milk,dugdha,,n/a,n/a,uncountable: one picture only,Draw: some milk.,,
+446,क्षीर,अकारान्त नपुं,milk,kshiira,,n/a,n/a,uncountable: one picture only,Draw: some milk.,,
+447,अन्न,अकारान्त नपुं,food,anna,,n/a,n/a,uncountable: one picture only,Draw: some food.,,
+448,भोजन,अकारान्त नपुं,meal,bhojana,,n/a,n/a,singular only; hard to picture: optional,Draw: a simple picture that suggests meal.,,
+449,पायस,अकारान्त नपुं,payasam,paayasa,,n/a,n/a,uncountable: one picture only,Draw: some payasam.,,
+450,शाक,अकारान्त नपुं,vegetable / vegetables,shaaka,,,,,Draw: one vegetable.,"Draw: exactly two vegetables, side by side.",Draw: a group of three to five vegetables.
+451,घृत,अकारान्त नपुं,ghee,ghrita,,n/a,n/a,uncountable: one picture only,Draw: some ghee.,,
+452,तैल,अकारान्त नपुं,oil,taila,,n/a,n/a,uncountable: one picture only,Draw: some oil.,,
+453,पुस्तक,अकारान्त नपुं,book / books,pustaka,,,,,Draw: one book.,"Draw: exactly two books, side by side.",Draw: a group of three to five books.
+454,पत्र,अकारान्त नपुं,letter / letters,patra,,,,,Draw: one letter.,"Draw: exactly two letters, side by side.",Draw: a group of three to five letters.
+455,वाक्य,अकारान्त नपुं,sentence / sentences,vaakya,,,,,Draw: one sentence.,"Draw: exactly two sentences, side by side.",Draw: a group of three to five sentences.
+456,पद,अकारान्त नपुं,word / words,pada,,,,,Draw: one word.,"Draw: exactly two words, side by side.",Draw: a group of three to five words.
+457,गीत,अकारान्त नपुं,song / songs,giita,,,,,Draw: one song.,"Draw: exactly two songs, side by side.",Draw: a group of three to five songs.
+458,नृत्य,अकारान्त नपुं,dance / dances,nritya,,,,hard to picture: optional,Draw: a simple picture that suggests dance.,"Draw: exactly two dances, side by side.",Draw: a group of three to five dances.
+459,गान,अकारान्त नपुं,singing,gaana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests singing.,,
+460,चित्र,अकारान्त नपुं,picture / pictures,citra,,,,hard to picture: optional,Draw: a simple picture that suggests picture.,"Draw: exactly two pictures, side by side.",Draw: a group of three to five pictures.
+461,गृह,अकारान्त नपुं,house / houses,griha,,,,,Draw: one house.,"Draw: exactly two houses, side by side.",Draw: a group of three to five houses.
+462,नगर,अकारान्त नपुं,city / cities,nagara,,,,,Draw: one city.,"Draw: exactly two cities, side by side.",Draw: a group of three to five cities.
+463,मन्दिर,अकारान्त नपुं,temple / temples,mandira,,,,,Draw: one temple.,"Draw: exactly two temples, side by side.",Draw: a group of three to five temples.
+464,भवन,अकारान्त नपुं,building / buildings,bhavana,,,,,Draw: one building.,"Draw: exactly two buildings, side by side.",Draw: a group of three to five buildings.
+465,उद्यान,अकारान्त नपुं,garden / gardens,udyaana,,,,,Draw: one garden.,"Draw: exactly two gardens, side by side.",Draw: a group of three to five gardens.
+466,क्षेत्र,अकारान्त नपुं,field / fields,kshetra,,,,,Draw: one field.,"Draw: exactly two fields, side by side.",Draw: a group of three to five fields.
+467,सरोवर,अकारान्त नपुं,lake / lakes,sarovara,,,,,Draw: one lake.,"Draw: exactly two lakes, side by side.",Draw: a group of three to five lakes.
+468,तीर्थ,अकारान्त नपुं,pilgrimage place / pilgrimage places,tiirtha,,,,,Draw: one pilgrimage place.,"Draw: exactly two pilgrimage places, side by side.",Draw: a group of three to five pilgrimage places.
+469,मित्र,अकारान्त नपुं,friend / friends,mitra,,,,,Draw: one friend.,"Draw: exactly two friends, side by side.",Draw: a group of three to five friends.
+470,नेत्र,अकारान्त नपुं,eye / eyes,netra,,,,,Draw: one eye.,"Draw: exactly two eyes, side by side.",Draw: a group of three to five eyes.
+471,नयन,अकारान्त नपुं,eye / eyes,nayana,,,,,Draw: one eye.,"Draw: exactly two eyes, side by side.",Draw: a group of three to five eyes.
+472,मुख,अकारान्त नपुं,face / faces,mukha,,,,,Draw: one face.,"Draw: exactly two faces, side by side.",Draw: a group of three to five faces.
+473,हृदय,अकारान्त नपुं,heart / hearts,hridaya,,,,,Draw: one heart.,"Draw: exactly two hearts, side by side.",Draw: a group of three to five hearts.
+474,शरीर,अकारान्त नपुं,body / bodies,shariira,,,,,Draw: one body.,"Draw: exactly two bodies, side by side.",Draw: a group of three to five bodies.
+475,वस्त्र,अकारान्त नपुं,cloth / clothes,vastra,,,,,Draw: one cloth.,"Draw: exactly two clothes, side by side.",Draw: a group of three to five clothes.
+476,कङ्कण,अकारान्त नपुं,bangle / bangles,kangkana,,,,,Draw: one bangle.,"Draw: exactly two bangles, side by side.",Draw: a group of three to five bangles.
+477,उपनेत्र,अकारान्त नपुं,spectacles / spectacles,upanetra,,,,,Draw: one spectacles.,"Draw: exactly two spectacles, side by side.",Draw: a group of three to five spectacles.
+478,छत्र,अकारान्त नपुं,umbrella / umbrellas,chatra,,,,,Draw: one umbrella.,"Draw: exactly two umbrellas, side by side.",Draw: a group of three to five umbrellas.
+479,व्यजन,अकारान्त नपुं,fan / fans,vyajana,,,,,Draw: one fan.,"Draw: exactly two fans, side by side.",Draw: a group of three to five fans.
+480,आसन,अकारान्त नपुं,seat / seats,aasana,,,,,Draw: one seat.,"Draw: exactly two seats, side by side.",Draw: a group of three to five seats.
+481,वाहन,अकारान्त नपुं,vehicle / vehicles,vaahana,,,,,Draw: one vehicle.,"Draw: exactly two vehicles, side by side.",Draw: a group of three to five vehicles.
+482,विमान,अकारान्त नपुं,aeroplane / aeroplanes,vimaana,,,,,Draw: one aeroplane.,"Draw: exactly two aeroplanes, side by side.",Draw: a group of three to five aeroplanes.
+483,यान,अकारान्त नपुं,carriage / carriages,yaana,,,,,Draw: one carriage.,"Draw: exactly two carriages, side by side.",Draw: a group of three to five carriages.
+484,चक्र,अकारान्त नपुं,wheel / wheels,cakra,,,,,Draw: one wheel.,"Draw: exactly two wheels, side by side.",Draw: a group of three to five wheels.
+485,पात्र,अकारान्त नपुं,vessel / vessels,paatra,,,,,Draw: one vessel.,"Draw: exactly two vessels, side by side.",Draw: a group of three to five vessels.
+486,द्वार,अकारान्त नपुं,door / doors,dvaara,,,,,Draw: one door.,"Draw: exactly two doors, side by side.",Draw: a group of three to five doors.
+487,वातायन,अकारान्त नपुं,window / windows,vaataayana,,,,,Draw: one window.,"Draw: exactly two windows, side by side.",Draw: a group of three to five windows.
+488,सङ्गणक,अकारान्त नपुं,computer / computers,sangganaka,,,,,Draw: one computer.,"Draw: exactly two computers, side by side.",Draw: a group of three to five computers.
+489,दूरदर्शन,अकारान्त नपुं,television / televisions,duuradarshana,,,,,Draw: one television.,"Draw: exactly two televisions, side by side.",Draw: a group of three to five televisions.
+490,धन,अकारान्त नपुं,wealth,dhana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests wealth.,,
+491,सुख,अकारान्त नपुं,happiness,sukha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests happiness.,,
+492,दुःख,अकारान्त नपुं,sorrow,duhkha,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests sorrow.,,
+493,ज्ञान,अकारान्त नपुं,knowledge,jnyaana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests knowledge.,,
+494,सत्य,अकारान्त नपुं,truth,satya,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests truth.,,
+495,कार्य,अकारान्त नपुं,work / works,kaarya,,,,hard to picture: optional,Draw: a simple picture that suggests work.,"Draw: exactly two works, side by side.",Draw: a group of three to five works.
+496,शास्त्र,अकारान्त नपुं,scripture / scriptures,shaastra,,,,hard to picture: optional,Draw: a simple picture that suggests scripture.,"Draw: exactly two scriptures, side by side.",Draw: a group of three to five scriptures.
+497,पुच्छ,अकारान्त नपुं,tail / tails,puccha,,,,,Draw: one tail.,"Draw: exactly two tails, side by side.",Draw: a group of three to five tails.
+498,रत्न,अकारान्त नपुं,gem / gems,ratna,,,,,Draw: one gem.,"Draw: exactly two gems, side by side.",Draw: a group of three to five gems.
+499,नक्षत्र,अकारान्त नपुं,star / stars,nakshatra,,,,,Draw: one star.,"Draw: exactly two stars, side by side.",Draw: a group of three to five stars.
+500,प्रभात,अकारान्त नपुं,morning,prabhaata,,n/a,n/a,"a name: optional, one picture only; hard to picture: optional",Draw: morning.,,
+501,वर्ष,अकारान्त नपुं,year / years,varsha,,,,hard to picture: optional,Draw: a simple picture that suggests year.,"Draw: exactly two years, side by side.",Draw: a group of three to five years.
+502,स्नान,अकारान्त नपुं,bath,snaana,,n/a,n/a,singular only; hard to picture: optional,Draw: a simple picture that suggests bath.,,
+503,अध्ययन,अकारान्त नपुं,study,adhyayana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests study.,,
+504,दान,अकारान्त नपुं,gift / gifts,daana,,,,hard to picture: optional,Draw: a simple picture that suggests gift.,"Draw: exactly two gifts, side by side.",Draw: a group of three to five gifts.
+505,वचन,अकारान्त नपुं,word / words,vacana,,,,,Draw: one word.,"Draw: exactly two words, side by side.",Draw: a group of three to five words.
+506,भाषण,अकारान्त नपुं,speech / speeches,bhaashana,,,,,Draw: one speech.,"Draw: exactly two speeches, side by side.",Draw: a group of three to five speeches.
+507,राष्ट्र,अकारान्त नपुं,nation / nations,raashtra,,,,,Draw: one nation.,"Draw: exactly two nations, side by side.",Draw: a group of three to five nations.
+508,उपवन,अकारान्त नपुं,grove / groves,upavana,,,,,Draw: one grove.,"Draw: exactly two groves, side by side.",Draw: a group of three to five groves.
+509,कानन,अकारान्त नपुं,forest / forests,kaanana,,,,,Draw: one forest.,"Draw: exactly two forests, side by side.",Draw: a group of three to five forests.
+510,विपिन,अकारान्त नपुं,thicket / thickets,vipina,,,,,Draw: one thicket.,"Draw: exactly two thickets, side by side.",Draw: a group of three to five thickets.
+511,द्वीप,अकारान्त नपुं,island / islands,dviipa,,,,,Draw: one island.,"Draw: exactly two islands, side by side.",Draw: a group of three to five islands.
+512,शिखर,अकारान्त नपुं,peak / peaks,shikhara,,,,,Draw: one peak.,"Draw: exactly two peaks, side by side.",Draw: a group of three to five peaks.
+513,शृङ्ग,अकारान्त नपुं,summit / summits,shringga,,,,,Draw: one summit.,"Draw: exactly two summits, side by side.",Draw: a group of three to five summits.
+514,सोपान,अकारान्त नपुं,staircase / staircases,sopaana,,,,,Draw: one staircase.,"Draw: exactly two staircases, side by side.",Draw: a group of three to five staircases.
+515,प्राङ्गण,अकारान्त नपुं,courtyard / courtyards,praanggana,,,,,Draw: one courtyard.,"Draw: exactly two courtyards, side by side.",Draw: a group of three to five courtyards.
+516,आयतन,अकारान्त नपुं,shrine / shrines,aayatana,,,,,Draw: one shrine.,"Draw: exactly two shrines, side by side.",Draw: a group of three to five shrines.
+517,तट,अकारान्त नपुं,bank / banks,tata,,,,,Draw: one bank.,"Draw: exactly two banks, side by side.",Draw: a group of three to five banks.
+518,कूल,अकारान्त नपुं,shore / shores,kuula,,,,,Draw: one shore.,"Draw: exactly two shores, side by side.",Draw: a group of three to five shores.
+519,सलिल,अकारान्त नपुं,water,salila,,n/a,n/a,uncountable: one picture only,Draw: some water.,,
+520,उदक,अकारान्त नपुं,water,udaka,,n/a,n/a,uncountable: one picture only,Draw: some water.,,
+521,पानीय,अकारान्त नपुं,drinking water,paaniiya,,n/a,n/a,uncountable: one picture only,Draw: some drinking water.,,
+522,लवण,अकारान्त नपुं,salt,lavana,,n/a,n/a,uncountable: one picture only,Draw: some salt.,,
+523,मरिच,अकारान्त नपुं,pepper,marica,,n/a,n/a,uncountable: one picture only,Draw: some pepper.,,
+524,नवनीत,अकारान्त नपुं,butter,navaniita,,n/a,n/a,uncountable: one picture only,Draw: some butter.,,
+525,धान्य,अकारान्त नपुं,grain,dhaanya,,n/a,n/a,uncountable: one picture only,Draw: some grain.,,
+526,मिष्टान्न,अकारान्त नपुं,sweet / sweets,mishtaanna,,,,,Draw: one sweet.,"Draw: exactly two sweets, side by side.",Draw: a group of three to five sweets.
+527,व्यञ्जन,अकारान्त नपुं,curry / curries,vyanyjana,,,,,Draw: one curry.,"Draw: exactly two curries, side by side.",Draw: a group of three to five curries.
+528,सस्य,अकारान्त नपुं,crop / crops,sasya,,,,,Draw: one crop.,"Draw: exactly two crops, side by side.",Draw: a group of three to five crops.
+529,नारिकेल,अकारान्त नपुं,coconut / coconuts,naarikela,,,,,Draw: one coconut.,"Draw: exactly two coconuts, side by side.",Draw: a group of three to five coconuts.
+530,बदर,अकारान्त नपुं,jujube / jujubes,badara,,,,,Draw: one jujube.,"Draw: exactly two jujubes, side by side.",Draw: a group of three to five jujubes.
+531,दाडिम,अकारान्त नपुं,pomegranate / pomegranates,daadima,,,,,Draw: one pomegranate.,"Draw: exactly two pomegranates, side by side.",Draw: a group of three to five pomegranates.
+532,पङ्कज,अकारान्त नपुं,lotus / lotuses,pangkaja,,,,,Draw: one lotus.,"Draw: exactly two lotuses, side by side.",Draw: a group of three to five lotuses.
+533,उत्पल,अकारान्त नपुं,water lily / water lilies,utpala,,,,,Draw: one water lily.,"Draw: exactly two water lilies, side by side.",Draw: a group of three to five water lilies.
+534,मूल,अकारान्त नपुं,root / roots,muula,,,,,Draw: one root.,"Draw: exactly two roots, side by side.",Draw: a group of three to five roots.
+535,तृण,अकारान्त नपुं,grass,trina,,n/a,n/a,uncountable: one picture only,Draw: some grass.,,
+536,काष्ठ,अकारान्त नपुं,wood,kaashtha,,n/a,n/a,uncountable: one picture only,Draw: some wood.,,
+537,नख,अकारान्त नपुं,nail / nails,nakha,,,,,Draw: one nail.,"Draw: exactly two nails, side by side.",Draw: a group of three to five nails.
+538,उदर,अकारान्त नपुं,belly / bellies,udara,,,,,Draw: one belly.,"Draw: exactly two bellies, side by side.",Draw: a group of three to five bellies.
+539,श्रोत्र,अकारान्त नपुं,ear / ears,shrotra,,,,,Draw: one ear.,"Draw: exactly two ears, side by side.",Draw: a group of three to five ears.
+540,लोचन,अकारान्त नपुं,eye / eyes,locana,,,,,Draw: one eye.,"Draw: exactly two eyes, side by side.",Draw: a group of three to five eyes.
+541,वदन,अकारान्त नपुं,face / faces,vadana,,,,,Draw: one face.,"Draw: exactly two faces, side by side.",Draw: a group of three to five faces.
+542,ललाट,अकारान्त नपुं,forehead / foreheads,lalaata,,,,,Draw: one forehead.,"Draw: exactly two foreheads, side by side.",Draw: a group of three to five foreheads.
+543,अङ्ग,अकारान्त नपुं,limb / limbs,angga,,,,,Draw: one limb.,"Draw: exactly two limbs, side by side.",Draw: a group of three to five limbs.
+544,रुधिर,अकारान्त नपुं,blood,rudhira,,n/a,n/a,uncountable: one picture only,Draw: some blood.,,
+545,उत्तरीय,अकारान्त नपुं,upper cloth / upper cloths,uttariiya,,,,,Draw: one upper cloth.,"Draw: exactly two upper cloths, side by side.",Draw: a group of three to five upper cloths.
+546,आभरण,अकारान्त नपुं,ornament / ornaments,aabharana,,,,,Draw: one ornament.,"Draw: exactly two ornaments, side by side.",Draw: a group of three to five ornaments.
+547,कुण्डल,अकारान्त नपुं,earring / earrings,kundala,,,,,Draw: one earring.,"Draw: exactly two earrings, side by side.",Draw: a group of three to five earrings.
+548,वलय,अकारान्त नपुं,bangle / bangles,valaya,,,,,Draw: one bangle.,"Draw: exactly two bangles, side by side.",Draw: a group of three to five bangles.
+549,कवच,अकारान्त नपुं,armour / armours,kavaca,,,,,Draw: one armour.,"Draw: exactly two armours, side by side.",Draw: a group of three to five armours.
+550,दर्पण,अकारान्त नपुं,mirror / mirrors,darpana,,,,,Draw: one mirror.,"Draw: exactly two mirrors, side by side.",Draw: a group of three to five mirrors.
+551,शयन,अकारान्त नपुं,bed / beds,shayana,,,,,Draw: one bed.,"Draw: exactly two beds, side by side.",Draw: a group of three to five beds.
+552,भाण्ड,अकारान्त नपुं,vessel / vessels,bhaanda,,,,,Draw: one vessel.,"Draw: exactly two vessels, side by side.",Draw: a group of three to five vessels.
+553,यन्त्र,अकारान्त नपुं,machine / machines,yantra,,,,,Draw: one machine.,"Draw: exactly two machines, side by side.",Draw: a group of three to five machines.
+554,शस्त्र,अकारान्त नपुं,weapon / weapons,shastra,,,,,Draw: one weapon.,"Draw: exactly two weapons, side by side.",Draw: a group of three to five weapons.
+555,सूत्र,अकारान्त नपुं,thread / threads,suutra,,,,,Draw: one thread.,"Draw: exactly two threads, side by side.",Draw: a group of three to five threads.
+556,औषध,अकारान्त नपुं,medicine / medicines,aushadha,,,,,Draw: one medicine.,"Draw: exactly two medicines, side by side.",Draw: a group of three to five medicines.
+557,मौक्तिक,अकारान्त नपुं,pearl / pearls,mauktika,,,,,Draw: one pearl.,"Draw: exactly two pearls, side by side.",Draw: a group of three to five pearls.
+558,सुवर्ण,अकारान्त नपुं,gold,suvarna,,n/a,n/a,uncountable: one picture only,Draw: some gold.,,
+559,रजत,अकारान्त नपुं,silver,rajata,,n/a,n/a,uncountable: one picture only,Draw: some silver.,,
+560,चूर्ण,अकारान्त नपुं,powder,cuurna,,n/a,n/a,uncountable: one picture only,Draw: some powder.,,
+561,नाटक,अकारान्त नपुं,play / plays,naataka,,,,,Draw: one play.,"Draw: exactly two plays, side by side.",Draw: a group of three to five plays.
+562,काव्य,अकारान्त नपुं,poem / poems,kaavya,,,,,Draw: one poem.,"Draw: exactly two poems, side by side.",Draw: a group of three to five poems.
+563,पुराण,अकारान्त नपुं,purana / puranas,puraana,,,,,Draw: one purana.,"Draw: exactly two puranas, side by side.",Draw: a group of three to five puranas.
+564,सूक्त,अकारान्त नपुं,hymn / hymns,suukta,,,,,Draw: one hymn.,"Draw: exactly two hymns, side by side.",Draw: a group of three to five hymns.
+565,स्तोत्र,अकारान्त नपुं,hymn / hymns,stotra,,,,,Draw: one hymn.,"Draw: exactly two hymns, side by side.",Draw: a group of three to five hymns.
+566,वाद्य,अकारान्त नपुं,instrument / instruments,vaadya,,,,,Draw: one instrument.,"Draw: exactly two instruments, side by side.",Draw: a group of three to five instruments.
+567,मङ्गल,अकारान्त नपुं,auspicious rite / auspicious rites,manggala,,,,hard to picture: optional,Draw: a simple picture that suggests auspicious rite.,"Draw: exactly two auspicious rites, side by side.",Draw: a group of three to five auspicious rites.
+568,आमन्त्रण,अकारान्त नपुं,invitation / invitations,aamantrana,,,,hard to picture: optional,Draw: a simple picture that suggests invitation.,"Draw: exactly two invitations, side by side.",Draw: a group of three to five invitations.
+569,कुल,अकारान्त नपुं,family / families,kula,,,,hard to picture: optional,Draw: a simple picture that suggests family.,"Draw: exactly two families, side by side.",Draw: a group of three to five families.
+570,दिन,अकारान्त नपुं,day / days,dina,,,,hard to picture: optional,Draw: a simple picture that suggests day.,"Draw: exactly two days, side by side.",Draw: a group of three to five days.
+571,गगन,अकारान्त नपुं,sky,gagana,,n/a,n/a,uncountable: one picture only,Draw: some sky.,,
+572,अन्तरिक्ष,अकारान्त नपुं,sky,antariksha,,n/a,n/a,uncountable: one picture only,Draw: some sky.,,
+573,तिमिर,अकारान्त नपुं,darkness,timira,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests darkness.,,
+574,उत्तर,अकारान्त नपुं,answer / answers,uttara,,,,hard to picture: optional,Draw: a simple picture that suggests answer.,"Draw: exactly two answers, side by side.",Draw: a group of three to five answers.
+575,भय,अकारान्त नपुं,fear,bhaya,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests fear.,,
+576,बल,अकारान्त नपुं,strength,bala,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests strength.,,
+577,धैर्य,अकारान्त नपुं,courage,dhairya,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests courage.,,
+578,साहस,अकारान्त नपुं,daring,saahasa,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests daring.,,
+579,मौन,अकारान्त नपुं,silence,mauna,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests silence.,,
+580,स्मरण,अकारान्त नपुं,memory,smarana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests memory.,,
+581,चिन्तन,अकारान्त नपुं,thinking,cintana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests thinking.,,
+582,दर्शन,अकारान्त नपुं,sight,darshana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests sight.,,
+583,श्रवण,अकारान्त नपुं,listening,shravana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests listening.,,
+584,लेखन,अकारान्त नपुं,writing,lekhana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests writing.,,
+585,पठन,अकारान्त नपुं,reading,pathana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests reading.,,
+586,गायन,अकारान्त नपुं,singing,gaayana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests singing.,,
+587,भ्रमण,अकारान्त नपुं,wandering,bhramana,,n/a,n/a,uncountable: one picture only; hard to picture: optional,Draw: a simple picture that suggests wandering.,,

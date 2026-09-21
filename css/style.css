@@ -380,3 +380,19 @@ select.words { width: 100%; min-height: 54px; border-radius: 12px; font-family: 
 .setrow { flex-wrap: wrap; }
 .setrow .lbl { flex: 1 1 170px; min-width: 0; }
 .panel { overflow-wrap: anywhere; }
+
+/* ---------- pronouns ---------- */
+.setup { font-size: 1.25rem; color: var(--ink-soft); text-align: center; margin: 14px 0 0; opacity: .8; }
+.chiprow.muted-row { opacity: .45; }
+.grid.wide { grid-template-columns: 76px repeat(7, 1fr) !important; }
+.grid .rowlab.small { font-size: .9rem; line-height: 1.1; }
+.grid .rowlab.locked { opacity: .4; }
+
+/* ---------- word pictures (js/images.js, tools/images.py) ---------- */
+/* Only drawn when a picture exists, so a word without one looks exactly as before. */
+.pic {
+  width: 7.5rem; aspect-ratio: 1 / 1; margin: 10px auto 0; border-radius: 18px; overflow: hidden;
+  background: #F7EDD3; box-shadow: 0 0 0 1px var(--leaf-edge), 0 4px 10px rgba(59, 36, 23, .18);
+}
+.pic.small { width: 5.75rem; border-radius: 14px; }
+.pic img { display: block; width: 100%; height: 100%; object-fit: cover; }

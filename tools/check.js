@@ -10,7 +10,7 @@ var path = require("path"), root = path.join(__dirname, "..", "js");
 global.window = {}; var mem = {};
 global.localStorage = { getItem: function (k) { return mem[k] || null; }, setItem: function (k, v) { mem[k] = v; } };
 var fs = require("fs");
-["grammar", "words", "frames", "pronouns", "pronoun-frames", "lipi", "stories-l1", "store", "questions", "lipi-questions"]
+["grammar", "words", "images", "frames", "pronouns", "pronoun-frames", "lipi", "stories-l1", "store", "questions", "lipi-questions", "pron-questions"]
   .forEach(function (f) { var file = path.join(root, f + ".js"); if (fs.existsSync(file)) require(file); });
 var VB = window.VB, problems = [];
 function bad(msg) { problems.push(msg); }
@@ -199,6 +199,144 @@ if (VB.STORIES_L1) (function () {
   console.log("Stories: " + VB.STORIES_L1.stories.length + "   Marks verified: " + marks);
   if (none.length) console.log("  (warning) cells with no marks yet: " + none.join(" "));
   if (thin.length) console.log("  (warning) cells with fewer than 3 marks: " + thin.join(" "));
+})();
+
+// 8. Pronouns. These are hand-written, so no engine vouches for them. Syncretism
+//    alone catches only half of all single-cell typos (measured by mutation), so
+//    trust is chained outward from VB.KIM, which shipped independently:
+//      VB.KIM -> kim -> tad -> etad, yad, idam obliques;   asmad <-> yushmad
+//    The fifteen suppletive forms no rule can reach are pinned as golden values.
+//    Measured result: every one of the 357 single-cell corruptions is caught.
+if (VB.PRONOUNS) {
+  var DEV = /^[\u0900-\u097F]+$/, B = VB.PRON_BY_ID, ALLC = [];
+  ["pra","dvi","tri","cat","pan","sha","sap"].forEach(function (v) { ["eka","dva","bahu"].forEach(function (n) { ALLC.push(v + "." + n); }); });
+  VB.PRONOUNS.forEach(function (p) {
+    var F = p.F, keys = Object.keys(F);
+    if (keys.length !== 21) bad("Pronoun " + p.id + " has " + keys.length + " cells, needs 21");
+    keys.forEach(function (k) {
+      if (k.indexOf("sam") === 0) bad("Pronoun " + p.id + " has a सम्बोधनम् cell");
+      if (!F[k] || !DEV.test(F[k])) bad("Pronoun " + p.id + " " + k + " is empty or not Devanagari");
+    });
+    if (["m", "f", "n", null].indexOf(p.linga) < 0) bad("Pronoun " + p.id + " has a bad linga");
+    if (!(F["tri.dva"] === F["cat.dva"] && F["cat.dva"] === F["pan.dva"])) bad("Pronoun " + p.id + ": tri, cat, pan dvivacana must match");
+    if (F["sha.dva"] !== F["sap.dva"]) bad("Pronoun " + p.id + ": sha and sap dvivacana must match");
+    if (F["pra.dva"] !== F["dvi.dva"]) bad("Pronoun " + p.id + ": pra and dvi dvivacana must match");
+    if (p.group !== "personal" && F["cat.bahu"] !== F["pan.bahu"]) bad("Pronoun " + p.id + ": cat and pan bahuvacana must match");
+    if (p.linga === "f" && F["pra.bahu"] !== F["dvi.bahu"]) bad("Pronoun " + p.id + ": feminine pra and dvi bahuvacana must match");
+    if (p.linga === "n") {
+      ["eka", "dva", "bahu"].forEach(function (v) { if (F["pra." + v] !== F["dvi." + v]) bad("Pronoun " + p.id + ": neuter pra and dvi must match"); });
+      var m = B[p.id.replace(/-n$/, "-m")];
+      ALLC.forEach(function (c) { if (c.indexOf("pra") !== 0 && c.indexOf("dvi.") !== 0 && F[c] !== m.F[c]) bad("Pronoun " + p.id + " " + c + " must equal the masculine"); });
+    }
+  });
+  var chk = function (id, c, want, why) { if (B[id] && B[id].F[c] !== want) bad("Pronoun " + id + " " + c + " is " + B[id].F[c] + ", expected " + want + " (" + why + ")"); };
+  if (VB.KIM) ["m", "f", "n"].forEach(function (g) { Object.keys(VB.KIM[g]).forEach(function (v) {
+    chk("kim-" + g, v + ".eka", VB.KIM[g][v][0], "VB.KIM"); chk("kim-" + g, v + ".bahu", VB.KIM[g][v][1], "VB.KIM");
+  }); });
+  var TADX = { "m:pra.eka": "सः", "f:pra.eka": "सा", "n:pra.eka": "तत्", "n:dvi.eka": "तत्" };
+  var ETX = { "m:pra.eka": "एषः", "f:pra.eka": "एषा" };
+  ["m", "f", "n"].forEach(function (g) { ALLC.forEach(function (c) {
+    chk("tad-" + g, c, TADX[g + ":" + c] || ("त" + B["kim-" + g].F[c].slice(1)), "kim with त");
+    chk("yad-" + g, c, "य" + B["tad-" + g].F[c].slice(1), "tad with य");
+    chk("etad-" + g, c, ETX[g + ":" + c] || ("ए" + B["tad-" + g].F[c]), "ए + tad");
+  }); });
+  ["cat", "pan", "sha", "sap"].forEach(function (v) {
+    ["m", "f"].forEach(function (g) { chk("idam-" + g, v + ".eka", "अ" + B["tad-" + g].F[v + ".eka"].slice(1), "tad with अ"); });
+    chk("idam-m", v + ".bahu", "ए" + B["tad-m"].F[v + ".bahu"].slice(2), "tad with ए");
+  });
+  ["tri", "cat", "pan", "sha", "sap"].forEach(function (v) { chk("idam-f", v + ".bahu", "आ" + B["tad-f"].F[v + ".bahu"].slice(2), "tad with आ"); });
+  ["pra", "dvi", "tri", "cat", "pan", "sha", "sap"].forEach(function (v) {
+    chk("yushmad", v + ".dva", "यु" + B.asmad.F[v + ".dva"].slice(1), "mirrors asmad");
+    if (v !== "pra") chk("yushmad", v + ".bahu", "युष्" + B.asmad.F[v + ".bahu"].slice(3), "mirrors asmad");
+  });
+  ["dvi", "tri", "pan", "sap"].forEach(function (v) { chk("yushmad", v + ".eka", "त्व" + B.asmad.F[v + ".eka"].slice(1), "mirrors asmad"); });
+  // Suppletive forms. No rule reaches these, so they are written here a second time.
+  var PIN = { "asmad": { "pra.eka": "अहम्", "pra.bahu": "वयम्", "cat.eka": "मह्यम्", "sha.eka": "मम" },
+    "yushmad": { "pra.eka": "त्वम्", "pra.bahu": "यूयम्", "cat.eka": "तुभ्यम्", "sha.eka": "तव" },
+    "idam-m": { "pra.eka": "अयम्", "pra.bahu": "इमे", "dvi.eka": "इमम्", "dvi.bahu": "इमान्" },
+    "idam-f": { "pra.eka": "इयम्", "pra.bahu": "इमाः", "dvi.eka": "इमाम्", "tri.eka": "अनया" } };
+  Object.keys(PIN).forEach(function (id) { Object.keys(PIN[id]).forEach(function (c) { chk(id, c, PIN[id][c], "pinned"); }); });
+}
+
+// 9. Pronoun frames: every answer resolves, and attributive pronouns agree with their noun
+if (VB.PFRAMES) {
+  var anuP = function (t) { return t.replace(/\u092E\u094D$/, "\u0902"); }, NOUN = {}, seenP = {};
+  VB.WORDS.forEach(function (w) { Object.keys(w.P).forEach(function (c) {
+    var f = anuP(w.P[c]); (NOUN[f] = NOUN[f] || []).push({ w: w, c: c });
+  }); });
+  VB.PFRAMES.forEach(function (t) {
+    if (seenP[t.id]) bad("Pronoun frame listed twice: " + t.id); seenP[t.id] = 1;
+    var p = VB.PRON_BY_ID[t.pron];
+    if (!p) { bad("Pronoun frame " + t.id + " names an unknown paradigm"); return; }
+    if (!p.F[t.cell]) { bad("Pronoun frame " + t.id + " names an unknown cell"); return; }
+    if (t.cell.indexOf(".dva") > 0 && !VB.PRON_SHOW_DVA) bad("Pronoun frame " + t.id + " uses dvivacana while it is switched off");
+    if ((t.sa.match(/\{P\}/g) || []).length !== 1) bad("Pronoun frame " + t.id + " needs exactly one {P}");
+    var toks = t.sa.split(/\s+/), i = toks.findIndex(function (x) { return x.indexOf("{P}") >= 0; });
+    var nx = toks[i + 1] && anuP(toks[i + 1].replace(/[\u0964\u0965,?!]/g, ""));
+    var hits = nx ? (NOUN[nx] || []) : [];
+    // Only an unambiguous next word proves attribution. Neuter nominative and
+    // accusative share a form, so सत्यं after यः is an object, not an attribute.
+    if (p.linga && hits.length === 1 && hits[0].c === t.cell && VB.GENDER[hits[0].w.cls] !== p.linga)
+      bad("Pronoun frame " + t.id + ": " + p.F[t.cell] + " does not agree in gender with " + toks[i + 1]);
+  });
+  console.log("Pronouns: " + VB.PRONOUNS.length + " paradigms, " + (VB.PRONOUNS.length * 21) + " cells   Pronoun frames: " + VB.PFRAMES.length);
+}
+
+
+// 10. Pronoun questions: generate thousands and check each one
+if (VB.PGEN) (function () {
+  var made = 0, st = VB.Store.state;
+  st.settings.all = true;
+  VB.MODULES.pron.members.forEach(function (id) {
+    VB.MODULES.pron.cells.forEach(function (cell) {
+      Object.keys(VB.PGEN).forEach(function (t) {
+        for (var k = 0; k < 3; k++) {
+          var q = VB.PGEN[t](id, cell, { level: 1 + k }); if (!q) continue; made++;
+          var where = "pronoun " + t + " " + id + ":" + cell;
+          if (q.options) {
+            var texts = q.options.map(function (o) { return o.text; });
+            if (new Set(texts).size !== texts.length) bad("Duplicate options in " + where + ": " + texts.join(" "));
+            var right = q.options.filter(function (o) { return o.correct; });
+            if (q.ui === "mcq" && right.length !== 1) bad("Not exactly one right option in " + where);
+            if (q.ui === "multi" && !right.length) bad("No right option in " + where);
+            if (q.options.length < 3) bad("Fewer than three options in " + where);
+          }
+          if (q.ui === "tiles") {
+            var pool = q.tiles.slice();
+            VB.aksharas(q.answer).forEach(function (a) { var i = pool.indexOf(a); if (i < 0) bad("Tile missing in " + where); else pool.splice(i, 1); });
+          }
+          if (q.ui === "tokens" && !q.allCorrect && q.tokens.filter(function (x) { return x.wrong; }).length !== 1) bad("Mistake question broken in " + where);
+          if (/\{[A-Za-z]/.test([q.filled, q.prompt && q.prompt.sentence].join(" "))) bad("Unfilled placeholder in " + where);
+          if (q.filled && /\u092E\u094D [\u0915-\u0939]/.test(q.filled)) bad("Filled pronoun sentence missed the anusvara rule in " + where + ": " + q.filled);
+          // sentence questions never offer another pronoun, and never another number for अहम्/त्वम्
+          if ((t === "sentence" || t === "stiles" || t === "error") && q.options) q.options.forEach(function (o) {
+            if (!o.correct && (o.tag === "P2" || (!VB.PRON_BY_ID[id].linga && o.tag === "M8"))) bad("Ambiguous wrong option in " + where + ": " + o.text);
+          });
+        }
+      });
+    });
+    ["small", "large", "full"].forEach(function (size) {
+      var tb = VB.pGenTable(id, size), pool = tb.chips.slice();
+      tb.blanks.forEach(function (c) { var i = pool.indexOf(tb.w.P[c]); if (i < 0) bad("Pronoun table chip missing for " + id + " " + c); else pool.splice(i, 1); });
+    });
+  });
+  st.settings.all = false;
+  console.log("Pronoun questions checked: " + made);
+})();
+
+// 11. Word pictures: every entry in js/images.js is a real word and a real file
+if (VB.IMAGES) (function () {
+  var n = 0;
+  ["eka", "dva", "bahu"].forEach(function (vac) {
+    Object.keys(VB.IMAGES[vac] || {}).forEach(function (stem) {
+      var entry = VB.IMAGES[vac][stem], name = entry.slice(0, entry.lastIndexOf("."));
+      if (!VB.BY_STEM[stem]) bad("Picture listed for a word that is not in the word list: " + stem + " (" + vac + ")");
+      else if (vac !== "eka" && VB.BY_STEM[stem].solo) bad("Picture for " + stem + " in " + vac + ", but that word is only ever singular");
+      if (!fs.existsSync(path.join(__dirname, "..", "img", "words", vac, name + ".webp"))) bad("Picture listed but missing: img/words/" + vac + "/" + name + ".webp. Run python3 tools/images.py");
+      n++;
+    });
+  });
+  console.log("Word pictures: " + n + " listed, all present.");
 })();
 
 if (problems.length) { console.log("\n" + problems.length + " problem(s):\n- " + problems.slice(0, 40).join("\n- ")); process.exit(1); }

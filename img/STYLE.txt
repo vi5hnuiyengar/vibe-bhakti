@@ -1,0 +1,5 @@
+Paste this once at the start of each Gemini chat, then ask for pictures one at a time
+using the 'ask for' columns in checklist.csv.
+
+For every picture I ask for in this chat, use exactly this style:
+Simple, warm illustration in the style of an Indian children's picture book. Soft flat colours with gentle shading, earthy palette of turmeric, indigo, leaf green and terracotta. One clear subject, centred, filling about two thirds of the frame, with even space around it. Plain warm cream background, colour #F7EDD3, no scenery unless the word is a place. No text, no letters, no numbers, no border, no frame, no watermark. Square image, 1:1.

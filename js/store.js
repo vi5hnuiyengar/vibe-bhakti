@@ -89,14 +89,19 @@ var VB = window.VB = window.VB || {};
         grid: [VB.CLASSES.length, VB.VIBS.length]
       }
     };
-    if (VB.PRON_ORDER && VB.PRONOUNS) {
+    // Pronouns: seventeen paradigms, seven vibhaktis, no सम्बोधनम्. The data
+    // carries all three vacanas; the cells shown follow VB.PRON_SHOW_DVA.
+    if (VB.PRON_ORDER && VB.PRON_BY_ID) {
+      var members = [];
+      VB.PRON_ORDER.forEach(function (g) { members = members.concat(g); });
+      var vacs = VB.PRON_SHOW_DVA ? VB.PRON_VACS : VB.PRON_VACS.filter(function (v) { return v !== "dva"; });
       var cells = [];
-      VB.PRON_VIBS.forEach(function (v) { VB.VACS.forEach(function (n) { cells.push(v + "." + n); }); });
+      VB.PRON_VIBS.forEach(function (v) { vacs.forEach(function (n) { cells.push(v + "." + n); }); });
       M.pron = {
-        id: "pron", members: VB.PRON_ORDER, cells: cells, vibs: VB.PRON_VIBS, vacs: VB.VACS,
-        label: function (m) { return VB.PRONOUNS[m] ? VB.PRONOUNS[m].label : m; },
-        forms: function (m) { return VB.PRONOUNS[m].F; },
-        grid: [VB.PRON_ORDER.length, VB.PRON_VIBS.length]
+        id: "pron", members: members, groups: VB.PRON_ORDER, cells: cells, vibs: VB.PRON_VIBS, vacs: vacs,
+        label: function (m) { return VB.PRON_BY_ID[m].label; },
+        forms: function (m) { return VB.PRON_BY_ID[m].F; },
+        grid: [members.length, VB.PRON_VIBS.length]
       };
     }
     VB.MODULES = M;
@@ -200,7 +205,7 @@ var VB = window.VB = window.VB || {};
       r.t = Date.now();
       r.r.push(credit >= 1 ? 1 : 0); if (r.r.length > 8) r.r.shift();
       if (!opts.massed) {
-        var recent = opts.store === "lipi" ? S.lipi.recent : S.recent;
+        var recent = opts.store === "lipi" ? S.lipi.recent : opts.track === "pron" ? S.pron.recent : S.recent;
         recent.push(correct ? 1 : 0); if (recent.length > 40) recent.shift();
       }
       tot.q++; if (correct) tot.c++;
@@ -215,12 +220,12 @@ var VB = window.VB = window.VB || {};
       if (filter.keys) return planKeys(count, filter.keys, filter.map || S.skills);
       var mod = VB.MODULES[filter.module || "noun"];
       var cells = (filter.module && filter.module !== "noun" ? mod.cells : Store.unlockedCells()).slice();
-      var members = mod.members.slice();
+      var members = mod.id === "pron" ? Store.pronOpen() : mod.members.slice();
       if (filter.vibs && filter.vibs.length) cells = cells.filter(function (c) { return filter.vibs.indexOf(c.split(".")[0]) >= 0; });
       if (filter.vacs && filter.vacs.length) cells = cells.filter(function (c) { return filter.vacs.indexOf(c.split(".")[1]) >= 0; });
       if (filter.classes && filter.classes.length) members = members.filter(function (m) { return filter.classes.indexOf(m) >= 0; });
       if (!cells.length) cells = Store.unlockedCells();
-      if (!members.length) members = mod.members.slice();
+      if (!members.length) members = mod.id === "pron" ? Store.pronOpen() : mod.members.slice();
 
       var now = Date.now(), list = [];
       members.forEach(function (m) {
@@ -265,6 +270,27 @@ var VB = window.VB = window.VB || {};
       var rec = S.recent.slice(-30);
       var acc = rec.length ? rec.reduce(function (a, b) { return a + b; }, 0) / rec.length : 0;
       if (ok && rec.length >= 20 && acc >= 0.75) { S.unlocked++; save(); return VB.CLUSTERS[S.unlocked - 1]; }
+      return null;
+    },
+
+    // ---------- pronoun track: its own counter, never gated by nouns ----------
+    pronOpen: function () {
+      var M = VB.MODULES.pron; if (!M) return [];
+      var n = S.settings.all ? M.groups.length : Math.max(1, S.pron.unlocked);
+      var out = []; M.groups.slice(0, n).forEach(function (g) { out = out.concat(g); });
+      return out;
+    },
+    // Same arithmetic as tryUnlock: every open pronoun cell answered right once,
+    // and about 3 in 4 of the last 30 pronoun answers right.
+    tryUnlockPron: function () {
+      var M = VB.MODULES.pron;
+      if (!M || S.settings.all || S.pron.unlocked >= M.groups.length) return null;
+      var ok = Store.pronOpen().every(function (m) {
+        return M.cells.every(function (c) { var r = S.skills[m + ":" + c]; return r && r.c >= 1; });
+      });
+      var rec = S.pron.recent.slice(-30);
+      var acc = rec.length ? rec.reduce(function (a, b) { return a + b; }, 0) / rec.length : 0;
+      if (ok && rec.length >= 20 && acc >= 0.75) { S.pron.unlocked++; save(); return M.groups[S.pron.unlocked - 1]; }
       return null;
     },
 
