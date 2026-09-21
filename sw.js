@@ -7,7 +7,7 @@
 var VERSION = "vibhakti-v2";
 var FILES = [
   "./", "index.html", "css/style.css", "manifest.webmanifest",
-  "js/grammar.js", "js/words.js", "js/images.js", "js/frames.js", "js/pronouns.js", "js/pronoun-frames.js", "js/lipi.js", "js/stories-l1.js", "js/store.js", "js/questions.js", "js/lipi-questions.js", "js/pron-questions.js",
+  "js/grammar.js", "js/words.js", "js/images.js", "js/audio.js", "js/frames.js", "js/pronouns.js", "js/pronoun-frames.js", "js/lipi.js", "js/stories-l1.js", "js/store.js", "js/questions.js", "js/lipi-questions.js", "js/pron-questions.js",
   "js/app-shell.js", "js/app-drill.js", "js/app-read.js", "js/app-script.js", "js/app-settings.js",
   "fonts/TiroDevanagariSanskrit-Regular.woff2", "fonts/Mukta-Regular.woff2", "fonts/Mukta-SemiBold.woff2",
   "icons/icon-192.png", "icons/icon-512.png", "icons/apple-touch-icon.png"

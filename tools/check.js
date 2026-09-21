@@ -10,7 +10,7 @@ var path = require("path"), root = path.join(__dirname, "..", "js");
 global.window = {}; var mem = {};
 global.localStorage = { getItem: function (k) { return mem[k] || null; }, setItem: function (k, v) { mem[k] = v; } };
 var fs = require("fs");
-["grammar", "words", "images", "frames", "pronouns", "pronoun-frames", "lipi", "stories-l1", "store", "questions", "lipi-questions", "pron-questions"]
+["grammar", "words", "images", "audio", "frames", "pronouns", "pronoun-frames", "lipi", "stories-l1", "store", "questions", "lipi-questions", "pron-questions"]
   .forEach(function (f) { var file = path.join(root, f + ".js"); if (fs.existsSync(file)) require(file); });
 var VB = window.VB, problems = [];
 function bad(msg) { problems.push(msg); }
@@ -109,6 +109,9 @@ console.log("Words: " + VB.WORDS.length + "   Frames: " + VB.FRAMES.length + "  
   if (out.settings.tab !== "abhyasa") bad("Store migration did not add settings.tab");
   if (!out.lipi || !out.lipi.skills || !out.read || !out.pron) bad("Store migration did not add the v2 sections");
   if (out.v !== 2) bad("Store migration did not stamp the schema version");
+  var later = VB.__graft({ settings: { scale: 1, a2hs: "no", futureFlag: 7, focus: { vibs: ["tri"], prons: ["तद्"] } }, total: { q: 0, c: 0 }, skills: {} });
+  if (later.settings.a2hs !== "no" || later.settings.futureFlag !== 7 || later.settings.focus.prons[0] !== "तद्")
+    bad("Store drops settings it does not know about");
   // a partial or foreign blob must not throw and must not be accepted
   VB.__graft({});
   VB.__graft({ skills: null, total: 5 });
@@ -337,6 +340,21 @@ if (VB.IMAGES) (function () {
     });
   });
   console.log("Word pictures: " + n + " listed, all present.");
+})();
+
+// 12. Recordings: every clip in js/audio.js exists, and every noun form it names is one the engine makes
+if (VB.AUDIO) (function () {
+  var n = 0, known = {};
+  VB.WORDS.forEach(function (w) { Object.keys(w.P).forEach(function (c) { known[w.P[c]] = 1; }); });
+  ["letters", "forms"].forEach(function (kind) {
+    Object.keys(VB.AUDIO[kind] || {}).forEach(function (form) {
+      var entry = VB.AUDIO[kind][form], name = entry.slice(0, entry.lastIndexOf("."));
+      if (!fs.existsSync(path.join(__dirname, "..", "audio", "clips", kind, name + ".mp3"))) bad("Recording listed but missing: audio/clips/" + kind + "/" + name + ".mp3");
+      if (kind === "letters" && !VB.BY_CHAR[form]) bad("Letter recording for something that is not a letter: " + form);
+      n++;
+    });
+  });
+  console.log("Recordings: " + n + " clips listed, all present.");
 })();
 
 if (problems.length) { console.log("\n" + problems.length + " problem(s):\n- " + problems.slice(0, 40).join("\n- ")); process.exit(1); }

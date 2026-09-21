@@ -47,6 +47,7 @@
       h("h1", { class: "title", text: "विभक्तिः" }),
       h("p", { class: "tagline", text: "A few minutes of practice every day." }),
       lampsRow(),
+      installCard(),
       h("section", { class: "leaf today" },
         h("h2", { text: done ? "अद्य अभ्यासः समाप्तः" : "अद्यतनः अभ्यासः" }),
         h("p", { text: done ? "Today's practice is done. Come back tomorrow, or practise a little more now." : "About five minutes. Twelve questions and two tables." }),
@@ -59,6 +60,33 @@
         modeBtn("रू", "रूपावलिः", "See every form of every word", function () { enter(reference); }),
         VB.MODULES.pron ? modeBtn("स", "सर्वनामाभ्यासः", "Pronouns: सः, सा, तत्, अहम्, त्वम् and more", function () { enter(function () { startPron(); }); }) : null)
     );
+  }
+
+  /*
+    Add to home screen. Shown on phones only, after two days of practice, until
+    the learner installs or taps "Not now". Installing makes the site open like
+    an app, and browsers are far less likely to clear an installed site's data.
+  */
+  function installCard() {
+    var st = S.state;
+    var standalone = (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+    var touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    if (standalone || !touch || st.settings.a2hs === "no" || Object.keys(st.days).length < 2) return null;
+    var ios = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    var prompt = U.installPrompt && U.installPrompt();
+    var card = h("section", { class: "install" },
+      h("b", { text: "Keep this on your home screen" }),
+      h("p", { text: "It opens like an app, works without internet, and your progress is safer." }),
+      prompt ? null : h("p", { class: "how", text: ios
+        ? "In Safari, tap the Share button (a square with an arrow), then Add to Home Screen."
+        : "Open the browser menu (⋮) and tap Add to Home screen, or Install app." }),
+      h("div", { class: "twobtn" },
+        prompt ? h("button", { class: "linkbtn", onclick: function () {
+          prompt.prompt();
+          prompt.userChoice.then(function () { st.settings.a2hs = "no"; S.save(); card.remove(); });
+        } }, "Install") : null,
+        h("button", { class: "linkbtn", onclick: function () { st.settings.a2hs = "no"; S.save(); card.remove(); } }, "Not now")));
+    return card;
   }
 
   // ---------- chips shared by the two selection cards ----------
@@ -853,6 +881,9 @@
     }, 1000);
     function nextItem() {
       var cells = S.unlockedCells(), q = null;
+      var pronStarted = VB.MODULES.pron && Object.keys(S.state.skills).some(isPron);
+      if (pronStarted && Math.random() < 0.25)
+        for (var j = 0; j < 10 && !q; j++) q = VB.pGenTF(VB.pick(S.pronOpen()), VB.pick(VB.MODULES.pron.cells));
       for (var k = 0; k < 10 && !q; k++) q = VB.genTF(VB.pick(VB.CLASSES), VB.pick(cells), { cells: cells });
       cur = q;
       card.innerHTML = "";

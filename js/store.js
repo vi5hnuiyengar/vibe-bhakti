@@ -34,17 +34,20 @@ var VB = window.VB = window.VB || {};
       recent: [],
       total: { q: 0, c: 0 },
       best: { speed: 0, lipi: 0 },
-      settings: { scale: 1, all: false, tab: "abhyasa", focus: { vibs: [], classes: [] } },
+      settings: { scale: 1, all: false, tab: "abhyasa", a2hs: "", focus: { vibs: [], classes: [], prons: [], lingas: [] } },
       lipi: { skills: {}, days: {}, total: { q: 0, c: 0 }, unlocked: 1, recent: [] },
       read: { level: 1, done: {} },
       pron: { unlocked: 1, introduced: 0, recent: [] }
     };
   }
 
-  // fill in anything a saved blob is missing, without discarding what it has
+  // Fill in anything a saved blob is missing, without discarding what it has.
+  // Fields the template does not know are kept too, so a setting added later
+  // (or saved by a newer version) is never silently dropped on reload.
   function graft(saved, base) {
     var out = base || blank();
     if (!saved || typeof saved !== "object") return out;
+    Object.keys(saved).forEach(function (k) { if (!(k in out) && saved[k] !== undefined) out[k] = saved[k]; });
     Object.keys(out).forEach(function (k) {
       var v = saved[k];
       if (v === undefined || v === null) return;

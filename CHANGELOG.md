@@ -34,3 +34,19 @@ Built to `vibe-bhakti-architecture.md`, phase by phase. `node tools/check.js` pa
 **Word pictures.** `js/images.js`, `tools/images.py`, and `img/` with a guide, a Gemini style paragraph and a checklist of all 587 words. A picture appears only when one exists; otherwise nothing changes on screen. The first hint tap now shows the word's meaning on every word question, not only on sentences.
 
 **Progress safety.** The site asks the browser for persistent storage (`navigator.storage.persist()`), so a phone short of space is less likely to clear saved progress.
+
+## Recordings, leftovers and the design doc (September 2026)
+
+**Recording pipeline.** `audio/` has three parts: a step-by-step guide for iPhone and Mac, `takes.csv` (382 takes, 3,035 forms, grouped by vacana and liṅga as asked), and `words-to-record.txt` (124 words by story frequency, balanced across classes). The two tools are:
+- `tools/audio-plan.js`, which builds the plan from the site's own engine.
+- `tools/audio.py`, which uses Python and ffmpeg with no packages. It cuts takes into one clip per written form, checks every count, evens loudness, marks redos, and writes `js/audio.js`.
+
+It was tested on synthetic iPhone-format recordings: single takes, named takes, a run of three, a short take, letters, and a misnamed file. The page integration comes next.
+
+**Pronoun speed round.** Pronoun items join the existing speed round, about one in four, once a learner has started pronouns.
+
+**Add to home screen card.** Shown on phones after two days of practice, dismissible for good. It uses Chrome's install prompt on Android and gives the Safari steps on iPhone.
+
+**Store fix.** The saved-state merge dropped any field the template did not list, so the pronoun choices in the focus card (and the new card's "Not now") were lost on reload. It now keeps every field, and the checker proves it.
+
+**Design doc.** `docs/ARCHITECTURE.md` is the architecture document with the five fixes applied (anusvāra rule, lipi schema, pronoun frame format, measured pronoun checker, persistent storage and home-screen card). It also records every decision since: dvivacana after सम्बोधनम् with an एक-बहु | द्वि | सर्वाणि row, optional forms accepted, 80-word class batches, the six lakāras, pictures, audio, and the लिपिः word levels.

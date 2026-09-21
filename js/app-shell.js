@@ -236,6 +236,11 @@
     else render();
   }
 
+  // Chrome on Android offers an install prompt; keep it for the install card.
+  var deferredInstall = null;
+  window.addEventListener("beforeinstallprompt", function (e) { e.preventDefault(); deferredInstall = e; });
+  window.addEventListener("appinstalled", function () { deferredInstall = null; S.state.settings.a2hs = "no"; S.save(); });
+
   window.addEventListener("popstate", function () { render(); });
   window.addEventListener("hashchange", function () { if (currentTab() !== lastTab || inSession) render(); });
   window.addEventListener("resize", spaceBelow);
@@ -252,6 +257,7 @@
     applyScale: applyScale, lampsRow: lampsRow, modeBtn: modeBtn, dock: dock, sheet: sheet,
     keepInView: keepInView, fullTable: fullTable, topBar: topBar, spaceBelow: spaceBelow, picture: picture,
     page: page, go: go, enter: enter, leave: leave, render: render, tabs: TABS,
+    installPrompt: function () { return deferredInstall; },
     inSession: function () { return inSession; },
     app: $app
   };
