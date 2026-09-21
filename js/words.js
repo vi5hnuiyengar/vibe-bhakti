@@ -115,6 +115,135 @@ a: `
 शङ्ख|conch|conches|object sound
 ध्वज|flag|flags|object
 कन्दुक|ball|balls|object buyable
+ब्राह्मण|brahmin|brahmins|person elder
+यजमान|patron|patrons|person elder
+पण्डित|scholar|scholars|person elder
+तापस|ascetic|ascetics|person elder
+वृद्ध|old man|old men|person elder
+श्वशुर|father-in-law|fathers-in-law|person elder
+नायक|leader|leaders|person elder
+न्यायाधीश|judge|judges|person elder
+कुमार|boy|boys|person child
+दारक|child|children|person child
+सुत|son|sons|person
+तनय|son|sons|person
+मानव|human|humans|person
+नागरिक|citizen|citizens|person
+ग्रामीण|villager|villagers|person
+सहायक|helper|helpers|person
+रक्षक|guard|guards|person
+वादक|player|players|person
+धावक|runner|runners|person
+याचक|beggar|beggars|person
+भिक्षुक|mendicant|mendicants|person
+दूत|messenger|messengers|person
+सूत|charioteer|charioteers|person
+भृत्य|servant|servants|person
+वीर|hero|heroes|person
+मूर्ख|fool|fools|person
+इन्द्र|Indra||deity|proper
+यम|Yama||deity|proper
+वरुण|Varuna||deity|proper
+कुबेर|Kubera||deity|proper
+सुब्रह्मण्य|Subrahmanya||deity|proper
+अर्जुन|Arjuna||person elder|proper
+भीम|Bhima||person elder|proper
+युधिष्ठिर|Yudhishthira||person elder|proper
+लक्ष्मण|Lakshmana||person elder|proper
+भरत|Bharata||person elder|proper
+दशरथ|Dasharatha||person elder|proper
+सुग्रीव|Sugriva||person elder|proper
+नारद|Narada||person elder|proper
+रावण|Ravana||person fearsome|proper
+गर्दभ|donkey|donkeys|animal
+उष्ट्र|camel|camels|animal
+मेष|ram|rams|animal
+अज|goat|goats|animal
+शशक|rabbit|rabbits|animal
+नकुल|mongoose|mongooses|animal
+वराह|boar|boars|animal fearsome
+ऋक्ष|bear|bears|animal fearsome
+वृक|wolf|wolves|animal fearsome
+कच्छप|tortoise|tortoises|animal waterlife
+मकर|crocodile|crocodiles|animal waterlife fearsome
+गृध्र|vulture|vultures|bird
+उलूक|owl|owls|bird
+बक|crane|cranes|bird waterlife
+चक्रवाक|ruddy goose|ruddy geese|bird waterlife
+मशक|mosquito|mosquitoes|creature
+वृश्चिक|scorpion|scorpions|creature fearsome
+कीट|insect|insects|creature
+आम्र|mango tree|mango trees|plant treeanimal
+अशोक|ashoka tree|ashoka trees|plant treeanimal
+वट|banyan|banyans|plant treeanimal
+अश्वत्थ|peepal tree|peepal trees|plant treeanimal
+अङ्कुर|sprout|sprouts|plant
+शैल|mountain|mountains|dest mountain
+राजमार्ग|highway|highways|dest road
+हट्ट|market|markets|dest shop buyable
+आश्रम|hermitage|hermitages|dest dwell
+मठ|monastery|monasteries|dest dwell temple
+छात्रावास|hostel|hostels|dwell dest
+विहार|vihara|viharas|dest temple
+आराम|pleasure garden|pleasure gardens|dest garden
+कक्ष|room|rooms|dwell
+प्रकोष्ठ|chamber|chambers|dwell
+स्तम्भ|pillar|pillars|object
+प्राकार|wall|walls|object
+कोण|corner|corners|object
+लड्डुक|laddu|laddus|food cookable buyable
+अपूप|cake|cakes|food cookable buyable
+कन्द|tuber|tubers|food
+तण्डुल|rice grain|rice grains|food
+यव|barley||food|mass
+गुड|jaggery||food|mass
+आहार|food||food|mass
+पनस|jackfruit|jackfruits|fruit food buyable
+खर्जूर|date|dates|fruit food buyable
+रस|juice|juices|drink food buyable
+कषाय|decoction|decoctions|drink
+स्नेह|affection||abstract|mass
+शोक|grief||abstract|mass
+हर्ष|joy||abstract|mass
+लोभ|greed||abstract|mass
+मोह|delusion||abstract|mass
+गर्व|pride||abstract|mass
+उत्साह|enthusiasm||abstract|mass
+विश्वास|trust||abstract|mass
+संशय|doubt|doubts|abstract
+प्रश्न|question|questions|abstract hearable
+उपाय|means|means|abstract
+आरम्भ|beginning|beginnings|abstract
+समय|time|times|time
+काल|time||time|mass
+मास|month|months|time
+पक्ष|fortnight|fortnights|time
+ग्रीष्म|summer||time|sg
+हेमन्त|winter||time|sg
+समारोह|ceremony|ceremonies|festival
+जन्मदिवस|birthday|birthdays|festival time
+केश|hair|hairs|body
+स्कन्ध|shoulder|shoulders|body
+कण्ठ|throat|throats|body
+ओष्ठ|lip|lips|body
+अङ्गुष्ठ|thumb|thumbs|body
+कुम्भ|pot|pots|container washable object
+पिटक|basket|baskets|container object
+खड्ग|sword|swords|object
+बाण|arrow|arrows|object
+मुद्गर|club|clubs|object
+कोश|treasury|treasuries|object
+हार|necklace|necklaces|object wear buyable
+कटक|bracelet|bracelets|object wear buyable
+शकट|cart|carts|vehicle
+प्लव|boat|boats|vehicle
+मृदङ्ग|drum|drums|object sound
+स्वर|note|notes|sound hearable
+नाद|sound|sounds|sound hearable
+राग|raga|ragas|sound hearable skill
+समूह|group|groups|group
+गण|troop|troops|group
+सङ्घ|assembly|assemblies|group
 `,
 
 // ---------------- आकारान्तः स्त्रीलिङ्गः ----------------
@@ -185,6 +314,62 @@ aa: `
 वर्षा|rainy season||time|proper
 तारा|star|stars|celestial
 मुद्रा|coin|coins|object
+जाया|wife|wives|person
+भार्या|wife|wives|person
+स्नुषा|daughter-in-law|daughters-in-law|person
+वृद्धा|old woman|old women|person elder
+पण्डिता|woman scholar|women scholars|person elder
+प्रजा|subject|subjects|person group
+कोकिला|female cuckoo|female cuckoos|bird
+सारिका|myna|mynas|bird pet
+द्राक्षा|grape|grapes|fruit food buyable
+शर्करा|sugar||food|mass
+हरिद्रा|turmeric||food|mass
+सुधा|nectar||drink food|mass
+वेदिका|platform|platforms|object seat
+मञ्जूषा|box|boxes|container object
+कुण्डिका|small pot|small pots|container washable object
+थालिका|plate|plates|container washable object
+शलाका|rod|rods|object
+सूचिका|needle|needles|object tool
+तूलिका|brush|brushes|object tool writable
+पञ्जिका|register|registers|writablein object reading
+प्रतिमा|image|images|object
+पताका|flag|flags|object
+मृत्तिका|clay||object|mass
+शिबिका|palanquin|palanquins|vehicle
+शाला|hall|halls|dwell dest
+गोशाला|cowshed|cowsheds|dwell dest
+नाट्यशाला|theatre|theatres|dest
+कन्दरा|cave|caves|dest
+कुल्या|canal|canals|water dest
+वसुधा|earth||dest|sg
+उषा|dawn||time|sg
+निशा|night|nights|time
+सीमा|boundary|boundaries|abstract
+दिशा|direction|directions|abstract
+शोभा|beauty||abstract|mass
+निद्रा|sleep||abstract|mass
+चिन्ता|worry||abstract|mass
+इच्छा|wish|wishes|abstract
+आशा|hope|hopes|abstract
+श्रद्धा|faith||abstract|mass
+कृपा|grace||abstract|mass
+व्यथा|pain||abstract|mass
+कल्पना|imagination||abstract|mass
+सूचना|information||abstract|mass
+शिक्षा|education||abstract skill|mass
+कला|art|arts|abstract skill
+सेवा|service||purpose abstract|mass
+रचना|composition|compositions|abstract reading
+घोषणा|announcement|announcements|hearable
+गाथा|ballad|ballads|reading hearable
+ऋचा|verse|verses|reading hearable
+टीका|commentary|commentaries|reading
+संहिता|collection|collections|reading
+घटना|event|events|abstract
+जटा|matted hair||body|mass
+शिखा|crest|crests|body
 `,
 
 // ---------------- ईकारान्तः स्त्रीलिङ्गः ----------------
@@ -229,6 +414,46 @@ ii: `
 अङ्गुली|finger|fingers|body
 रजनी|night|nights|time
 मैत्री|friendship||abstract|mass
+युवती|young woman|young women|person
+स्वामिनी|mistress|mistresses|person elder
+छात्री|woman student|women students|person
+लक्ष्मी|Lakshmi||deity|proper
+गायत्री|Gayatri||deity reading|proper
+शुकी|female parrot|female parrots|bird pet
+हंसी|female swan|female swans|bird waterlife
+कुक्कुटी|hen|hens|bird animal
+मृगी|doe|does|animal
+वानरी|female monkey|female monkeys|animal treeanimal
+मार्जारी|female cat|female cats|animal pet
+व्याघ्री|tigress|tigresses|animal fearsome
+अटवी|forest|forests|dest forest
+वाटी|garden|gardens|dest garden
+वीथी|lane|lanes|dest road
+पुरी|city|cities|dest dwell
+वापी|step-well|step-wells|water dest
+तटिनी|river|rivers|water dest
+नलिनी|lotus pond|lotus ponds|water
+तटी|bank|banks|water dest
+मेदिनी|earth||dest|sg
+गोष्ठी|assembly|assemblies|group
+मण्डली|circle|circles|group
+श्रेणी|row|rows|group
+मञ्जरी|blossom cluster|blossom clusters|flower plant
+कुमुदिनी|lily plant|lily plants|flower plant water
+पद्मिनी|lotus plant|lotus plants|flower plant water
+यूथी|jasmine|jasmines|flower
+मालती|jasmine creeper|jasmine creepers|flower plant
+केतकी|screwpine|screwpines|flower plant
+तुलसी|tulasi|tulasi plants|plant flower
+पेटी|box|boxes|container object
+चुल्ली|stove|stoves|object
+देहली|threshold|thresholds|object
+वेणी|braid|braids|body
+शर्वरी|night|nights|time
+पौर्णमी|full moon day|full moon days|time celestial
+एकादशी|ekadashi||festival time|proper
+आरती|arati||festival purpose|sg
+सामग्री|material||object|mass
 `,
 
 // ---------------- अकारान्तः नपुंसकलिङ्गः ----------------
@@ -305,5 +530,85 @@ n: `
 वचन|word|words|hearable
 भाषण|speech|speeches|hearable
 राष्ट्र|nation|nations|dwell
+उपवन|grove|groves|dest garden forest
+कानन|forest|forests|dest forest
+विपिन|thicket|thickets|dest forest
+द्वीप|island|islands|dest
+शिखर|peak|peaks|dest mountain
+शृङ्ग|summit|summits|dest mountain
+सोपान|staircase|staircases|object
+प्राङ्गण|courtyard|courtyards|dwell dest
+आयतन|shrine|shrines|temple dest
+तट|bank|banks|water dest
+कूल|shore|shores|water dest
+सलिल|water||water|mass
+उदक|water||water|mass
+पानीय|drinking water||water drink|mass
+लवण|salt||food|mass
+मरिच|pepper||food|mass
+नवनीत|butter||food|mass
+धान्य|grain||food|mass
+मिष्टान्न|sweet|sweets|food cookable buyable
+व्यञ्जन|curry|curries|food cookable
+सस्य|crop|crops|plant food
+नारिकेल|coconut|coconuts|fruit food buyable
+बदर|jujube|jujubes|fruit food
+दाडिम|pomegranate|pomegranates|fruit food buyable
+पङ्कज|lotus|lotuses|flower water
+उत्पल|water lily|water lilies|flower water
+मूल|root|roots|plant
+तृण|grass||plant|mass
+काष्ठ|wood||object|mass
+नख|nail|nails|body
+उदर|belly|bellies|body
+श्रोत्र|ear|ears|body ear
+लोचन|eye|eyes|body eye
+वदन|face|faces|body
+ललाट|forehead|foreheads|body
+अङ्ग|limb|limbs|body
+रुधिर|blood||body|mass
+उत्तरीय|upper cloth|upper cloths|wear object
+आभरण|ornament|ornaments|object wear buyable
+कुण्डल|earring|earrings|object wear buyable
+वलय|bangle|bangles|object wear buyable
+कवच|armour|armours|object wear
+दर्पण|mirror|mirrors|object buyable
+शयन|bed|beds|object seat
+भाण्ड|vessel|vessels|container washable object
+यन्त्र|machine|machines|object tool buyable
+शस्त्र|weapon|weapons|object
+सूत्र|thread|threads|object
+औषध|medicine|medicines|object buyable
+मौक्तिक|pearl|pearls|object buyable
+सुवर्ण|gold||object|mass
+रजत|silver||object|mass
+चूर्ण|powder||object|mass
+नाटक|play|plays|reading hearable
+काव्य|poem|poems|reading
+पुराण|purana|puranas|reading
+सूक्त|hymn|hymns|reading hearable
+स्तोत्र|hymn|hymns|reading hearable
+वाद्य|instrument|instruments|object sound
+मङ्गल|auspicious rite|auspicious rites|festival
+आमन्त्रण|invitation|invitations|festival hearable
+कुल|family|families|group
+दिन|day|days|time
+गगन|sky||celestial|mass
+अन्तरिक्ष|sky||celestial|mass
+तिमिर|darkness||abstract|mass
+उत्तर|answer|answers|abstract hearable
+भय|fear||abstract|mass
+बल|strength||abstract|mass
+धैर्य|courage||abstract|mass
+साहस|daring||abstract|mass
+मौन|silence||abstract|mass
+स्मरण|memory||abstract|mass
+चिन्तन|thinking||abstract purpose|mass
+दर्शन|sight||abstract purpose|mass
+श्रवण|listening||abstract purpose skill|mass
+लेखन|writing||abstract purpose skill|mass
+पठन|reading||abstract purpose skill|mass
+गायन|singing||abstract purpose skill|mass
+भ्रमण|wandering||purpose|mass
 `
 };

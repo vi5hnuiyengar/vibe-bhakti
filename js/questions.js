@@ -203,6 +203,7 @@ var VB = window.VB = window.VB || {};
   function fits(t, w) {
     if (t.only) return t.only.indexOf(w.stem) >= 0;
     if (t.ex.indexOf(w.stem) >= 0) return false;
+    if (!t.cats.length) return true;
     for (var i = 0; i < t.cats.length; i++) if (w.cats[t.cats[i]]) return true;
     return false;
   }
@@ -221,7 +222,7 @@ var VB = window.VB = window.VB || {};
       VB.FRAMES.forEach(function (t) {
         if (t.vib !== vib || tries[k].indexOf(t.d) < 0) return;
         VB.BY_CLASS[cls].forEach(function (w) {
-          if (vib === "sam" && t.id !== "sam03" && t.id !== "sam07" && !w.cats.person) return;
+          if (vib === "sam" && !t.anyword && t.id !== "sam03" && t.id !== "sam07" && !w.cats.person) return;
           if (fits(t, w) && numsFor(t, w).indexOf(vac) >= 0) pairs.push([t, w]);
         });
       });

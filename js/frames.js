@@ -40,7 +40,7 @@ VB.FRAMES = [];
   function F(id, vib, d, kind, cats, sa, en, o) {
     o = o || {};
     VB.FRAMES.push({ id: id, vib: vib, d: d, kind: kind, cats: cats ? cats.split(" ") : [],
-      sa: sa, en: en, strict: !!o.strict, cue: !!o.cue, nums: o.nums || ["eka", "bahu"],
+      sa: sa, en: en, strict: !!o.strict, cue: !!o.cue, anyword: !!o.anyword, nums: o.nums || ["eka", "bahu"],
       ex: o.ex ? o.ex.split(" ") : [], only: o.only ? o.only.split(" ") : null });
   }
   var K = { strict: true, cue: true };
@@ -216,6 +216,147 @@ VB.FRAMES = [];
   F("sam07","sam",3,"sambodhana","deity","हे {X}, मां रक्ष।","{Xv}, protect me.",{strict:true,nums:["eka"]});
   F("sam08","sam",2,"sambodhana","person","हे {X}, {B} जलं {v:पिबतु|पिबन्तु}।","{Xv}, please drink some water.",{strict:true,cue:true});
   F("sam09","sam",3,"sambodhana","person","हे {X}, {B} मम गृहम् {v:आगच्छतु|आगच्छन्तु}।","{Xv}, please come to my house.",{strict:true,cue:true});
+
+  // ================= ADDITIONS =================
+
+  // ---------------- प्रथमा ----------------
+  F("pra26","pra",1,"karta","flower celestial","{X} {v:शोभते|शोभन्ते}।","{X} {v:shines|shine}.",K);
+  F("pra27","pra",1,"karta","plant","{X} {v:वर्धते|वर्धन्ते}।","{X} {v:grows|grow}.",K);
+  F("pra28","pra",2,"karta","flower","उद्याने {X} {v:विकसति|विकसन्ति}।","{X} {v:blooms|bloom} in the garden.",K);
+  F("pra29","pra",2,"karta","bird","{X} मधुरं {v:गायति|गायन्ति}।","{X} {v:sings|sing} sweetly.",K);
+  F("pra30","pra",2,"karta","bird","गगने {X} {v:उड्डयते|उड्डयन्ते}।","{X} {v:flies|fly} in the sky.",K);
+  F("pra31","pra",2,"karta","waterlife","जले {X} {v:तरति|तरन्ति}।","{X} {v:swims|swim} in the water.",K);
+  F("pra32","pra",2,"karta","animal","{X} शीघ्रं {v:धावति|धावन्ति}।","{X} {v:runs|run} fast.",k({ex:"मत्स्य मण्डूक कच्छप"}));
+  F("pra33","pra",2,"karta","person","अद्य {X} {v:आगच्छति|आगच्छन्ति}।","{X} {v:is|are} coming today.",K);
+  F("pra34","pra",3,"karta","person animal","प्रभाते {X} {v:प्रबुध्यते|प्रबुध्यन्ते}।","At dawn {X} {v:wakes|wake} up.",K);
+  F("pra35","pra",3,"karta","person","{X} सर्वदा सत्यं {v:वदति|वदन्ति}।","{X} always {v:speaks|speak} the truth.",K);
+  F("pra36","pra",3,"karta","water","वर्षाकाले {X} {v:पूर्यते|पूर्यन्ते}।","In the rainy season {X} {v:fills|fill} up.",K);
+  F("pra37","pra",2,"karta","group","{X} अत्र {v:मिलति|मिलन्ति}।","{X} {v:gathers|gather} here.",K);
+  F("pra38","pra",3,"karta","sound","{X} मनः {v:हरति|हरन्ति}।","{X} {v:steals|steal} the heart.",K);
+  F("pra39","pra",3,"karta","deity","{X} जनानां हृदये {v:वसति|वसन्ति}।","{X} {v:dwells|dwell} in the hearts of people.",K);
+
+  // ---------------- द्वितीया ----------------
+  F("dvi32","dvi",1,"karma","flower bird","{S} {X} पश्यति।","{S} sees {X}.");
+  F("dvi33","dvi",2,"karma","mountain vehicle","{S} {X} आरोहति।","{S} climbs {X}.");
+  F("dvi34","dvi",2,"karma","reading","{S} {X} रचयति।","{S} composes {X}.");
+  F("dvi35","dvi",2,"karma","sound hearable","{S} {X} शृणोति।","{S} listens to {X}.");
+  F("dvi36","dvi",2,"paritah","dest","{S} {X} प्रति गच्छति।","{S} goes towards {X}.",{strict:true});
+  F("dvi37","dvi",2,"paritah","temple dest","{S} {X} परितः भ्रमति।","{S} wanders around {X}.",{strict:true});
+  F("dvi38","dvi",3,"karma","deity","{S} प्रातः उत्थाय {X} स्मरति।","Rising at dawn, {S} remembers {X}.");
+  F("dvi39","dvi",3,"karma","temple dwell","{S} {X} अलङ्करोति।","{S} decorates {X}.");
+  F("dvi40","dvi",2,"karma","drink","{S} {X} पिबति।","{S} drinks {X}.");
+  F("dvi41","dvi",3,"karma","dwell","{S} {X} त्यक्त्वा वनं गच्छति।","Leaving {X}, {S} goes to the forest.");
+  F("dvi42","dvi",3,"karma","abstract","{S} शास्त्रं पठित्वा {X} जानाति।","Having studied the scripture, {S} knows {X}.");
+  F("dvi43","dvi",2,"karma","fruit","{S} {X} गणयति।","{S} counts {X}.",{nums:["bahu"]});
+  F("dvi44","dvi",3,"paritah","road water","{X} उभयतः वृक्षाः सन्ति।","There are trees on both sides of {X}.",{strict:true});
+  F("dvi45","dvi",3,"karma","mountain celestial","{S} {X} दृष्ट्वा विस्मयते।","{S} is amazed on seeing {X}.");
+
+  // ---------------- तृतीया ----------------
+  F("tri20","tri",1,"karana","tool writable","{S} {X} लिखति।","{S} writes with {X}.",{strict:true});
+  F("tri21","tri",2,"saha","pet","{S} {X} सह क्रीडति।","{S} plays with {X}.",{strict:true});
+  F("tri22","tri",2,"karana","vehicle","{S} {X} ग्रामं गच्छति।","{S} goes to the village by {X}.",{strict:true});
+  F("tri23","tri",2,"karana","eye","{S} {X} जगत् पश्यति।","{S} sees the world with {X}.",{strict:true});
+  F("tri24","tri",2,"karana","ear","{S} {X} गीतं शृणोति।","{S} hears the song with {X}.",{strict:true});
+  F("tri25","tri",2,"karana","container","{S} {X} जलं सिञ्चति।","{S} sprinkles water with {X}.",{strict:true});
+  F("tri26","tri",3,"saha","person","{S} {X} सह मन्दिरं गच्छति।","{S} goes to the temple with {X}.",{strict:true});
+  F("tri27","tri",3,"karana","object","{S} {X} शत्रुं जयति।","{S} defeats the enemy with {X}.",{strict:true,only:"खड्ग बाण शस्त्र मुद्गर दण्ड"});
+  F("tri28","tri",2,"karana","water","{S} {X} मुखं प्रक्षालयति।","{S} washes his face with {X}.",{strict:true});
+  F("tri29","tri",3,"karana","wear","{S} {X} शोभते।","{S} looks beautiful with {X}.",{strict:true});
+  F("tri30","tri",2,"prayojanam","object abstract","किं {X} प्रयोजनम्?","What use is {X}?",{strict:true});
+  F("tri31","tri",3,"saha","person","{S} {X} सह वार्तां करोति।","{S} converses with {X}.",{strict:true});
+  F("tri33","tri",2,"karana","flower fruit","{S} {X} देवं पूजयति।","{S} worships the god with {X}.",{strict:true});
+  F("tri34","tri",2,"karana","container","{S} {X} भोजनं करोति।","{S} eats out of {X}.",{strict:true,only:"पात्र थालिका भाण्ड चषक"});
+  F("tri35","tri",3,"saha","pet person","{S} {X} सह उद्याने भ्रमति।","{S} strolls in the garden with {X}.",{strict:true});
+  F("tri36","tri",3,"karana","skill abstract","जनाः {X} सुखं प्राप्नुवन्ति।","People attain happiness through {X}.",{strict:true});
+  F("tri37","tri",2,"karana","body","{S} {X} कार्यं करोति।","{S} does the work with {X}.",{strict:true,only:"हस्त अङ्गुली बल"});
+
+  // ---------------- चतुर्थी ----------------
+  F("cat17","cat",1,"sampradana","plant animal","{S} {X} जलं ददाति।","{S} gives water to {X}.");
+  F("cat18","cat",1,"namah","deity elder","{X} नमः।","Salutations to {X}.",{strict:true});
+  F("cat19","cat",2,"sampradana","person","{S} {X} वस्त्रं यच्छति।","{S} offers a garment to {X}.");
+  F("cat20","cat",2,"ruc","person child","{X} मोदकाः रोचन्ते।","{X} {v:likes|like} sweets.",{strict:true});
+  F("cat21","cat",2,"ruc","person child","{X} क्रीडा रोचते।","{X} {v:enjoys|enjoy} playing.",{strict:true});
+  F("cat22","cat",3,"kup","person","{S} {X} कुप्यति।","{S} is angry with {X}.",{strict:true});
+  F("cat23","cat",3,"sprh","buyable","{S} {X} स्पृहयति।","{S} longs for {X}.",{strict:true});
+  F("cat24","cat",2,"sampradana","person","{S} {X} पत्रं लिखति।","{S} writes a letter to {X}.");
+  F("cat25","cat",2,"sampradana","child person","{S} {X} कथां कथयति।","{S} tells a story to {X}.");
+  F("cat26","cat",3,"sampradana","group person","{S} {X} अन्नं वितरति।","{S} distributes food to {X}.");
+  F("cat27","cat",2,"sampradana","child animal","माता {X} दुग्धं यच्छति।","The mother gives milk to {X}.");
+  F("cat28","cat",3,"namah","person elder","{X} स्वस्ति।","Blessings upon {X}.",{strict:true});
+  F("cat29","cat",3,"tadarthya","purpose","{S} {X} ग्रामं गच्छति।","{S} goes to the village for {X}.",{strict:true});
+  F("cat30","cat",3,"sampradana","group person","{S} {X} धनं ददाति।","{S} gives wealth to {X}.");
+  F("cat31","cat",2,"sampradana","person","{X} सुखं भवतु।","May there be happiness for {X}.",{strict:true});
+  F("cat32","cat",3,"sampradana","person","गुरुः {X} ज्ञानं ददाति।","The teacher gives knowledge to {X}.");
+
+  // ---------------- पञ्चमी ----------------
+  F("pan15","pan",1,"bahih","dwell dest","{S} {X} बहिः तिष्ठति।","{S} stands outside {X}.",{strict:true});
+  F("pan16","pan",2,"apadana","water","{X} जलम् आगच्छति।","Water comes from {X}.");
+  F("pan17","pan",2,"bhi","fearsome","{S} {X} बिभेति।","{S} is afraid of {X}.",{strict:true});
+  F("pan18","pan",2,"apadana","person","{S} {X} फलं स्वीकरोति।","{S} accepts a fruit from {X}.");
+  F("pan19","pan",3,"bahih","purpose time","{X} अनन्तरं {S} गृहं गच्छति।","After {X}, {S} goes home.",{strict:true});
+  F("pan20","pan",3,"bahih","purpose time","{X} पूर्वं {S} स्नानं करोति।","Before {X}, {S} bathes.",{strict:true});
+  F("pan21","pan",2,"apadana","vehicle mountain","{S} {X} अवतरति।","{S} descends from {X}.");
+  F("pan22","pan",2,"apadana","treeanimal plant","{X} पुष्पाणि पतन्ति।","Flowers fall from {X}.");
+  F("pan23","pan",3,"apadana","dest dwell","{S} {X} दूरं गच्छति।","{S} goes far away from {X}.");
+  F("pan24","pan",3,"apadana","sound","{X} मधुरः ध्वनिः आगच्छति।","A sweet sound comes from {X}.");
+  F("pan25","pan",2,"apadana","fearsome","{S} {X} पलायते।","{S} flees from {X}.");
+  F("pan26","pan",3,"apadana","elder reading","{S} {X} विद्यां प्राप्नोति।","{S} obtains learning from {X}.");
+  F("pan27","pan",2,"apadana","dwell","{S} {X} निर्गच्छति।","{S} comes out of {X}.");
+  F("pan28","pan",3,"apadana","mountain water","{X} वायुः वहति।","The wind blows from {X}.");
+  F("pan29","pan",2,"bahih","dwell","{S} {X} बहिः क्रीडति।","{S} plays outside {X}.",{strict:true});
+  F("pan30","pan",3,"apadana","mountain","{X} सूर्यः उदेति।","The sun rises from {X}.");
+
+  // ---------------- षष्ठी ----------------
+  F("sha21","sha",1,"sambandha","flower animal","{X} वर्णः श्वेतः।","{X's} colour is white.");
+  F("sha22","sha",2,"samipa","plant object","{X} उपरि पक्षी तिष्ठति।","A bird sits on top of {X}.",{strict:true});
+  F("sha23","sha",2,"samipa","seat object","{X} अधः मार्जारः शेते।","A cat lies under {X}.",{strict:true});
+  F("sha24","sha",2,"samipa","dest dwell","{X} मध्ये उद्यानम् अस्ति।","There is a garden in the middle of {X}.",{strict:true});
+  F("sha25","sha",2,"samipa","temple person","{S} {X} पुरतः तिष्ठति।","{S} stands in front of {X}.",{strict:true});
+  F("sha26","sha",3,"samipa","person animal","{S} {X} पृष्ठतः गच्छति।","{S} walks behind {X}.",{strict:true});
+  F("sha27","sha",3,"samipa","group person","{S} {X} कृते कार्यं करोति।","{S} works for the sake of {X}.",{strict:true});
+  F("sha28","sha",2,"samipa","temple dest","{X} समीपे जनाः मिलन्ति।","People gather near {X}.",{strict:true});
+  F("sha29","sha",2,"sambandha","plant","{X} पर्णानि हरितानि।","{X's} leaves are green.");
+  F("sha30","sha",3,"sambandha","elder deity","{X} कीर्तिः सर्वत्र विस्तृता।","{X's} fame has spread everywhere.");
+  F("sha31","sha",2,"sambandha","bird person","{X} स्वरः मधुरः।","{X's} voice is sweet.");
+  F("sha32","sha",3,"samipa","water","{X} मध्ये मत्स्याः सन्ति।","There are fish in the middle of {X}.",{strict:true});
+  F("sha33","sha",2,"sambandha","shop temple dwell","{X} द्वारं पिहितम्।","{X's} door is shut.");
+  F("sha34","sha",3,"sambandha","festival time","{X} स्मरणं सुखं ददाति।","The memory of {X} gives joy.");
+
+  // ---------------- सप्तमी ----------------
+  F("sap22","sap",1,"adhikarana","container","{X} जलम् अस्ति।","There is water in {X}.");
+  F("sap23","sap",2,"adhikarana","garden forest","{X} पुष्पाणि विकसन्ति।","Flowers bloom in {X}.");
+  F("sap24","sap",2,"adhikarana","seat container","{S} {X} पुस्तकं स्थापयति।","{S} places a book on {X}.");
+  F("sap25","sap",2,"adhikarana","festival dest","{X} बहवः जनाः सन्ति।","There are many people at {X}.");
+  F("sap26","sap",3,"vishaya","skill","बालकः {X} निपुणः अस्ति।","The boy is skilled in {X}.",{strict:true});
+  F("sap27","sap",3,"vishaya","garden purpose","{S} {X} रमते।","{S} delights in {X}.",{strict:true});
+  F("sap28","sap",2,"adhikarana","road dest","{X} वृक्षाः सन्ति।","There are trees along {X}.");
+  F("sap29","sap",2,"adhikarana","seat","{S} {X} उपविशति।","{S} sits on {X}.");
+  F("sap30","sap",3,"adhikarana","celestial","{X} नक्षत्राणि दृश्यन्ते।","Stars are seen in {X}.",{only:"गगन अन्तरिक्ष"});
+  F("sap31","sap",2,"adhikarana","dwell dest","{S} {X} वसति।","{S} lives in {X}.");
+  F("sap32","sap",3,"adhikarana","festival","{X} जनाः नृत्यन्ति।","People dance at {X}.");
+  F("sap33","sap",2,"adhikarana","writablein","{S} {X} लिखति।","{S} writes in {X}.");
+  F("sap34","sap",3,"adhikarana","forest temple","{X} शान्तिः विद्यते।","There is peace in {X}.");
+  F("sap35","sap",2,"adhikarana","flower food","{X} मधुरः गन्धः अस्ति।","{X} {v:has|have} a sweet fragrance.");
+
+  // ---------------- सम्बोधनम् ----------------
+  // The frames flagged anyword use no gendered agreement and no {B},
+  // so they work for every class including नपुंसकलिङ्गम्.
+  F("sam10","sam",2,"sambodhana","person","हे {X}, {B} किमर्थं {v:शोचति|शोचन्ति}?","{Xv}, why are you sad?",{strict:true,cue:true});
+  F("sam11","sam",2,"sambodhana","person","हे {X}, {B} मम गृहे {v:तिष्ठतु|तिष्ठन्तु}।","{Xv}, please stay at my house.",{strict:true,cue:true});
+  F("sam12","sam",3,"sambodhana","elder","हे {X}, {B} मां {v:क्षमताम्|क्षमन्ताम्}।","{Xv}, please forgive me.",{strict:true,cue:true});
+  F("sam13","sam",2,"sambodhana","person","हे {X}, {B} अत्र {v:उपविशतु|उपविशन्तु}।","{Xv}, please sit here.",{strict:true,cue:true});
+  F("sam14","sam",3,"sambodhana","elder person","हे {X}, {B} कथां {v:कथयतु|कथयन्तु}।","{Xv}, please tell a story.",{strict:true,cue:true});
+  F("sam15","sam",2,"sambodhana","person","हे {X}, {B} कदा {v:आगच्छति|आगच्छन्ति}?","{Xv}, when are you coming?",{strict:true,cue:true});
+  F("sam16","sam",1,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, {v:तुभ्यं|युष्मभ्यं} नमः।","{Xv}, salutations to you.",{strict:true,anyword:true});
+  F("sam17","sam",2,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, अहं {v:त्वां|युष्मान्} स्मरामि।","{Xv}, I remember you.",{strict:true,anyword:true});
+  F("sam18","sam",2,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, अत्र {v:आगच्छ|आगच्छत}।","{Xv}, come here.",{strict:true,cue:true,anyword:true});
+  F("sam19","sam",2,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, मां {v:पश्य|पश्यत}।","{Xv}, look at me.",{strict:true,cue:true,anyword:true});
+  F("sam20","sam",3,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, अहं {v:त्वां|युष्मान्} वन्दे।","{Xv}, I bow to you.",{strict:true,anyword:true});
+  F("sam21","sam",2,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, कुत्र {v:असि|स्थ}?","{Xv}, where are you?",{strict:true,cue:true,anyword:true});
+  F("sam22","sam",3,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, मम कथां {v:शृणु|शृणुत}।","{Xv}, listen to my story.",{strict:true,cue:true,anyword:true});
+  F("sam23","sam",2,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, मम गृहम् {v:आगच्छ|आगच्छत}।","{Xv}, come to my house.",{strict:true,cue:true,anyword:true});
+  F("sam24","sam",3,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, {v:त्वां|युष्मान्} दृष्ट्वा अहं तुष्यामि।","{Xv}, seeing you I am content.",{strict:true,anyword:true});
+  F("sam25","sam",3,"sambodhana","person deity animal bird flower plant water celestial dest mountain forest temple","हे {X}, अहं {v:त्वां|युष्मान्} न विस्मरामि।","{Xv}, I do not forget you.",{strict:true,anyword:true});
 })();
 
 // A short introduction shown when a vibhakti is unlocked

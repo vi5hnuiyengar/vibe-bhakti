@@ -1,9 +1,18 @@
 # विभक्तिः · Vibhakti daily practice
 
-A small website for practising Sanskrit vibhaktis for about five minutes a day.
+A small website for practising Sanskrit for a few minutes a day.
 It runs on any phone or computer, works without internet once opened, and needs no account.
 
-It covers the four most common noun classes, all seven vibhaktis and सम्बोधनम्, in एकवचनम् and बहुवचनम्:
+It has four pages, one tab each:
+
+| Tab | What it is for |
+|---|---|
+| **अभ्यासः** | Vibhakti drills: the daily session, focused and massed practice, tables, a speed round, and every form of every word |
+| **पठनम्** | Reading real stories line by line and naming the vibhakti of marked words |
+| **लिपिः** | Learning to read Devanagari: letters, vowel signs and conjuncts |
+| **प्रगतिः** | Progress for all of the above, in one place |
+
+The vibhakti drills cover the four most common noun classes, all seven vibhaktis and सम्बोधनम्, in एकवचनम् and बहुवचनम्:
 
 | Class | Pattern word |
 |---|---|
@@ -12,7 +21,7 @@ It covers the four most common noun classes, all seven vibhaktis and सम्�
 | ईकारान्तः स्त्रीलिङ्गः | नदी |
 | अकारान्तः नपुंसकलिङ्गः | फल |
 
-That is 64 skills (4 classes × 8 vibhaktis × 2 numbers), drilled with 282 everyday words and 155 sentence patterns.
+That is 64 skills (4 classes × 8 vibhaktis × 2 numbers), drilled with 587 everyday words and 276 sentence patterns. The reading page has 48 level 1 stories. The script page covers 50 letters, 11 vowel signs and 66 conjuncts in 10 stages.
 
 ---
 
@@ -32,6 +41,8 @@ That is 64 skills (4 classes × 8 vibhaktis × 2 numbers), drilled with 282 ever
 12. [Updating the live site](#12-updating-the-live-site)
 13. [What each file does](#13-what-each-file-does)
 14. [Things to know](#14-things-to-know)
+15. [The script page](#15-the-script-page)
+16. [The reading page and adding stories](#16-the-reading-page-and-adding-stories)
 
 ---
 
@@ -130,41 +141,59 @@ After the first visit, the site works without internet.
 
 ## 4. What a learner does each day
 
-On the home screen, the learner taps **आरभताम्** (Start). A daily session is:
+The app opens on the **अभ्यासः** tab. Four tabs sit at the bottom of the screen. They disappear while a practice or a story is running, so a session has the whole screen. The phone's back button leaves a session. On any tab other than अभ्यासः, back returns to अभ्यासः. On अभ्यासः, back leaves the site.
 
-- **12 questions**, mixed from the exercise types below.
+### The daily practice
+
+The learner taps **आरभताम्** (Start). A daily session is:
+
+- **12 questions**, mixed from the exercise types in section 5.
 - **2 declension tables** to fill in. One comes after the fourth question and one near the end.
 - **Up to 3 second chances.** Skills the learner got wrong come back at the end, as a different exercise with a different word.
 
 This takes about five minutes.
 
+### Two ways to choose your own practice
+
+Both are cards on the अभ्यासः tab.
+
+- **सरल-अभ्यासः (ten of the same).** Pick one vibhakti, and optionally one word class. You get ten questions in a row on it, alternating एकवचनम् and बहुवचनम्, using only four exercise types: choose the form, build the form, which vibhakti, change the number. Use it to set a new pattern before the mixed daily practice tests it.
+- **अभ्यासं वृणुत (choose your practice).** Pick any vibhaktis and any classes with the chips, then start twelve questions from that selection, with every exercise type. The selection is remembered.
+
+Both feed the memory model and the progress grid. **Neither counts toward opening the next vibhakti**, because that gate exists to require mixed practice. Drilling one vibhakti over and over cannot unlock everything.
+
+### Other modes on the same tab
+
+- **सारणी-अभ्यासः** (Table practice): five declension tables in a row, from a few blanks up to the whole table from memory.
+- **वेग-अभ्यासः** (Speed round): 60 seconds of true or false, tapping as fast as possible.
+- **रूपावलिः** (All forms): the full declension table of any word in the list.
+
+### Hints and feedback
+
 Every question has a **सङ्केतः (Hint)** button:
 - The **first tap** shows the English meaning of the sentence, or a pattern word to compare with.
 - The **second tap** shows the grammar rule, such as "सह always takes तृतीया".
-- A right answer after a hint earns half credit, so hints help without inflating progress.
+- A right answer after a hint earns half credit.
 
 After each answer, a panel shows:
 - whether it was right,
 - the correct form,
 - the word, its class, and which vibhakti and number it is,
 - a note on the specific mistake, if the learner made a known one,
-- a button to see the word's full table, with the practised cell highlighted,
+- a button to see the word's full table,
 - for sentences, a button to see the English meaning.
 
-The home screen also shows:
-- seven small lamps (दीपाः) for the last seven days, lit on days with practice, and the streak count,
-- a progress grid with the 4 classes (rows) × 8 vibhaktis (columns),
-- three extra modes:
-  - **सारणी-अभ्यासः** (Table practice): five declension tables in a row, from a few blanks up to the whole table from memory.
-  - **वेग-अभ्यासः** (Speed round): 60 seconds of true or false, tapping as fast as possible. The best score is kept.
-  - **रूपावलिः** (All forms): the full declension table of any word in the list, for reference.
+### Lamps and streaks
 
-The gear button at the top right opens settings:
+Seven small lamps show the last seven days. Vibhakti practice and reading light the same lamps. The script page keeps its own lamps, since some learners will use only one of the two.
+
+### Settings
+
+The gear button opens settings:
 - **Text size**, in three steps.
-- **All vibhaktis**, which opens every vibhakti at once for learners who already know the basics.
-- **Reset**, which erases progress on this device.
-
----
+- **All vibhaktis**, which opens every vibhakti at once.
+- **Export and import** progress (section 8).
+- **Reset**, which erases vibhakti, script and reading progress together.
 
 ## 5. The 13 kinds of exercise
 
@@ -273,14 +302,35 @@ Learners who already know the basics can open everything at once in settings.
 
 ## 8. Where progress is kept
 
-Progress is saved in the browser on that device (`localStorage`, key `vibhakti-abhyasa-v1`).
+Progress is saved in the browser on that device (`localStorage`, key `vibhakti-abhyasa-v2`).
 
 - Nothing is sent anywhere. There are no accounts, no tracking and no analytics.
 - A different phone, or a different browser on the same phone, starts fresh.
 - Clearing the browser's site data erases progress.
-- Safari on iPhone may clear data for websites that have not been opened for several weeks. Using the site regularly, or adding it to the home screen, avoids this.
+- Safari on iPhone may clear data for websites that have not been opened for several weeks.
 
----
+**Moving progress to another phone, or keeping a backup.**
+1. Open settings (the gear) and tap **निर्यातः (Export)**. A small file downloads, and the same text is copied to the clipboard.
+2. On the other phone, open settings, tap **आयातः (Import)** and paste the text.
+
+The import checks that the text really is progress from this app before replacing anything, and asks first.
+
+**Upgrading from the first version.** The first version saved under `vibhakti-abhyasa-v1`. On first opening, the new version copies everything from that key into the new one, and leaves the old key untouched. If you ever go back to the old version, its progress is still there.
+
+**What is stored:**
+
+| Field | What it holds |
+|---|---|
+| `skills` | the memory record of every vibhakti skill, from drills and reading alike |
+| `words` | when each word was last seen, so words rotate |
+| `days` | days with vibhakti or reading practice (the lamps) |
+| `unlocked`, `introduced` | how many vibhakti groups are open and have been introduced |
+| `recent` | the last 40 answers, used to decide when the next vibhaktis open |
+| `total`, `best` | lifetime answers, and the best speed-round scores |
+| `settings` | text size, "all vibhaktis", the current tab, and the saved focus selection |
+| `lipi` | the script page's own skills, days, totals, stage and recent answers |
+| `read` | which stories have been read, with the score for each |
+| `pron` | reserved for pronouns (not built yet) |
 
 ## 9. Adding or changing words
 
@@ -398,67 +448,153 @@ The parts, in order:
 
 ## 11. Checking your changes
 
-After editing words or sentences, run:
+After editing words, sentences, script data or stories, run:
 
 ```
 node tools/check.js
 ```
 
-This needs Node.js, free from https://nodejs.org. The script changes nothing. It:
+This needs Node.js, free from https://nodejs.org. It changes nothing. It checks:
 
-1. checks known declensions, including tricky ण cases like रामेण, कृष्णेन, कुमारीणाम् and भाषणेन,
-2. checks every word's spelling matches its class, and that no word is listed twice,
-3. checks every sentence pattern has words that fit it,
-4. generates about 13,000 questions and 200 tables, and checks each for duplicate options, a single right answer, missing tiles and unfilled placeholders.
+1. known declensions, including the tricky ण cases,
+2. every word's spelling matches its class, and no word is listed twice,
+3. every sentence pattern has words that fit it,
+4. about 13,000 generated vibhakti questions and 200 tables, for duplicate options, a single right answer, missing tiles and unfilled placeholders,
+5. that progress saved by the first version survives the upgrade with every field intact,
+6. the script tables: every confusion entry is a real character, every conjunct is its two parts joined by ्, and every listed transliteration matches how the app reads the character,
+7. about 5,000 generated script questions at every stage,
+8. every marked word in every story, regenerated from the grammar engine and compared with the word as written (section 16).
 
-It ends with "All checks passed." or a list of what to fix.
+It ends with "All checks passed." or a list of what to fix. It also prints which story cells have few or no marked words yet, as a warning, not a failure.
 
----
+**The independent cross-check.** `tools/crosscheck.py` declines every word with a second declension engine written separately in Python, and compares all 16 forms of every word with the site's own engine. At the time of writing, both agree on all 9,392 forms of the 587 words. It needs Python and one package:
+
+```
+pip install indic_transliteration
+python3 tools/crosscheck.py
+```
+
+The site itself never uses this script or its package.
 
 ## 12. Updating the live site
 
 Upload the changed files as described in section 2.
 
-The site always loads the newest files when a phone is online. It keeps a copy for offline use, which is refreshed each time. So learners get updates automatically the next time they open it with internet. There is no need to change anything in `sw.js`.
+The site always loads the newest files when a phone is online. It keeps a copy for offline use, which is refreshed each time. So learners get updates automatically the next time they open it with internet. If you add a new file (a new script, a new story file), add its path to the `FILES` list in `sw.js`, or the site will not work offline. Changing existing files needs nothing.
 
 ---
 
 ## 13. What each file does
 
 ```
-index.html              the page itself; loads everything below
+index.html              the page itself; loads the scripts below, in this order
 manifest.webmanifest    name, colours and icon for "Add to Home Screen"
-sw.js                   offline support (network first, saved copy as fallback)
+sw.js                   offline support. Every file the site uses is listed in FILES here
 css/style.css           all colours, fonts and layout
-fonts/                  Tiro Devanagari Sanskrit (Sanskrit text) and Mukta (English text), both open-licence
+fonts/                  Tiro Devanagari Sanskrit and Mukta, with their licence (OFL.txt)
 icons/                  app icons
-js/grammar.js           the declension engine, the ण rule, the list of learner mistakes, forms of किम्
-js/words.js             the 282 words
-js/frames.js            the 155 sentence patterns, hint rules, and introductions to each vibhakti
-js/store.js             progress, the memory model, choosing skills, opening new vibhaktis
-js/questions.js         the 13 exercise generators
-js/app.js               screens, buttons, feedback, tables, speed round, settings
-tools/check.js          the self-check described in section 11
+
+js/grammar.js           the declension engine and ण rule. Verified; do not change its logic
+js/words.js             the 587 words
+js/frames.js            the 276 sentence patterns, hint rules, and introductions to each vibhakti
+js/lipi.js              letters, vowel signs, conjuncts, confusion sets and script stages
+js/stories-l1.js        the level 1 story corpus
+js/store.js             progress (schema v2), the memory model, session planning, unlock gates
+js/questions.js         the 13 vibhakti exercise generators
+js/lipi-questions.js    the 6 script exercise generators, and transliteration
+
+js/app-shell.js         shared pieces on VB.UI: DOM helper, icons, panels, tables, tab bar, router
+js/app-drill.js         अभ्यासः: daily, massed and focused practice, tables, speed round, all forms
+js/app-read.js          पठनम्: story list and the line-by-line reader
+js/app-script.js        लिपिः: script sessions and the letter speed round
+js/app-settings.js      प्रगतिः page and the settings panel, including export and import
+
+tools/check.js          the self-check (section 11)
+tools/crosscheck.py     the independent Python cross-check (section 11)
+tools/engine_py.py      the Python declension engine it uses
 ```
 
-**How the grammar works.** The app does not store a list of forms. `grammar.js` builds every form from the stem using the standard endings for each class. It then applies the ण rule (णत्वम्) letter by letter: र, ष or ऋ earlier in the word turns the ending's न into ण, unless a blocking letter comes in between. This engine was checked against a separate Python implementation on all 2,416 forms of the first 151 words, with no differences.
+**How the pieces fit.** Page files never call each other. Each one registers itself with `VB.UI.page(name, render)`, and the router in `app-shell.js` renders the page for the current tab. Shared widgets (the feedback panel, the top bar, the declension table) live only in `app-shell.js`.
 
-**How wrong options are made.** Wrong options are the mistakes learners really make:
-- the same ending from another gender or class,
-- the right vibhakti with the wrong number,
-- a neighbouring vibhakti,
-- न instead of ण or the reverse,
-- सु instead of षु,
-- प्रथमा used for सम्बोधनम्,
-- the known traps रामाः for रामान् and नदीः for नद्यः.
+**The module registry.** `store.js` defines `VB.MODULES`. Each module is a list of members (for nouns, the four classes) and a list of cells (vibhakti and vacana pairs). Skill keys are always `member:cell`, for example `a:sap.eka`. The planner and the progress grid read the registry instead of assuming four classes, eight vibhaktis or two vacanas. This is what lets pronouns and verbs be added as data later.
 
-Each wrong option carries a tag, so the feedback can explain the exact slip.
-
----
+**How the grammar works.** The app does not store a list of forms. `grammar.js` builds every form from the stem using the standard endings for each class, then applies the ण rule letter by letter. The reading corpus follows the same rule: marked words are stored as stem, class and cell, never as typed forms.
 
 ## 14. Things to know
 
-- **Grammar is guaranteed by rule; naturalness is not.** Every form is correct because it is generated by rule, and every sentence pattern was written by hand. But word-and-sentence combinations are made automatically, so now and then one may be grammatical but a little odd, such as a king being given a fruit. If a teacher spots one, tighten that pattern's categories or add the word to its `ex` list.
-- **Scope.** द्विवचनम् and other noun classes (इकारान्त, उकारान्त, ऋकारान्त, consonant stems, pronouns) are not included yet. The engine and word format are built so these can be added later.
-- **Verbs** in the sentences are simple लट् and लोट् forms, with a few ल्यप्/क्त्वा forms (गत्वा, कृत्वा, प्रज्वाल्य) and one तुमुन् (पठितुम्) in the literary sentences.
-- **English** appears in the instruction line, hints, notes and settings. Everything a learner reads and answers is in Devanagari.
+- **Grammar is guaranteed by rule; naturalness is not.** Every form is generated, and every sentence pattern was written by hand. But word-and-sentence combinations are made automatically, so now and then one may be grammatical but a little odd. If a teacher spots one, tighten that pattern's categories or add the word to its `ex` list.
+- **Scope.** द्विवचनम्, pronouns and other noun classes are not included yet. The code is written so that they arrive as data: nothing assumes two vacanas or four classes.
+- **Verbs** in the sentences are simple लट् and लोट् forms, with a few ल्यप्/क्त्वा forms and one तुमुन् in the literary sentences.
+- **English** appears in the instruction line, hints, notes, settings, story glosses and transliteration on the script page. Everything a learner reads as Sanskrit and answers is in Devanagari.
+
+---
+
+## 15. The script page
+
+**लिपिः** teaches reading Devanagari, so that the vibhakti drills can be read without decoding letter by letter.
+
+A session is twelve questions with the same hint button, feedback panel and "अग्रे" as the drills. There are six exercises:
+
+| # | Exercise | Shown | The learner picks |
+|---|---|---|---|
+| 1 | Letter to sound | भ | bha |
+| 2 | Sound to letter | bha | भ |
+| 3 | Vowel sign | क + ◌ी | की |
+| 4 | Conjunct | क्ष | क + ष |
+| 5 | Word reading | मन्दिरम् | mandiram |
+| 6 | Find the letter | a word with one syllable marked | its first letter |
+
+**Wrong options are real confusions.** Every character in `lipi.js` has a confusion set, and wrong options come from it first: ध/घ, भ/म/स, प/ष, ब/व, and for conjuncts the reversed reading order (र्म offers म + र, the classic रेफ mistake). Word-reading options swap one letter for a confusable one, so "dharmaḥ" is offered beside "gharmaḥ" and "dharbhaḥ".
+
+**Words come from the vibhakti word list**, so every word decoded here is one the learner will meet in a drill. Only words made entirely of characters the learner has already opened are shown.
+
+**Stages.** Characters open in the ten stages set out in `lipi.js`. It starts with eight vowels, then common consonants, then vowel signs, and ends with conjuncts and the रेफ/रकार forms. The next stage opens by the same rule as vibhaktis: everything open has been answered right at least once, and about 3 in 4 recent answers are right.
+
+Letters have their own memory map, lamps and speed round. The script grid on प्रगतिः shows how well each letter is known.
+
+---
+
+## 16. The reading page and adding stories
+
+**How reading works.** The learner opens a story and sees the first line. Marked words are highlighted. Tapping one opens three dropdowns: लिङ्गम्, विभक्तिः, वचनम्. An answer is right only when all three match.
+
+- **Right:** a small green tick on the word, nothing more.
+- **Wrong:** the correct answer and the word's full table, then back to reading.
+
+Answering every marked word unlocks the next line. Being right does not, so reading never becomes a test that stops the learner. Finished lines stay above, dimmed, so the story builds on the screen. Each line has an **अर्थः** button for its English meaning, which is never shown unless asked for.
+
+Reading answers go into the same memory store as the drills, so the progress grid counts them. A finished story is recorded with its score and can be read again.
+
+The learner is asked for **liṅga, not class**. A reader looking at नद्याः should think "feminine", not "ईकारान्त स्त्रीलिङ्ग". The class is still what gets recorded.
+
+**Levels.** Level 1 is open. Levels 2 to 4 are shown as "work in progress".
+
+**Adding a story.** Stories live in `js/stories-l1.js`:
+
+```js
+{
+  id: "pt-001",                         // unique; prefix pt- ht- sb- rm- mb- pu- or-
+  title: "सिंहः मूषकः च",
+  source: "Pañcatantra, Mitrabheda",   // required for verbatim and adapted
+  provenance: "retelling",             // verbatim | adapted | retelling
+  difficulty: 1,                        // 1 to 3
+  lines: [
+    {
+      sa: "एकस्मिन् वने सिंहः वसति स्म।",
+      en: "In a certain forest there lived a lion.",
+      marks: [
+        { tok: 1, stem: "वन",  cls: "n", cell: "sap.eka" },
+        { tok: 2, stem: "सिंह", cls: "a", cell: "pra.eka" }
+      ]
+    }
+  ]
+}
+```
+
+- `tok` counts words in `sa`, from 0, split on spaces.
+- **A mark is never a typed form.** It is a stem, a class and a cell. The checker regenerates the form with the grammar engine and fails if it does not equal the word in the line. A mislabelled word fails the check instead of quietly teaching the wrong thing.
+- **A marked word must be in `js/words.js`.** Other words can appear in a line; they simply cannot be marked.
+- **Only level 1 nouns are marked.** Pronouns, verbs and indeclinables are supporting vocabulary, covered by the line's English gloss, and are never quizzed.
+- **Sandhi.** If a marked word would change through sandhi with its neighbour, write the line without that sandhi, or leave the word unmarked. The one exception the checker allows is a final म् written as anusvara before a consonant (गृहं गच्छति), which is how the app spells running Sanskrit anyway.
+
+Run `node tools/check.js` after adding stories. It verifies every mark and prints which cells still have few examples, so gaps are easy to fill.
