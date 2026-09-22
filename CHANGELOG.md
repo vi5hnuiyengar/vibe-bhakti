@@ -50,3 +50,11 @@ It was tested on synthetic iPhone-format recordings: single takes, named takes, 
 **Store fix.** The saved-state merge dropped any field the template did not list, so the pronoun choices in the focus card (and the new card's "Not now") were lost on reload. It now keeps every field, and the checker proves it.
 
 **Design doc.** `docs/ARCHITECTURE.md` is the architecture document with the five fixes applied (anusvāra rule, lipi schema, pronoun frame format, measured pronoun checker, persistent storage and home-screen card). It also records every decision since: dvivacana after सम्बोधनम् with an एक-बहु | द्वि | सर्वाणि row, optional forms accepted, 80-word class batches, the six lakāras, pictures, audio, and the लिपिः word levels.
+
+## Reading page, redesigned (September 2026)
+
+- **Passages.** Stories come in passages of up to four lines (about 220 characters), as plain flowing text. Nothing is underlined while reading.
+- **Answering.** Answering is a separate step. The app walks through the passage's marked words in order, highlights only the current one, and keeps it in view.
+- **Chip panel.** A compact panel of chips replaces the three dropdowns: liṅga and vacana on one row, the eight vibhaktis below, reflowing on small phones. That's three taps and a check. Right answers move on by themselves, and wrong answers show the correction with the table one tap away.
+- **"न जानामि"** shows the answer without a guess.
+- **Tested:** 12 full stories at two phone sizes and both text sizes, with no layout problems. The test also caught the Check button scoring every answer wrong before release.

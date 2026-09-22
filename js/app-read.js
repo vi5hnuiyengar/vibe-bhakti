@@ -2,9 +2,10 @@
   app-read.js
   Page 2, पठनम्: reading a story line by line.
 
-  The learner reads a line, taps each marked word, and names its liṅga,
-  vibhakti and vacana. Answering unlocks the next line; being right does not,
-  so reading never turns into a test that stops the learner.
+  The learner reads a short passage as plain text, then names the liṅga,
+  vacana and vibhakti of its marked words, one at a time, with chips.
+  Answering moves the story on; being right does not have to, so reading
+  never turns into a test that stops the learner.
 
   Marked words are stored as {tok, stem, cls, cell}. The checker proves each
   one equals VB.decline(stem, cls)[cell], so the corpus cannot teach a wrong form.
@@ -60,124 +61,149 @@
 
   // =====================================================================
   // READER
+  //
+  // Read first, answer second. A story comes in short passages of a few lines,
+  // shown as plain text with nothing marked. After reading a passage the
+  // learner taps once, and the app walks through that passage's marked words
+  // one by one: only the current word is highlighted, and a compact panel of
+  // chips asks for liṅga, vacana and vibhakti. Right answers move straight on.
   // =====================================================================
+
+  // group lines into passages: at most four lines and about 220 characters
+  function passagesOf(st) {
+    var out = [], cur = [], len = 0;
+    st.lines.forEach(function (l, i) {
+      if (cur.length && (cur.length >= 4 || len + l.sa.length > 220)) { out.push(cur); cur = []; len = 0; }
+      cur.push(i); len += l.sa.length;
+    });
+    if (cur.length) out.push(cur);
+    return out;
+  }
+
+  var LINGA_SHORT = { m: "पुं.", f: "स्त्री.", n: "नपुं." };
+  var VAC_SHORT = { eka: "एक.", dva: "द्वि.", bahu: "बहु." };
+
   function reader(st) {
-    var ses = { st: st, li: 0, right: 0, total: 0, answered: {} };
-    var col = h("div", { class: "reader" });
-    var nextBtn = h("button", { class: "primary", onclick: advance });
-    var head = h("div", {});
+    var parts = passagesOf(st);
+    var ses = { pi: 0, right: 0, total: 0 };
+    var head = h("div", {}), col = h("div", { class: "reader" }), dockBox = h("div", { class: "dock solid" }, h("div", { class: "dock-inner" }));
+    var dockInner = dockBox.firstChild;
 
     function quit() {
       if (ses.total > 0 && !confirm("Leave this story? Your answers so far are saved.")) return;
       U.leave();
     }
-    function drawHead() {
-      head.innerHTML = "";
-      add(head, U.topBar(ses.li, st.lines.length, quit));
+    function drawHead() { head.innerHTML = ""; add(head, U.topBar(ses.pi, parts.length, quit)); }
+    function setDock() {
+      dockInner.innerHTML = "";
+      add(dockInner, Array.prototype.slice.call(arguments));
+      U.spaceBelow();
     }
 
     show(head,
       h("div", { class: "rtitle" }, h("h1", { class: "sa", text: st.title }), h("p", { text: st.source || "" })),
-      col,
-      dock(nextBtn));
+      col, dockBox);
     drawHead();
-    addLine(0);
+    addPassage(0);
 
-    // one line of the story, with its marked words as buttons
-    function addLine(i) {
-      var line = st.lines[i], toks = line.sa.split(" ");
-      var marks = {};
-      (line.marks || []).forEach(function (m) { marks[m.tok] = m; });
-      var p = h("p", { class: "rline sa" + (reduceMotion() ? "" : " enter") });
-      toks.forEach(function (t, k) {
-        if (marks[k]) {
-          var btn = h("button", { class: "rmark", "aria-label": t + ", marked word. Tap to answer." }, t);
-          btn.addEventListener("click", function () { if (ses.li === i && !ses.answered[i + ":" + k]) ask(i, k, marks[k], btn); });
-          add(p, btn);
-        } else add(p, h("span", { text: t }));
-        add(p, " ");
+    // ---------- one passage, as plain flowing text ----------
+    function addPassage(pi) {
+      var idx = parts[pi], words = [], glosses = [];
+      var text = h("p", { class: "rtext sa" + (reduceMotion() ? "" : " enter") });
+      idx.forEach(function (li) {
+        var line = st.lines[li], marks = {};
+        (line.marks || []).forEach(function (m) { marks[m.tok] = m; });
+        line.sa.split(" ").forEach(function (t, k) {
+          var span = h("span", { class: "rw", text: t });
+          if (marks[k]) words.push({ el: span, m: marks[k] });
+          add(text, [span, " "]);
+        });
+        glosses.push(line.en);
       });
-      var mean = h("p", { class: "rmean", hidden: true, text: line.en });
-      var wrap = h("div", { class: "rwrap" }, p,
+      var mean = h("div", { class: "rmean", hidden: true }, glosses.map(function (g) { return h("p", { text: g }); }));
+      var card = h("section", { class: "rpass" }, text,
         h("button", { class: "linkbtn small", onclick: function () { mean.hidden = !mean.hidden; } }, "अर्थः", h("small", { text: "Meaning" })),
         mean);
-      col.appendChild(wrap);
-      updateNext();
-      if (i > 0) U.keepInView(wrap);
+      col.appendChild(card);
+      if (pi > 0) U.keepInView(card);
+
+      if (words.length) {
+        setDock(h("button", { class: "primary", onclick: function () { answer(card, words, 0, 0); } },
+          bi("प्रश्नाः  " + N(words.length), words.length === 1 ? "Name 1 word" : "Name " + words.length + " words")));
+      } else finishPassage(card, 0, 0);
     }
 
-    function lineMarks(i) { return (st.lines[i].marks || []); }
-    function lineDone(i) { return lineMarks(i).every(function (m) { return ses.answered[i + ":" + m.tok]; }); }
+    // ---------- answering: one marked word at a time ----------
+    function answer(card, words, i, right) {
+      if (i >= words.length) return finishPassage(card, right, words.length);
+      var wd = words[i], m = wd.m, pick = { g: null, n: null, v: null };
+      card.querySelectorAll(".rw.cur").forEach(function (e) { e.classList.remove("cur"); });
+      wd.el.classList.add("cur");
+      wd.el.setAttribute("aria-current", "true");
 
-    function updateNext() {
-      var last = ses.li >= st.lines.length - 1, ready = lineDone(ses.li);
-      nextBtn.innerHTML = "";
-      add(nextBtn, bi(last ? "समाप्तम्" : "अग्रिमा पङ्क्तिः", last ? "Finish" : "Next line"));
-      nextBtn.disabled = !ready;
-      var left = lineMarks(ses.li).filter(function (m) { return !ses.answered[ses.li + ":" + m.tok]; }).length;
-      nextBtn.setAttribute("aria-label", ready ? "Next line" : left + " marked word(s) still to answer");
-    }
-
-    function advance() {
-      if (!lineDone(ses.li)) return;
-      if (ses.li >= st.lines.length - 1) return finish();
-      var cur = col.lastChild; if (cur) cur.classList.add("past");
-      ses.li++;
-      drawHead();
-      addLine(ses.li);
-    }
-
-    // ---------- the three-dropdown question ----------
-    function ask(i, k, m, btn) {
-      var w = VB.BY_STEM[m.stem];
-      function sel(label, en, opts) {
-        var s = h("select", { class: "rsel", "aria-label": en },
-          h("option", { value: "", text: "चिनुत" }),
-          opts.map(function (o) { return h("option", { value: o[0], text: o[1] }); }));
-        s.addEventListener("change", check);
-        return h("label", { class: "rfield" }, h("span", { class: "sa", text: label }), h("small", { text: en }), s);
+      var check = h("button", { class: "primary", disabled: true, onclick: function () { judge(false); } }, bi("परीक्षताम्", "Check"));
+      function chip(label, key, val) {
+        return h("button", { class: "achip", "aria-pressed": "false", "data-k": key, "data-v": val, onclick: function (e) {
+          pick[key] = val;
+          panel.querySelectorAll('.achip[data-k="' + key + '"]').forEach(function (b) { b.setAttribute("aria-pressed", b === e.currentTarget ? "true" : "false"); });
+          check.disabled = !(pick.g && pick.n && pick.v);
+        } }, label);
       }
-      var fL = sel("लिङ्गम्", "Gender", ["m", "f", "n"].map(function (g) { return [g, LINGA_SA[g]]; }));
-      var fV = sel("विभक्तिः", "Vibhakti", VB.VIBS.map(function (v) { return [v, VB.VIB_SA[v]]; }));
-      var fN = sel("वचनम्", "Number", (VB.SHOWN_VACS || VB.VACS).map(function (n) { return [n, VB.VAC_SA[n]]; }));
-      var submit = h("button", { class: "primary", disabled: true, onclick: judge }, bi("परीक्षताम्", "Check"));
-      var body = h("div", {}, fL, fV, fN, submit);
-      var panel = h("div", { class: "panel", role: "dialog", "aria-label": "Name this word" },
-        h("p", { class: "big", style: "margin:0 0 6px", text: btn.textContent }),
-        body);
-      var ov = h("div", { class: "overlay", onclick: function (e) { if (e.target === ov) ov.remove(); } }, panel);
-      document.body.appendChild(ov);
-      fL.querySelector("select").focus();
+      var vacs = VB.SHOWN_VACS || VB.VACS;
+      var panel = h("div", { class: "apanel", role: "group", "aria-label": "Name the marked word" },
+        h("div", { class: "arow top" },
+          h("div", { class: "agroup" }, ["m", "f", "n"].map(function (g) { return chip(LINGA_SHORT[g], "g", g); })),
+          h("div", { class: "agroup" }, vacs.map(function (n) { return chip(VAC_SHORT[n], "n", n); }))),
+        h("div", { class: "arow vibs" }, VB.VIBS.map(function (v) { return chip(VB.VIB_SA[v], "v", v); })),
+        h("div", { class: "aact" },
+          h("button", { class: "linkbtn small", onclick: function () { judge(true); } }, "न जानामि", h("small", { text: "Show me" })),
+          h("span", { class: "acount", text: N(i + 1) + " / " + N(words.length) })),
+        check);
+      setDock(panel);
+      U.keepInView(wd.el);   // after the panel is in place, so the word sits above it
 
-      function val(f) { return f.querySelector("select").value; }
-      function check() { submit.disabled = !(val(fL) && val(fV) && val(fN)); }
-
-      function judge() {
+      function judge(gaveUp) {
         var cell = m.cell.split("."), g = VB.GENDER[m.cls];
-        var ok = val(fL) === g && val(fV) === cell[0] && val(fN) === cell[1];
-        ses.answered[i + ":" + k] = true;
-        ses.total++; if (ok) ses.right++;
+        var ok = !gaveUp && pick.g === g && pick.v === cell[0] && pick.n === cell[1];
+        ses.total++; if (ok) { ses.right++; right++; }
         S.record(m.cls + ":" + m.cell, ok, { hard: true });
         S.save();
-        btn.classList.add(ok ? "ok" : "bad");
-        btn.setAttribute("aria-label", btn.textContent + (ok ? ", answered correctly" : ", answered, see the correction"));
-        updateNext();
-        if (ok) { ov.remove(); return; }     // right: a quiet mark on the word, nothing more
-        // wrong: show the answer and the full table, then carry on reading
-        body.innerHTML = "";
-        add(body, [
-          h("p", { class: "verdict", style: "color:var(--kumkum)" }, icon("no"), "सम्यक् उत्तरम्"),
-          h("p", { class: "ans", text: LINGA_SA[g] + ",  " + VB.cellLabel(m.cell) }),
+        wd.el.removeAttribute("aria-current");
+        var correct = LINGA_SA[g] + ",  " + VB.cellLabel(m.cell);
+        if (ok) {
+          // a quiet confirmation, then straight on
+          setDock(h("div", { class: "apanel done" }, h("p", { class: "averdict ok" }, icon("ok"), "साधु  ", h("span", { class: "sa", text: wd.el.textContent }))));
+          setTimeout(function () { wd.el.classList.remove("cur"); answer(card, words, i + 1, right); }, reduceMotion() ? 250 : 650);
+          return;
+        }
+        var w = VB.BY_STEM[m.stem], tbl = h("div", { class: "peek", hidden: true }, U.fullTable(w, [m.cell]));
+        setDock(h("div", { class: "apanel done" },
+          h("p", { class: "averdict bad" }, icon("no"), h("span", { class: "sa", text: wd.el.textContent })),
+          h("p", { class: "ans sa", text: correct }),
           h("p", { class: "why", text: m.stem + " (" + VB.CLASS_SA[m.cls] + ")" }),
-          h("div", { class: "peek" }, U.fullTable(w, [m.cell])),
-          h("button", { class: "primary", onclick: function () { ov.remove(); } }, bi("अग्रे", "Carry on reading"))
-        ]);
+          h("button", { class: "linkbtn small", onclick: function () { tbl.hidden = !tbl.hidden; U.spaceBelow(); } }, "सारणी", h("small", { text: "Table" })),
+          tbl,
+          h("button", { class: "primary", onclick: function () { wd.el.classList.remove("cur"); answer(card, words, i + 1, right); } }, bi("अग्रे", "Next"))));
       }
+    }
+
+    // ---------- after a passage ----------
+    function finishPassage(card, right, total) {
+      card.querySelectorAll(".rw.cur").forEach(function (e) { e.classList.remove("cur"); });
+      var last = ses.pi >= parts.length - 1;
+      setDock(
+        total ? h("p", { class: "ascore sa", text: N(right) + " / " + N(total) + "  सम्यक्" }) : null,
+        h("button", { class: "primary", onclick: function () {
+          if (last) return finish();
+          card.classList.add("past");
+          ses.pi++;
+          drawHead();
+          addPassage(ses.pi);
+        } }, bi(last ? "समाप्तम्" : "अग्रिमः भागः", last ? "Finish" : "Next passage")));
     }
 
     function finish() {
-      var at = Date.now();
-      R().done[st.id] = { at: at, right: ses.right, total: ses.total };
+      R().done[st.id] = { at: Date.now(), right: ses.right, total: ses.total };
       if (ses.total) S.finishDay(ses.total, ses.right); else S.save();
       show(
         h("div", { style: "height:30px" }),

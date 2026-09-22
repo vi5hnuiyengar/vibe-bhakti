@@ -339,6 +339,14 @@ Reuse the existing 60-second speed round pattern for letter recognition. Best sc
 
 ## 7. Page 3: पठनम् (reading) (new)
 
+> **As built, revised.** The one-line-at-a-time reader with tappable underlined words was replaced after use, because it interrupted reading. The revision:
+> - **Passages.** Stories come in passages of up to four lines, as plain text with nothing marked.
+> - **Answering.** Answering is a separate step. The app steps through the passage's marked words, highlighting only the current one.
+> - **Chips.** A chip panel asks liṅga, vacana and vibhakti: three taps and a check. Right answers advance on their own.
+> - **"न जानामि"** reveals the answer without a guess.
+>
+> The rules in 7.2 (liṅga not class, answering unlocks progress, being right does not) still hold.
+
 This is the largest new feature. Build it last.
 
 ### 7.1 The learner's experience

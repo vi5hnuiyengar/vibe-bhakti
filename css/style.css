@@ -403,3 +403,34 @@ select.words { width: 100%; min-height: 54px; border-radius: 12px; font-family: 
 .install p { margin: 4px 0 10px; color: var(--on-wood-soft); font-size: .95rem; }
 .install .how { color: var(--on-wood); }
 .install .linkbtn { background: var(--leaf-2); color: var(--ink); font-family: var(--ui); }
+
+/* ---------- reading: passages and the answer panel ---------- */
+.rpass { background: var(--leaf); color: var(--ink); border-radius: 18px; padding: 16px 18px 12px; border: 1px solid var(--leaf-edge);
+  margin-bottom: 10px; transition: opacity .3s ease;
+  background-image: repeating-linear-gradient(0deg, rgba(122, 88, 36, .04) 0 1px, transparent 1px 8px), linear-gradient(180deg, #F4E6C0, var(--leaf) 40%, #EBD8A8); }
+.rpass.past { opacity: .55; }
+.rtext { font-size: 1.6rem; line-height: 1.95; margin: 0 0 6px; }
+.rtext.enter { animation: rlin .3s ease-out; }
+.rw { border-radius: 6px; padding: 0 .08em; transition: background-color .2s ease; }
+.rw.cur { background: rgba(232, 163, 58, .38); box-shadow: 0 0 0 2px rgba(201, 131, 28, .55); }
+.rmean p { margin: 4px 0; }
+.apanel { background: var(--leaf); color: var(--ink); border-radius: 18px; padding: 10px 10px 8px; }
+.apanel.done { padding: 12px 14px; }
+.arow { display: grid; gap: 6px; margin-bottom: 6px; }
+.arow.top { grid-template-columns: 3fr 2fr; gap: 10px; margin-bottom: 8px; }
+.agroup { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 5px; }
+.arow.vibs { grid-template-columns: repeat(auto-fill, minmax(3.9em, 1fr)); }
+.arow.vibs .achip { font-size: .92rem; }
+.achip { min-height: 44px; min-width: 0; border-radius: 12px; border: 1.5px solid var(--leaf-edge); background: #FBF3DC; color: var(--ink);
+  font-family: var(--sa); font-size: 1.05rem; padding: 2px 2px; line-height: 1.15; overflow-wrap: anywhere; }
+.achip[aria-pressed="true"] { background: var(--ink); color: var(--leaf); border-color: var(--ink); }
+.aact { display: flex; justify-content: space-between; align-items: center; margin: 2px 2px 8px; }
+.acount { font-family: var(--sa); color: var(--ink-soft); font-size: 1rem; }
+.averdict { font-family: var(--sa); font-size: 1.5rem; margin: 0; display: flex; align-items: center; gap: 8px; }
+.averdict svg { width: 26px; height: 26px; }
+.averdict.ok { color: var(--green); } .averdict.bad { color: var(--kumkum); }
+.apanel .ans { font-size: 1.35rem; margin: 6px 0 2px; }
+.apanel .why { font-size: 1.05rem; margin: 0 0 8px; }
+.apanel .peek { max-height: 34vh; overflow-y: auto; margin-bottom: 8px; }
+.apanel .primary { margin-top: 4px; }
+.ascore { text-align: center; color: var(--on-wood); font-size: 1.2rem; margin: 0 0 10px; }

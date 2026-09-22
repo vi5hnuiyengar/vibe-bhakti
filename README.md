@@ -589,14 +589,17 @@ Letters have their own memory map, lamps and speed round. The script grid on प
 
 ## 16. The reading page and adding stories
 
-**How reading works.** The learner opens a story and sees the first line. Marked words are highlighted. Tapping one opens three dropdowns: लिङ्गम्, विभक्तिः, वचनम्. An answer is right only when all three match.
+**How reading works.** A story comes in short passages of three or four lines, shown as plain text. Nothing is underlined or marked while you read, so the story reads like a story.
 
-- **Right:** a small green tick on the word, nothing more.
-- **Wrong:** the correct answer and the word's full table, then back to reading.
+1. Read the passage. The **अर्थः** button shows its English meaning, only if asked for.
+2. Tap **प्रश्नाः** (Name the words). The app walks through that passage's marked words one at a time. Only the current word is highlighted, and the page keeps it in view.
+3. A small panel at the bottom asks for three things with chips: liṅga (पुं. स्त्री. नपुं.), vacana (एक. बहु.) and vibhakti. Tap one of each, then **परीक्षताम्**.
+   - **Right:** a quiet "साधु", and the next word comes up by itself.
+   - **Wrong:** the correct answer, with the word's full table one tap away, then **अग्रे**.
+   - **न जानामि** (I don't know) shows the answer without guessing. It counts as not yet known.
+4. After the last word, the passage's score shows, and **अग्रिमः भागः** brings the next passage. Finished passages stay above, slightly dimmed, so the story builds on the screen with no leftover marks.
 
-Answering every marked word unlocks the next line. Being right does not, so reading never becomes a test that stops the learner. Finished lines stay above, dimmed, so the story builds on the screen. Each line has an **अर्थः** button for its English meaning, which is never shown unless asked for.
-
-Reading answers go into the same memory store as the drills, so the progress grid counts them. A finished story is recorded with its score and can be read again.
+An answer is right only when all three match. Every answer goes into the same memory store as the drills, so the progress grid counts reading too. A finished story is recorded with its score and can be read again.
 
 The learner is asked for **liṅga, not class**. A reader looking at नद्याः should think "feminine", not "ईकारान्त स्त्रीलिङ्ग". The class is still what gets recorded.
 
